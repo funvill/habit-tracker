@@ -1,3 +1,4 @@
 (fp_lib_table
   (lib (name "calendar")(type "KiCad")(uri "${KIPRJMOD}/calendar.pretty")(options "")(descr ""))
+  (lib (name "TestPoint")(type "KiCad")(uri "${KICAD6_FOOTPRINT_DIR}/TestPoint.pretty")(options "")(descr ""))
 )
