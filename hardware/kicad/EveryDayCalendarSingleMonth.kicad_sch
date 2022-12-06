@@ -1306,6 +1306,7 @@
     )
   )
 
+
   (junction (at 266.7 224.155) (diameter 0) (color 0 0 0 0)
     (uuid 0086c5c1-cf72-444a-807e-fcb107a232c3)
   )
@@ -3654,7 +3655,7 @@
   (symbol (lib_id "tom-mechanical:SW_SPST") (at 36.195 292.735 0) (unit 1)
     (in_bom yes) (on_board yes)
     (uuid 068764eb-f496-4001-875a-752c9b009f36)
-    (property "Reference" "SW_WIN2" (id 0) (at 36.195 287.02 0))
+    (property "Reference" "WIN2" (id 0) (at 36.195 287.02 0))
     (property "Value" "Switch_SW_Push" (id 1) (at 36.195 289.3314 0))
     (property "Footprint" "calendar:SW_Push_1P1T_NO_6x6mm_H9.5mm" (id 2) (at 36.195 287.655 0)
       (effects (font (size 1.27 1.27)) hide)
@@ -3692,7 +3693,7 @@
   (symbol (lib_id "calendar:WS2812B") (at 317.5 194.945 0) (unit 1)
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid 07ec4e42-15c3-4194-90a1-d75c7690956a)
-    (property "Reference" "DAY37" (id 0) (at 328.295 190.6143 0))
+    (property "Reference" "DAY7" (id 0) (at 328.295 190.6143 0))
     (property "Value" "WS2812B" (id 1) (at 328.295 193.1543 0))
     (property "Footprint" "calendar:LED_WS2812C-2020-V1_2.0x2.0mm" (id 2) (at 318.77 202.565 0)
       (effects (font (size 1.27 1.27)) (justify left top) hide)
@@ -3744,7 +3745,7 @@
   (symbol (lib_id "Connector:TestPoint") (at 243.205 57.785 0) (unit 1)
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid 0d452324-858f-4bd6-a936-f8e478811a0b)
-    (property "Reference" "TP_TOP_GND1" (id 0) (at 245.745 53.2129 0)
+    (property "Reference" "GND1" (id 0) (at 245.745 53.2129 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "TestPoint" (id 1) (at 245.745 55.7529 0)
@@ -3804,7 +3805,7 @@
   (symbol (lib_id "calendar:WS2812B") (at 193.04 306.07 0) (unit 1)
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid 1038628f-a1f1-41a6-9b61-be9080c169f9)
-    (property "Reference" "DAY12" (id 0) (at 203.835 301.7393 0))
+    (property "Reference" "DAY37" (id 0) (at 203.835 301.7393 0))
     (property "Value" "WS2812B" (id 1) (at 203.835 304.2793 0))
     (property "Footprint" "calendar:LED_WS2812C-2020-V1_2.0x2.0mm" (id 2) (at 194.31 313.69 0)
       (effects (font (size 1.27 1.27)) (justify left top) hide)
@@ -3840,7 +3841,7 @@
   (symbol (lib_id "jlcpcb-basic-capacitor-0603:10uF,10V,X5R ") (at 387.35 231.775 0) (mirror x) (unit 1)
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid 11fdffee-6c8f-42c5-9e2c-b81e5b169dc8)
-    (property "Reference" "C_ROW3" (id 0) (at 384.175 230.5049 0)
+    (property "Reference" "ROW3" (id 0) (at 384.175 230.5049 0)
       (effects (font (size 1.27 1.27)) (justify right))
     )
     (property "Value" "10uF,10V,X5R " (id 1) (at 384.175 233.0449 0)
@@ -3896,7 +3897,7 @@
   (symbol (lib_id "calendar:WS2812B") (at 193.04 216.535 0) (unit 1)
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid 164d5bdc-7951-49e2-a5d9-631ad2f2dd28)
-    (property "Reference" "DAY8" (id 0) (at 203.835 212.2043 0))
+    (property "Reference" "DAY9" (id 0) (at 203.835 212.2043 0))
     (property "Value" "WS2812B" (id 1) (at 203.835 214.7443 0))
     (property "Footprint" "calendar:LED_WS2812C-2020-V1_2.0x2.0mm" (id 2) (at 194.31 224.155 0)
       (effects (font (size 1.27 1.27)) (justify left top) hide)
@@ -3916,7 +3917,7 @@
   (symbol (lib_id "calendar:WS2812B") (at 266.7 216.535 0) (unit 1)
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid 167365dc-2189-4ea8-86fd-02f4324ec961)
-    (property "Reference" "DAY26" (id 0) (at 277.495 212.2043 0))
+    (property "Reference" "DAY12" (id 0) (at 277.495 212.2043 0))
     (property "Value" "WS2812B" (id 1) (at 277.495 214.7443 0))
     (property "Footprint" "calendar:LED_WS2812C-2020-V1_2.0x2.0mm" (id 2) (at 267.97 224.155 0)
       (effects (font (size 1.27 1.27)) (justify left top) hide)
@@ -3986,7 +3987,7 @@
   (symbol (lib_id "tom-mechanical:SW_SPST") (at 36.195 236.855 0) (unit 1)
     (in_bom yes) (on_board yes)
     (uuid 1b06ff24-2237-45c9-812b-4b606d4d146a)
-    (property "Reference" "CAL_NEXT" (id 0) (at 36.195 231.14 0))
+    (property "Reference" "NEXT1" (id 0) (at 36.195 231.14 0))
     (property "Value" "Switch_SW_Push" (id 1) (at 36.195 233.4514 0))
     (property "Footprint" "calendar:SW_Push_1P1T_NO_6x6mm_H9.5mm" (id 2) (at 36.195 231.775 0)
       (effects (font (size 1.27 1.27)) hide)
@@ -4092,7 +4093,7 @@
   (symbol (lib_id "calendar:WS2812B") (at 317.5 259.715 0) (unit 1)
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid 1ecbc610-077c-4442-9cd4-b0b863413e95)
-    (property "Reference" "DAY40" (id 0) (at 328.295 255.3843 0))
+    (property "Reference" "DAY28" (id 0) (at 328.295 255.3843 0))
     (property "Value" "WS2812B" (id 1) (at 328.295 257.9243 0))
     (property "Footprint" "calendar:LED_WS2812C-2020-V1_2.0x2.0mm" (id 2) (at 318.77 267.335 0)
       (effects (font (size 1.27 1.27)) (justify left top) hide)
@@ -4262,7 +4263,7 @@
   (symbol (lib_id "calendar:WS2812B") (at 243.84 194.945 0) (unit 1)
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid 247840d0-ab76-4a3a-9329-b58e19c8d2d3)
-    (property "Reference" "DAY19" (id 0) (at 254.635 190.6143 0))
+    (property "Reference" "DAY4" (id 0) (at 254.635 190.6143 0))
     (property "Value" "WS2812B" (id 1) (at 254.635 193.1543 0))
     (property "Footprint" "calendar:LED_WS2812C-2020-V1_2.0x2.0mm" (id 2) (at 245.11 202.565 0)
       (effects (font (size 1.27 1.27)) (justify left top) hide)
@@ -4298,7 +4299,7 @@
   (symbol (lib_id "calendar:WS2812B") (at 167.64 282.575 0) (unit 1)
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid 267ffc7d-80c4-4ad4-8c0d-48804e6930ea)
-    (property "Reference" "DAY5" (id 0) (at 178.435 278.2443 0))
+    (property "Reference" "DAY29" (id 0) (at 178.435 278.2443 0))
     (property "Value" "WS2812B" (id 1) (at 178.435 280.7843 0))
     (property "Footprint" "calendar:LED_WS2812C-2020-V1_2.0x2.0mm" (id 2) (at 168.91 290.195 0)
       (effects (font (size 1.27 1.27)) (justify left top) hide)
@@ -4357,7 +4358,7 @@
   (symbol (lib_id "calendar:WS2812B") (at 292.1 238.125 0) (unit 1)
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid 295be909-4bc8-4759-8733-cd80502d5da4)
-    (property "Reference" "DAY33" (id 0) (at 302.895 233.7943 0))
+    (property "Reference" "DAY20" (id 0) (at 302.895 233.7943 0))
     (property "Value" "WS2812B" (id 1) (at 302.895 236.3343 0))
     (property "Footprint" "calendar:LED_WS2812C-2020-V1_2.0x2.0mm" (id 2) (at 293.37 245.745 0)
       (effects (font (size 1.27 1.27)) (justify left top) hide)
@@ -4423,7 +4424,7 @@
   (symbol (lib_id "calendar:WS2812B") (at 292.1 194.945 0) (unit 1)
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid 2d31f0a0-22b1-4298-8c5f-156115543daf)
-    (property "Reference" "DAY31" (id 0) (at 302.895 190.6143 0))
+    (property "Reference" "DAY6" (id 0) (at 302.895 190.6143 0))
     (property "Value" "WS2812B" (id 1) (at 302.895 193.1543 0))
     (property "Footprint" "calendar:LED_WS2812C-2020-V1_2.0x2.0mm" (id 2) (at 293.37 202.565 0)
       (effects (font (size 1.27 1.27)) (justify left top) hide)
@@ -4499,7 +4500,7 @@
   (symbol (lib_id "Connector:TestPoint") (at 263.525 92.71 0) (unit 1)
     (in_bom yes) (on_board yes)
     (uuid 32b46005-ffe7-4b2f-95ab-039506cdc1b7)
-    (property "Reference" "5V" (id 0) (at 264.795 91.44 0)
+    (property "Reference" "5V4" (id 0) (at 264.795 91.44 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "TestPoint" (id 1) (at 264.795 93.98 0)
@@ -4517,7 +4518,7 @@
   (symbol (lib_id "calendar:WS2812B") (at 266.7 259.715 0) (unit 1)
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid 32cd0182-1bab-4689-8964-de9a6bcd1605)
-    (property "Reference" "DAY28" (id 0) (at 277.495 255.3843 0))
+    (property "Reference" "DAY26" (id 0) (at 277.495 255.3843 0))
     (property "Value" "WS2812B" (id 1) (at 277.495 257.9243 0))
     (property "Footprint" "calendar:LED_WS2812C-2020-V1_2.0x2.0mm" (id 2) (at 267.97 267.335 0)
       (effects (font (size 1.27 1.27)) (justify left top) hide)
@@ -4613,7 +4614,7 @@
   (symbol (lib_id "Connector:TestPoint") (at 273.05 83.82 90) (mirror x) (unit 1)
     (in_bom yes) (on_board yes)
     (uuid 37b33f1b-aa00-4047-9d53-2621fe291352)
-    (property "Reference" "TP_RIGHT_GND1" (id 0) (at 273.05 78.74 90))
+    (property "Reference" "GND2" (id 0) (at 273.05 78.74 90))
     (property "Value" "TestPoint" (id 1) (at 273.05 81.28 90))
     (property "Footprint" "TestPoint:TestPoint_Pad_2.5x2.5mm" (id 2) (at 273.05 88.9 0)
       (effects (font (size 1.27 1.27)) hide)
@@ -4739,7 +4740,7 @@
   (symbol (lib_id "Connector:TestPoint") (at 273.05 69.85 90) (mirror x) (unit 1)
     (in_bom yes) (on_board yes)
     (uuid 3c88e646-5c38-44c0-8ccf-1f487b84aebb)
-    (property "Reference" "5V" (id 0) (at 271.78 64.77 90))
+    (property "Reference" "5V2" (id 0) (at 271.78 64.77 90))
     (property "Value" "TestPoint" (id 1) (at 271.78 67.31 90))
     (property "Footprint" "TestPoint:TestPoint_Pad_2.5x2.5mm" (id 2) (at 273.05 74.93 0)
       (effects (font (size 1.27 1.27)) hide)
@@ -4853,7 +4854,7 @@
   (symbol (lib_id "calendar:WS2812B") (at 218.44 238.125 0) (unit 1)
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid 43174876-69af-43ac-a082-e78ea2875dc2)
-    (property "Reference" "DAY15" (id 0) (at 229.235 233.7943 0))
+    (property "Reference" "DAY17" (id 0) (at 229.235 233.7943 0))
     (property "Value" "WS2812B" (id 1) (at 229.235 236.3343 0))
     (property "Footprint" "calendar:LED_WS2812C-2020-V1_2.0x2.0mm" (id 2) (at 219.71 245.745 0)
       (effects (font (size 1.27 1.27)) (justify left top) hide)
@@ -5013,7 +5014,7 @@
   (symbol (lib_id "calendar:WS2812B") (at 167.64 306.07 0) (unit 1)
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid 587600e5-20ca-415c-9d8d-3005b36ffed5)
-    (property "Reference" "DAY6" (id 0) (at 178.435 301.7393 0))
+    (property "Reference" "DAY36" (id 0) (at 178.435 301.7393 0))
     (property "Value" "WS2812B" (id 1) (at 178.435 304.2793 0))
     (property "Footprint" "calendar:LED_WS2812C-2020-V1_2.0x2.0mm" (id 2) (at 168.91 313.69 0)
       (effects (font (size 1.27 1.27)) (justify left top) hide)
@@ -5121,7 +5122,7 @@
   (symbol (lib_id "calendar:WS2812B") (at 292.1 306.07 0) (unit 1)
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid 646ac386-b274-49fc-b67d-97e340e20756)
-    (property "Reference" "DAY36" (id 0) (at 302.895 301.7393 0))
+    (property "Reference" "DAY41" (id 0) (at 302.895 301.7393 0))
     (property "Value" "WS2812B" (id 1) (at 302.895 304.2793 0))
     (property "Footprint" "calendar:LED_WS2812C-2020-V1_2.0x2.0mm" (id 2) (at 293.37 313.69 0)
       (effects (font (size 1.27 1.27)) (justify left top) hide)
@@ -5141,7 +5142,7 @@
   (symbol (lib_id "calendar:WS2812B") (at 243.84 259.715 0) (unit 1)
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid 656b4931-6fbc-46b4-aacc-1bf1ad87c2a4)
-    (property "Reference" "DAY22" (id 0) (at 254.635 255.3843 0))
+    (property "Reference" "DAY25" (id 0) (at 254.635 255.3843 0))
     (property "Value" "WS2812B" (id 1) (at 254.635 257.9243 0))
     (property "Footprint" "calendar:LED_WS2812C-2020-V1_2.0x2.0mm" (id 2) (at 245.11 267.335 0)
       (effects (font (size 1.27 1.27)) (justify left top) hide)
@@ -5335,7 +5336,7 @@
   (symbol (lib_id "jlcpcb-basic-capacitor-0603:10uF,10V,X5R ") (at 387.35 251.46 0) (mirror x) (unit 1)
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid 6c946ff6-66a2-40c0-98d3-f4ff61a27d28)
-    (property "Reference" "C_ROW4" (id 0) (at 384.175 250.1899 0)
+    (property "Reference" "ROW4" (id 0) (at 384.175 250.1899 0)
       (effects (font (size 1.27 1.27)) (justify right))
     )
     (property "Value" "10uF,10V,X5R " (id 1) (at 384.175 252.7299 0)
@@ -5441,7 +5442,7 @@
   (symbol (lib_id "calendar:WS2812B") (at 218.44 306.07 0) (unit 1)
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid 6dc421f9-d671-4e4f-96f1-805dc410bef4)
-    (property "Reference" "DAY18" (id 0) (at 229.235 301.7393 0))
+    (property "Reference" "DAY38" (id 0) (at 229.235 301.7393 0))
     (property "Value" "WS2812B" (id 1) (at 229.235 304.2793 0))
     (property "Footprint" "calendar:LED_WS2812C-2020-V1_2.0x2.0mm" (id 2) (at 219.71 313.69 0)
       (effects (font (size 1.27 1.27)) (justify left top) hide)
@@ -5461,7 +5462,7 @@
   (symbol (lib_id "Connector:TestPoint") (at 226.06 330.2 180) (unit 1)
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid 6dd7985d-dca0-41e4-ab7c-21fbfe33a081)
-    (property "Reference" "LED_OUT" (id 0) (at 227.965 332.2319 0)
+    (property "Reference" "LED_OUT1" (id 0) (at 227.965 332.2319 0)
       (effects (font (size 1.27 1.27)) (justify right))
     )
     (property "Value" "TestPoint" (id 1) (at 227.965 334.7719 0)
@@ -5479,7 +5480,7 @@
   (symbol (lib_id "calendar:WS2812B") (at 167.64 216.535 0) (unit 1)
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid 6f4fea98-698f-4d7c-be95-2976ef92b721)
-    (property "Reference" "DAY2" (id 0) (at 178.435 212.2043 0))
+    (property "Reference" "DAY8" (id 0) (at 178.435 212.2043 0))
     (property "Value" "WS2812B" (id 1) (at 178.435 214.7443 0))
     (property "Footprint" "calendar:LED_WS2812C-2020-V1_2.0x2.0mm" (id 2) (at 168.91 224.155 0)
       (effects (font (size 1.27 1.27)) (justify left top) hide)
@@ -5499,7 +5500,7 @@
   (symbol (lib_id "calendar:WS2812B") (at 266.7 306.07 0) (unit 1)
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid 7303e60a-7d46-46e5-b4a2-ec9cb0e1b167)
-    (property "Reference" "DAY30" (id 0) (at 277.495 301.7393 0))
+    (property "Reference" "DAY40" (id 0) (at 277.495 301.7393 0))
     (property "Value" "WS2812B" (id 1) (at 277.495 304.2793 0))
     (property "Footprint" "calendar:LED_WS2812C-2020-V1_2.0x2.0mm" (id 2) (at 267.97 313.69 0)
       (effects (font (size 1.27 1.27)) (justify left top) hide)
@@ -5581,7 +5582,7 @@
   (symbol (lib_id "Connector:TestPoint") (at 244.475 93.345 0) (unit 1)
     (in_bom yes) (on_board yes)
     (uuid 7b5cd6f3-f591-4c08-b5a5-39d81918f5fc)
-    (property "Reference" "GND" (id 0) (at 245.745 91.44 0)
+    (property "Reference" "GND4" (id 0) (at 245.745 91.44 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "TestPoint" (id 1) (at 245.745 93.98 0)
@@ -5622,7 +5623,7 @@
   (symbol (lib_id "Connector:TestPoint") (at 129.54 173.355 180) (unit 1)
     (in_bom yes) (on_board yes)
     (uuid 7d535c57-26b3-4d48-87e7-7f8db2eeb930)
-    (property "Reference" "LED_IN" (id 0) (at 128.27 179.07 0)
+    (property "Reference" "LED_IN1" (id 0) (at 128.27 179.07 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "TestPoint" (id 1) (at 128.27 176.53 0)
@@ -5689,7 +5690,7 @@
   (symbol (lib_id "jlcpcb-basic-capacitor-0603:10uF,10V,X5R ") (at 387.35 271.145 0) (mirror x) (unit 1)
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid 811917cf-6d53-4c31-b734-2830b8b68334)
-    (property "Reference" "C_ROW5" (id 0) (at 384.175 269.8749 0)
+    (property "Reference" "ROW5" (id 0) (at 384.175 269.8749 0)
       (effects (font (size 1.27 1.27)) (justify right))
     )
     (property "Value" "10uF,10V,X5R " (id 1) (at 384.175 272.4149 0)
@@ -5717,7 +5718,7 @@
   (symbol (lib_id "calendar:WS2812B") (at 292.1 259.715 0) (unit 1)
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid 8342027c-e9d1-41d8-9166-7c26b6570228)
-    (property "Reference" "DAY34" (id 0) (at 302.895 255.3843 0))
+    (property "Reference" "DAY27" (id 0) (at 302.895 255.3843 0))
     (property "Value" "WS2812B" (id 1) (at 302.895 257.9243 0))
     (property "Footprint" "calendar:LED_WS2812C-2020-V1_2.0x2.0mm" (id 2) (at 293.37 267.335 0)
       (effects (font (size 1.27 1.27)) (justify left top) hide)
@@ -5765,7 +5766,7 @@
   (symbol (lib_id "jlcpcb-basic-capacitor-0603:10uF,10V,X5R ") (at 387.35 211.455 0) (mirror x) (unit 1)
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid 86d99946-035d-40cc-995f-cc6b770948ad)
-    (property "Reference" "C_ROW2" (id 0) (at 384.175 210.1849 0)
+    (property "Reference" "ROW2" (id 0) (at 384.175 210.1849 0)
       (effects (font (size 1.27 1.27)) (justify right))
     )
     (property "Value" "10uF,10V,X5R " (id 1) (at 384.175 212.7249 0)
@@ -5884,7 +5885,7 @@
   (symbol (lib_id "calendar:WS2812B") (at 218.44 282.575 0) (unit 1)
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid 8bd182e3-c12a-438b-b197-b6be90df3878)
-    (property "Reference" "DAY17" (id 0) (at 229.235 278.2443 0))
+    (property "Reference" "DAY31" (id 0) (at 229.235 278.2443 0))
     (property "Value" "WS2812B" (id 1) (at 229.235 280.7843 0))
     (property "Footprint" "calendar:LED_WS2812C-2020-V1_2.0x2.0mm" (id 2) (at 219.71 290.195 0)
       (effects (font (size 1.27 1.27)) (justify left top) hide)
@@ -5920,7 +5921,7 @@
   (symbol (lib_id "calendar:WS2812B") (at 292.1 216.535 0) (unit 1)
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid 8d45d4b0-cc90-4732-b103-50a04545124c)
-    (property "Reference" "DAY32" (id 0) (at 302.895 212.2043 0))
+    (property "Reference" "DAY13" (id 0) (at 302.895 212.2043 0))
     (property "Value" "WS2812B" (id 1) (at 302.895 214.7443 0))
     (property "Footprint" "calendar:LED_WS2812C-2020-V1_2.0x2.0mm" (id 2) (at 293.37 224.155 0)
       (effects (font (size 1.27 1.27)) (justify left top) hide)
@@ -5986,7 +5987,7 @@
   (symbol (lib_id "jlcpcb-basic-capacitor-0603:10uF,10V,X5R ") (at 387.35 191.77 0) (mirror x) (unit 1)
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid 8e2a9caa-69a7-418c-8add-2cd62ed745dc)
-    (property "Reference" "C_ROW1" (id 0) (at 384.175 190.4999 0)
+    (property "Reference" "ROW1" (id 0) (at 384.175 190.4999 0)
       (effects (font (size 1.27 1.27)) (justify right))
     )
     (property "Value" "10uF,10V,X5R " (id 1) (at 384.175 193.0399 0)
@@ -6080,7 +6081,7 @@
   (symbol (lib_id "calendar:WS2812B") (at 218.44 216.535 0) (unit 1)
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid 975a9ac1-e818-4339-ba4e-41a7f872930a)
-    (property "Reference" "DAY14" (id 0) (at 229.235 212.2043 0))
+    (property "Reference" "DAY10" (id 0) (at 229.235 212.2043 0))
     (property "Value" "WS2812B" (id 1) (at 229.235 214.7443 0))
     (property "Footprint" "calendar:LED_WS2812C-2020-V1_2.0x2.0mm" (id 2) (at 219.71 224.155 0)
       (effects (font (size 1.27 1.27)) (justify left top) hide)
@@ -6100,7 +6101,7 @@
   (symbol (lib_id "calendar:WS2812B") (at 167.64 259.715 0) (unit 1)
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid 97c5c8d8-5c9d-4a45-b63c-e6cb26411a79)
-    (property "Reference" "DAY4" (id 0) (at 178.435 255.3843 0))
+    (property "Reference" "DAY22" (id 0) (at 178.435 255.3843 0))
     (property "Value" "WS2812B" (id 1) (at 178.435 257.9243 0))
     (property "Footprint" "calendar:LED_WS2812C-2020-V1_2.0x2.0mm" (id 2) (at 168.91 267.335 0)
       (effects (font (size 1.27 1.27)) (justify left top) hide)
@@ -6148,7 +6149,7 @@
   (symbol (lib_id "calendar:WS2812B") (at 266.7 282.575 0) (unit 1)
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid 9b9a7eae-103b-4135-ac6e-96c3ebdbc0a3)
-    (property "Reference" "DAY29" (id 0) (at 277.495 278.2443 0))
+    (property "Reference" "DAY33" (id 0) (at 277.495 278.2443 0))
     (property "Value" "WS2812B" (id 1) (at 277.495 280.7843 0))
     (property "Footprint" "calendar:LED_WS2812C-2020-V1_2.0x2.0mm" (id 2) (at 267.97 290.195 0)
       (effects (font (size 1.27 1.27)) (justify left top) hide)
@@ -6168,7 +6169,7 @@
   (symbol (lib_id "calendar:WS2812B") (at 193.04 238.125 0) (unit 1)
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid 9c111511-bdb4-4106-831c-3786d6bd33ac)
-    (property "Reference" "DAY9" (id 0) (at 203.835 233.7943 0))
+    (property "Reference" "DAY16" (id 0) (at 203.835 233.7943 0))
     (property "Value" "WS2812B" (id 1) (at 203.835 236.3343 0))
     (property "Footprint" "calendar:LED_WS2812C-2020-V1_2.0x2.0mm" (id 2) (at 194.31 245.745 0)
       (effects (font (size 1.27 1.27)) (justify left top) hide)
@@ -6405,7 +6406,7 @@
   (symbol (lib_id "calendar:WS2812B") (at 243.84 306.07 0) (unit 1)
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid af0d216a-c9e8-4539-a4e3-8c671bbb073c)
-    (property "Reference" "DAY24" (id 0) (at 254.635 301.7393 0))
+    (property "Reference" "DAY39" (id 0) (at 254.635 301.7393 0))
     (property "Value" "WS2812B" (id 1) (at 254.635 304.2793 0))
     (property "Footprint" "calendar:LED_WS2812C-2020-V1_2.0x2.0mm" (id 2) (at 245.11 313.69 0)
       (effects (font (size 1.27 1.27)) (justify left top) hide)
@@ -6501,7 +6502,7 @@
   (symbol (lib_id "calendar:WS2812B") (at 317.5 238.125 0) (unit 1)
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid b6d86c58-c81a-4559-8a2c-381053bf6fb0)
-    (property "Reference" "DAY39" (id 0) (at 328.295 233.7943 0))
+    (property "Reference" "DAY21" (id 0) (at 328.295 233.7943 0))
     (property "Value" "WS2812B" (id 1) (at 328.295 236.3343 0))
     (property "Footprint" "calendar:LED_WS2812C-2020-V1_2.0x2.0mm" (id 2) (at 318.77 245.745 0)
       (effects (font (size 1.27 1.27)) (justify left top) hide)
@@ -6521,7 +6522,7 @@
   (symbol (lib_id "calendar:WS2812B") (at 193.04 282.575 0) (unit 1)
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid b866cced-a356-40f5-ad86-e2c151813767)
-    (property "Reference" "DAY11" (id 0) (at 203.835 278.2443 0))
+    (property "Reference" "DAY30" (id 0) (at 203.835 278.2443 0))
     (property "Value" "WS2812B" (id 1) (at 203.835 280.7843 0))
     (property "Footprint" "calendar:LED_WS2812C-2020-V1_2.0x2.0mm" (id 2) (at 194.31 290.195 0)
       (effects (font (size 1.27 1.27)) (justify left top) hide)
@@ -6585,7 +6586,7 @@
   (symbol (lib_id "Connector:TestPoint") (at 260.985 56.515 0) (unit 1)
     (in_bom yes) (on_board yes)
     (uuid baa15f43-fb4f-447d-ab86-6d970f312735)
-    (property "Reference" "TP_TOP_5V1" (id 0) (at 262.255 53.2129 0)
+    (property "Reference" "5V1" (id 0) (at 262.255 53.2129 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "TestPoint" (id 1) (at 263.525 55.245 0)
@@ -6663,7 +6664,7 @@
   (symbol (lib_id "tom-mechanical:SW_SPST") (at 36.195 217.805 0) (unit 1)
     (in_bom yes) (on_board yes)
     (uuid befa23ae-69ac-4c39-b4f3-94ed728669a7)
-    (property "Reference" "SW_CAL_PREV1" (id 0) (at 36.195 211.6836 0))
+    (property "Reference" "PREV1" (id 0) (at 36.195 211.6836 0))
     (property "Value" "Switch_SW_Push" (id 1) (at 36.195 213.995 0))
     (property "Footprint" "calendar:SW_Push_1P1T_NO_6x6mm_H9.5mm" (id 2) (at 36.195 212.725 0)
       (effects (font (size 1.27 1.27)) hide)
@@ -6697,7 +6698,7 @@
   (symbol (lib_id "Connector:TestPoint") (at 232.41 71.12 90) (unit 1)
     (in_bom yes) (on_board yes)
     (uuid c2fa4bb1-f04a-4a45-9656-6b3c72f0c28a)
-    (property "Reference" "5V" (id 0) (at 237.49 64.77 90)
+    (property "Reference" "5V3" (id 0) (at 237.49 64.77 90)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "TestPoint" (id 1) (at 236.22 67.31 90)
@@ -6715,7 +6716,7 @@
   (symbol (lib_id "calendar:WS2812B") (at 243.84 238.125 0) (unit 1)
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid c42a001e-4a43-4aad-9b2a-ac6020b22ea3)
-    (property "Reference" "DAY21" (id 0) (at 254.635 233.7943 0))
+    (property "Reference" "DAY18" (id 0) (at 254.635 233.7943 0))
     (property "Value" "WS2812B" (id 1) (at 254.635 236.3343 0))
     (property "Footprint" "calendar:LED_WS2812C-2020-V1_2.0x2.0mm" (id 2) (at 245.11 245.745 0)
       (effects (font (size 1.27 1.27)) (justify left top) hide)
@@ -6763,7 +6764,7 @@
   (symbol (lib_id "calendar:WS2812B") (at 218.44 194.945 0) (unit 1)
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid c4d54005-8ed9-4edd-bac4-fae1f4e9576f)
-    (property "Reference" "DAY13" (id 0) (at 229.235 190.6143 0))
+    (property "Reference" "DAY3" (id 0) (at 229.235 190.6143 0))
     (property "Value" "WS2812B" (id 1) (at 229.235 193.1543 0))
     (property "Footprint" "calendar:LED_WS2812C-2020-V1_2.0x2.0mm" (id 2) (at 219.71 202.565 0)
       (effects (font (size 1.27 1.27)) (justify left top) hide)
@@ -6783,7 +6784,7 @@
   (symbol (lib_id "jlcpcb-basic-capacitor-0603:10uF,10V,X5R ") (at 387.35 290.83 0) (mirror x) (unit 1)
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid c52760d8-774c-4bf2-86a2-f7fb120c9d3c)
-    (property "Reference" "C_ROW6" (id 0) (at 384.175 289.5599 0)
+    (property "Reference" "ROW6" (id 0) (at 384.175 289.5599 0)
       (effects (font (size 1.27 1.27)) (justify right))
     )
     (property "Value" "10uF,10V,X5R " (id 1) (at 384.175 292.0999 0)
@@ -6895,7 +6896,7 @@
   (symbol (lib_id "calendar:WS2812B") (at 243.84 216.535 0) (unit 1)
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid cb7afad1-56ce-4de2-ab36-c7127defef29)
-    (property "Reference" "DAY20" (id 0) (at 254.635 212.2043 0))
+    (property "Reference" "DAY11" (id 0) (at 254.635 212.2043 0))
     (property "Value" "WS2812B" (id 1) (at 254.635 214.7443 0))
     (property "Footprint" "calendar:LED_WS2812C-2020-V1_2.0x2.0mm" (id 2) (at 245.11 224.155 0)
       (effects (font (size 1.27 1.27)) (justify left top) hide)
@@ -6915,7 +6916,7 @@
   (symbol (lib_id "calendar:WS2812B") (at 292.1 282.575 0) (unit 1)
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid cc7fe8a3-fce4-4de7-b374-7cc495c1bf2b)
-    (property "Reference" "DAY35" (id 0) (at 302.895 278.2443 0))
+    (property "Reference" "DAY34" (id 0) (at 302.895 278.2443 0))
     (property "Value" "WS2812B" (id 1) (at 302.895 280.7843 0))
     (property "Footprint" "calendar:LED_WS2812C-2020-V1_2.0x2.0mm" (id 2) (at 293.37 290.195 0)
       (effects (font (size 1.27 1.27)) (justify left top) hide)
@@ -6953,7 +6954,7 @@
   (symbol (lib_id "Connector_Generic:Conn_01x03") (at 324.485 73.66 0) (unit 1)
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid d14bd5d6-1332-4c0c-b6ef-8f16c66dc11f)
-    (property "Reference" "ONE_WIRE" (id 0) (at 327.66 72.3899 0)
+    (property "Reference" "ONE_WIRE1" (id 0) (at 327.66 72.3899 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "Conn_01x03" (id 1) (at 327.66 74.9299 0)
@@ -7023,7 +7024,7 @@
   (symbol (lib_id "calendar:WS2812B") (at 193.04 194.945 0) (unit 1)
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid d4991754-068c-4754-8eaa-796f741d3fc4)
-    (property "Reference" "DAY7" (id 0) (at 203.835 190.6143 0))
+    (property "Reference" "DAY2" (id 0) (at 203.835 190.6143 0))
     (property "Value" "WS2812B" (id 1) (at 203.835 193.1543 0))
     (property "Footprint" "calendar:LED_WS2812C-2020-V1_2.0x2.0mm" (id 2) (at 194.31 202.565 0)
       (effects (font (size 1.27 1.27)) (justify left top) hide)
@@ -7061,7 +7062,7 @@
   (symbol (lib_id "calendar:WS2812B") (at 317.5 216.535 0) (unit 1)
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid db1390c8-0240-456e-bdd6-03b129677579)
-    (property "Reference" "DAY38" (id 0) (at 328.295 212.2043 0))
+    (property "Reference" "DAY14" (id 0) (at 328.295 212.2043 0))
     (property "Value" "WS2812B" (id 1) (at 328.295 214.7443 0))
     (property "Footprint" "calendar:LED_WS2812C-2020-V1_2.0x2.0mm" (id 2) (at 318.77 224.155 0)
       (effects (font (size 1.27 1.27)) (justify left top) hide)
@@ -7081,7 +7082,7 @@
   (symbol (lib_id "calendar:WS2812B") (at 243.84 282.575 0) (unit 1)
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid de75624c-1c08-4b10-9335-b8bd4b97da69)
-    (property "Reference" "DAY23" (id 0) (at 254.635 278.2443 0))
+    (property "Reference" "DAY32" (id 0) (at 254.635 278.2443 0))
     (property "Value" "WS2812B" (id 1) (at 254.635 280.7843 0))
     (property "Footprint" "calendar:LED_WS2812C-2020-V1_2.0x2.0mm" (id 2) (at 245.11 290.195 0)
       (effects (font (size 1.27 1.27)) (justify left top) hide)
@@ -7129,7 +7130,7 @@
   (symbol (lib_id "calendar:WS2812B") (at 193.04 259.715 0) (unit 1)
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid dfeee93e-0c9c-4834-87eb-44b69b3537ab)
-    (property "Reference" "DAY10" (id 0) (at 203.835 255.3843 0))
+    (property "Reference" "DAY23" (id 0) (at 203.835 255.3843 0))
     (property "Value" "WS2812B" (id 1) (at 203.835 257.9243 0))
     (property "Footprint" "calendar:LED_WS2812C-2020-V1_2.0x2.0mm" (id 2) (at 194.31 267.335 0)
       (effects (font (size 1.27 1.27)) (justify left top) hide)
@@ -7256,7 +7257,7 @@
   (symbol (lib_id "tom-mechanical:SW_SPST") (at 36.195 274.32 0) (unit 1)
     (in_bom yes) (on_board yes)
     (uuid eb346a01-654a-4a8f-9fc6-84f57ec5c44d)
-    (property "Reference" "SW_WIN1" (id 0) (at 36.195 268.605 0))
+    (property "Reference" "WIN1" (id 0) (at 36.195 268.605 0))
     (property "Value" "Switch_SW_Push" (id 1) (at 36.195 270.9164 0))
     (property "Footprint" "calendar:SW_Push_1P1T_NO_6x6mm_H9.5mm" (id 2) (at 36.195 269.24 0)
       (effects (font (size 1.27 1.27)) hide)
@@ -7292,7 +7293,7 @@
   (symbol (lib_id "Connector:TestPoint") (at 232.41 85.09 90) (unit 1)
     (in_bom yes) (on_board yes)
     (uuid ef35c61f-ddc4-4b83-93cd-283cfd2965c6)
-    (property "Reference" "TP_LEFT_GND1" (id 0) (at 240.03 80.01 90)
+    (property "Reference" "GND3" (id 0) (at 240.03 80.01 90)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "TestPoint" (id 1) (at 236.22 82.55 90)
@@ -7328,7 +7329,7 @@
   (symbol (lib_id "calendar:WS2812B") (at 167.64 238.125 0) (unit 1)
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid efddcf6c-0aa1-4c50-9a49-2c71c9b97a4d)
-    (property "Reference" "DAY3" (id 0) (at 178.435 233.7943 0))
+    (property "Reference" "DAY15" (id 0) (at 178.435 233.7943 0))
     (property "Value" "WS2812B" (id 1) (at 178.435 236.3343 0))
     (property "Footprint" "calendar:LED_WS2812C-2020-V1_2.0x2.0mm" (id 2) (at 168.91 245.745 0)
       (effects (font (size 1.27 1.27)) (justify left top) hide)
@@ -7382,7 +7383,7 @@
   (symbol (lib_id "tom-mechanical:SW_SPST") (at 36.195 255.905 0) (unit 1)
     (in_bom yes) (on_board yes)
     (uuid f12cd6a6-e285-4e92-8b75-d4da8a94cce0)
-    (property "Reference" "SW_CAL_MODE1" (id 0) (at 36.195 250.19 0))
+    (property "Reference" "MODE1" (id 0) (at 36.195 250.19 0))
     (property "Value" "Switch_SW_Push" (id 1) (at 36.195 252.5014 0))
     (property "Footprint" "calendar:SW_Push_1P1T_NO_6x6mm_H9.5mm" (id 2) (at 36.195 250.825 0)
       (effects (font (size 1.27 1.27)) hide)
@@ -7459,7 +7460,7 @@
   (symbol (lib_id "calendar:WS2812B") (at 317.5 282.575 0) (unit 1)
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid f4cd435b-9144-479a-913c-8f310d34e8c7)
-    (property "Reference" "DAY41" (id 0) (at 328.295 278.2443 0))
+    (property "Reference" "DAY35" (id 0) (at 328.295 278.2443 0))
     (property "Value" "WS2812B" (id 1) (at 328.295 280.7843 0))
     (property "Footprint" "calendar:LED_WS2812C-2020-V1_2.0x2.0mm" (id 2) (at 318.77 290.195 0)
       (effects (font (size 1.27 1.27)) (justify left top) hide)
@@ -7497,7 +7498,7 @@
   (symbol (lib_id "calendar:WS2812B") (at 266.7 238.125 0) (unit 1)
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid f77fc6f2-eead-4b35-878a-f58e73658a1d)
-    (property "Reference" "DAY27" (id 0) (at 277.495 233.7943 0))
+    (property "Reference" "DAY19" (id 0) (at 277.495 233.7943 0))
     (property "Value" "WS2812B" (id 1) (at 277.495 236.3343 0))
     (property "Footprint" "calendar:LED_WS2812C-2020-V1_2.0x2.0mm" (id 2) (at 267.97 245.745 0)
       (effects (font (size 1.27 1.27)) (justify left top) hide)
@@ -7545,7 +7546,7 @@
   (symbol (lib_id "calendar:WS2812B") (at 266.7 194.945 0) (unit 1)
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid f9058cf9-1dce-49ff-b4fe-fe91a3ffc42e)
-    (property "Reference" "DAY25" (id 0) (at 277.495 190.6143 0))
+    (property "Reference" "DAY5" (id 0) (at 277.495 190.6143 0))
     (property "Value" "WS2812B" (id 1) (at 277.495 193.1543 0))
     (property "Footprint" "calendar:LED_WS2812C-2020-V1_2.0x2.0mm" (id 2) (at 267.97 202.565 0)
       (effects (font (size 1.27 1.27)) (justify left top) hide)
@@ -7609,7 +7610,7 @@
   (symbol (lib_id "calendar:WS2812B") (at 218.44 259.715 0) (unit 1)
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid fd6f4a89-ab37-4149-b3d6-fabd84462512)
-    (property "Reference" "DAY16" (id 0) (at 229.235 255.3843 0))
+    (property "Reference" "DAY24" (id 0) (at 229.235 255.3843 0))
     (property "Value" "WS2812B" (id 1) (at 229.235 257.9243 0))
     (property "Footprint" "calendar:LED_WS2812C-2020-V1_2.0x2.0mm" (id 2) (at 219.71 267.335 0)
       (effects (font (size 1.27 1.27)) (justify left top) hide)
@@ -7790,14 +7791,17 @@
     (path "/21fa4bc0-c521-47e2-b8e8-d30a6449e2f7"
       (reference "#PWR055") (unit 1) (value "+5V") (footprint "")
     )
-    (path "/32b46005-ffe7-4b2f-95ab-039506cdc1b7"
-      (reference "5V") (unit 1) (value "TestPoint") (footprint "TestPoint:TestPoint_Pad_2.5x2.5mm")
+    (path "/baa15f43-fb4f-447d-ab86-6d970f312735"
+      (reference "5V1") (unit 1) (value "TestPoint") (footprint "TestPoint:TestPoint_Pad_2.5x2.5mm")
     )
     (path "/3c88e646-5c38-44c0-8ccf-1f487b84aebb"
-      (reference "5V") (unit 1) (value "TestPoint") (footprint "TestPoint:TestPoint_Pad_2.5x2.5mm")
+      (reference "5V2") (unit 1) (value "TestPoint") (footprint "TestPoint:TestPoint_Pad_2.5x2.5mm")
     )
     (path "/c2fa4bb1-f04a-4a45-9656-6b3c72f0c28a"
-      (reference "5V") (unit 1) (value "TestPoint") (footprint "TestPoint:TestPoint_Pad_2.5x2.5mm")
+      (reference "5V3") (unit 1) (value "TestPoint") (footprint "TestPoint:TestPoint_Pad_2.5x2.5mm")
+    )
+    (path "/32b46005-ffe7-4b2f-95ab-039506cdc1b7"
+      (reference "5V4") (unit 1) (value "TestPoint") (footprint "TestPoint:TestPoint_Pad_2.5x2.5mm")
     )
     (path "/5e5ca5be-5de2-4ecc-85e6-8fbbed803745"
       (reference "C1") (unit 1) (value "10uF,10V,X5R ") (footprint "tom-passives:C_0603_1608Metric")
@@ -7922,27 +7926,6 @@
     (path "/1fd2707a-91df-4e69-9f21-8aab932d35fa"
       (reference "C43") (unit 1) (value "1uF,25V,X5R ") (footprint "tom-passives:C_0402_1005Metric")
     )
-    (path "/1b06ff24-2237-45c9-812b-4b606d4d146a"
-      (reference "CAL_NEXT") (unit 1) (value "Switch_SW_Push") (footprint "calendar:SW_Push_1P1T_NO_6x6mm_H9.5mm")
-    )
-    (path "/8e2a9caa-69a7-418c-8add-2cd62ed745dc"
-      (reference "C_ROW1") (unit 1) (value "10uF,10V,X5R ") (footprint "tom-passives:C_0603_1608Metric")
-    )
-    (path "/86d99946-035d-40cc-995f-cc6b770948ad"
-      (reference "C_ROW2") (unit 1) (value "10uF,10V,X5R ") (footprint "tom-passives:C_0603_1608Metric")
-    )
-    (path "/11fdffee-6c8f-42c5-9e2c-b81e5b169dc8"
-      (reference "C_ROW3") (unit 1) (value "10uF,10V,X5R ") (footprint "tom-passives:C_0603_1608Metric")
-    )
-    (path "/6c946ff6-66a2-40c0-98d3-f4ff61a27d28"
-      (reference "C_ROW4") (unit 1) (value "10uF,10V,X5R ") (footprint "tom-passives:C_0603_1608Metric")
-    )
-    (path "/811917cf-6d53-4c31-b734-2830b8b68334"
-      (reference "C_ROW5") (unit 1) (value "10uF,10V,X5R ") (footprint "tom-passives:C_0603_1608Metric")
-    )
-    (path "/c52760d8-774c-4bf2-86a2-f7fb120c9d3c"
-      (reference "C_ROW6") (unit 1) (value "10uF,10V,X5R ") (footprint "tom-passives:C_0603_1608Metric")
-    )
     (path "/1ea6dd4a-8e24-4b6b-a05e-b4c01a45d8c0"
       (reference "C_ROW_STATUS1") (unit 1) (value "10uF,10V,X5R ") (footprint "tom-passives:C_0603_1608Metric")
     )
@@ -7952,124 +7935,124 @@
     (path "/3655222d-a493-4da9-8325-d911b4a9ceed"
       (reference "DAY1") (unit 1) (value "WS2812B") (footprint "calendar:LED_WS2812C-2020-V1_2.0x2.0mm")
     )
-    (path "/6f4fea98-698f-4d7c-be95-2976ef92b721"
+    (path "/d4991754-068c-4754-8eaa-796f741d3fc4"
       (reference "DAY2") (unit 1) (value "WS2812B") (footprint "calendar:LED_WS2812C-2020-V1_2.0x2.0mm")
     )
-    (path "/efddcf6c-0aa1-4c50-9a49-2c71c9b97a4d"
+    (path "/c4d54005-8ed9-4edd-bac4-fae1f4e9576f"
       (reference "DAY3") (unit 1) (value "WS2812B") (footprint "calendar:LED_WS2812C-2020-V1_2.0x2.0mm")
     )
-    (path "/97c5c8d8-5c9d-4a45-b63c-e6cb26411a79"
+    (path "/247840d0-ab76-4a3a-9329-b58e19c8d2d3"
       (reference "DAY4") (unit 1) (value "WS2812B") (footprint "calendar:LED_WS2812C-2020-V1_2.0x2.0mm")
     )
-    (path "/267ffc7d-80c4-4ad4-8c0d-48804e6930ea"
+    (path "/f9058cf9-1dce-49ff-b4fe-fe91a3ffc42e"
       (reference "DAY5") (unit 1) (value "WS2812B") (footprint "calendar:LED_WS2812C-2020-V1_2.0x2.0mm")
     )
-    (path "/587600e5-20ca-415c-9d8d-3005b36ffed5"
+    (path "/2d31f0a0-22b1-4298-8c5f-156115543daf"
       (reference "DAY6") (unit 1) (value "WS2812B") (footprint "calendar:LED_WS2812C-2020-V1_2.0x2.0mm")
     )
-    (path "/d4991754-068c-4754-8eaa-796f741d3fc4"
+    (path "/07ec4e42-15c3-4194-90a1-d75c7690956a"
       (reference "DAY7") (unit 1) (value "WS2812B") (footprint "calendar:LED_WS2812C-2020-V1_2.0x2.0mm")
     )
-    (path "/164d5bdc-7951-49e2-a5d9-631ad2f2dd28"
+    (path "/6f4fea98-698f-4d7c-be95-2976ef92b721"
       (reference "DAY8") (unit 1) (value "WS2812B") (footprint "calendar:LED_WS2812C-2020-V1_2.0x2.0mm")
     )
-    (path "/9c111511-bdb4-4106-831c-3786d6bd33ac"
+    (path "/164d5bdc-7951-49e2-a5d9-631ad2f2dd28"
       (reference "DAY9") (unit 1) (value "WS2812B") (footprint "calendar:LED_WS2812C-2020-V1_2.0x2.0mm")
     )
-    (path "/dfeee93e-0c9c-4834-87eb-44b69b3537ab"
+    (path "/975a9ac1-e818-4339-ba4e-41a7f872930a"
       (reference "DAY10") (unit 1) (value "WS2812B") (footprint "calendar:LED_WS2812C-2020-V1_2.0x2.0mm")
     )
-    (path "/b866cced-a356-40f5-ad86-e2c151813767"
+    (path "/cb7afad1-56ce-4de2-ab36-c7127defef29"
       (reference "DAY11") (unit 1) (value "WS2812B") (footprint "calendar:LED_WS2812C-2020-V1_2.0x2.0mm")
     )
-    (path "/1038628f-a1f1-41a6-9b61-be9080c169f9"
+    (path "/167365dc-2189-4ea8-86fd-02f4324ec961"
       (reference "DAY12") (unit 1) (value "WS2812B") (footprint "calendar:LED_WS2812C-2020-V1_2.0x2.0mm")
     )
-    (path "/c4d54005-8ed9-4edd-bac4-fae1f4e9576f"
+    (path "/8d45d4b0-cc90-4732-b103-50a04545124c"
       (reference "DAY13") (unit 1) (value "WS2812B") (footprint "calendar:LED_WS2812C-2020-V1_2.0x2.0mm")
     )
-    (path "/975a9ac1-e818-4339-ba4e-41a7f872930a"
+    (path "/db1390c8-0240-456e-bdd6-03b129677579"
       (reference "DAY14") (unit 1) (value "WS2812B") (footprint "calendar:LED_WS2812C-2020-V1_2.0x2.0mm")
     )
-    (path "/43174876-69af-43ac-a082-e78ea2875dc2"
+    (path "/efddcf6c-0aa1-4c50-9a49-2c71c9b97a4d"
       (reference "DAY15") (unit 1) (value "WS2812B") (footprint "calendar:LED_WS2812C-2020-V1_2.0x2.0mm")
     )
-    (path "/fd6f4a89-ab37-4149-b3d6-fabd84462512"
+    (path "/9c111511-bdb4-4106-831c-3786d6bd33ac"
       (reference "DAY16") (unit 1) (value "WS2812B") (footprint "calendar:LED_WS2812C-2020-V1_2.0x2.0mm")
     )
-    (path "/8bd182e3-c12a-438b-b197-b6be90df3878"
+    (path "/43174876-69af-43ac-a082-e78ea2875dc2"
       (reference "DAY17") (unit 1) (value "WS2812B") (footprint "calendar:LED_WS2812C-2020-V1_2.0x2.0mm")
     )
-    (path "/6dc421f9-d671-4e4f-96f1-805dc410bef4"
+    (path "/c42a001e-4a43-4aad-9b2a-ac6020b22ea3"
       (reference "DAY18") (unit 1) (value "WS2812B") (footprint "calendar:LED_WS2812C-2020-V1_2.0x2.0mm")
     )
-    (path "/247840d0-ab76-4a3a-9329-b58e19c8d2d3"
+    (path "/f77fc6f2-eead-4b35-878a-f58e73658a1d"
       (reference "DAY19") (unit 1) (value "WS2812B") (footprint "calendar:LED_WS2812C-2020-V1_2.0x2.0mm")
     )
-    (path "/cb7afad1-56ce-4de2-ab36-c7127defef29"
+    (path "/295be909-4bc8-4759-8733-cd80502d5da4"
       (reference "DAY20") (unit 1) (value "WS2812B") (footprint "calendar:LED_WS2812C-2020-V1_2.0x2.0mm")
     )
-    (path "/c42a001e-4a43-4aad-9b2a-ac6020b22ea3"
+    (path "/b6d86c58-c81a-4559-8a2c-381053bf6fb0"
       (reference "DAY21") (unit 1) (value "WS2812B") (footprint "calendar:LED_WS2812C-2020-V1_2.0x2.0mm")
     )
-    (path "/656b4931-6fbc-46b4-aacc-1bf1ad87c2a4"
+    (path "/97c5c8d8-5c9d-4a45-b63c-e6cb26411a79"
       (reference "DAY22") (unit 1) (value "WS2812B") (footprint "calendar:LED_WS2812C-2020-V1_2.0x2.0mm")
     )
-    (path "/de75624c-1c08-4b10-9335-b8bd4b97da69"
+    (path "/dfeee93e-0c9c-4834-87eb-44b69b3537ab"
       (reference "DAY23") (unit 1) (value "WS2812B") (footprint "calendar:LED_WS2812C-2020-V1_2.0x2.0mm")
     )
-    (path "/af0d216a-c9e8-4539-a4e3-8c671bbb073c"
+    (path "/fd6f4a89-ab37-4149-b3d6-fabd84462512"
       (reference "DAY24") (unit 1) (value "WS2812B") (footprint "calendar:LED_WS2812C-2020-V1_2.0x2.0mm")
     )
-    (path "/f9058cf9-1dce-49ff-b4fe-fe91a3ffc42e"
+    (path "/656b4931-6fbc-46b4-aacc-1bf1ad87c2a4"
       (reference "DAY25") (unit 1) (value "WS2812B") (footprint "calendar:LED_WS2812C-2020-V1_2.0x2.0mm")
     )
-    (path "/167365dc-2189-4ea8-86fd-02f4324ec961"
+    (path "/32cd0182-1bab-4689-8964-de9a6bcd1605"
       (reference "DAY26") (unit 1) (value "WS2812B") (footprint "calendar:LED_WS2812C-2020-V1_2.0x2.0mm")
     )
-    (path "/f77fc6f2-eead-4b35-878a-f58e73658a1d"
+    (path "/8342027c-e9d1-41d8-9166-7c26b6570228"
       (reference "DAY27") (unit 1) (value "WS2812B") (footprint "calendar:LED_WS2812C-2020-V1_2.0x2.0mm")
     )
-    (path "/32cd0182-1bab-4689-8964-de9a6bcd1605"
+    (path "/1ecbc610-077c-4442-9cd4-b0b863413e95"
       (reference "DAY28") (unit 1) (value "WS2812B") (footprint "calendar:LED_WS2812C-2020-V1_2.0x2.0mm")
     )
-    (path "/9b9a7eae-103b-4135-ac6e-96c3ebdbc0a3"
+    (path "/267ffc7d-80c4-4ad4-8c0d-48804e6930ea"
       (reference "DAY29") (unit 1) (value "WS2812B") (footprint "calendar:LED_WS2812C-2020-V1_2.0x2.0mm")
     )
-    (path "/7303e60a-7d46-46e5-b4a2-ec9cb0e1b167"
+    (path "/b866cced-a356-40f5-ad86-e2c151813767"
       (reference "DAY30") (unit 1) (value "WS2812B") (footprint "calendar:LED_WS2812C-2020-V1_2.0x2.0mm")
     )
-    (path "/2d31f0a0-22b1-4298-8c5f-156115543daf"
+    (path "/8bd182e3-c12a-438b-b197-b6be90df3878"
       (reference "DAY31") (unit 1) (value "WS2812B") (footprint "calendar:LED_WS2812C-2020-V1_2.0x2.0mm")
     )
-    (path "/8d45d4b0-cc90-4732-b103-50a04545124c"
+    (path "/de75624c-1c08-4b10-9335-b8bd4b97da69"
       (reference "DAY32") (unit 1) (value "WS2812B") (footprint "calendar:LED_WS2812C-2020-V1_2.0x2.0mm")
     )
-    (path "/295be909-4bc8-4759-8733-cd80502d5da4"
+    (path "/9b9a7eae-103b-4135-ac6e-96c3ebdbc0a3"
       (reference "DAY33") (unit 1) (value "WS2812B") (footprint "calendar:LED_WS2812C-2020-V1_2.0x2.0mm")
     )
-    (path "/8342027c-e9d1-41d8-9166-7c26b6570228"
+    (path "/cc7fe8a3-fce4-4de7-b374-7cc495c1bf2b"
       (reference "DAY34") (unit 1) (value "WS2812B") (footprint "calendar:LED_WS2812C-2020-V1_2.0x2.0mm")
     )
-    (path "/cc7fe8a3-fce4-4de7-b374-7cc495c1bf2b"
+    (path "/f4cd435b-9144-479a-913c-8f310d34e8c7"
       (reference "DAY35") (unit 1) (value "WS2812B") (footprint "calendar:LED_WS2812C-2020-V1_2.0x2.0mm")
     )
-    (path "/646ac386-b274-49fc-b67d-97e340e20756"
+    (path "/587600e5-20ca-415c-9d8d-3005b36ffed5"
       (reference "DAY36") (unit 1) (value "WS2812B") (footprint "calendar:LED_WS2812C-2020-V1_2.0x2.0mm")
     )
-    (path "/07ec4e42-15c3-4194-90a1-d75c7690956a"
+    (path "/1038628f-a1f1-41a6-9b61-be9080c169f9"
       (reference "DAY37") (unit 1) (value "WS2812B") (footprint "calendar:LED_WS2812C-2020-V1_2.0x2.0mm")
     )
-    (path "/db1390c8-0240-456e-bdd6-03b129677579"
+    (path "/6dc421f9-d671-4e4f-96f1-805dc410bef4"
       (reference "DAY38") (unit 1) (value "WS2812B") (footprint "calendar:LED_WS2812C-2020-V1_2.0x2.0mm")
     )
-    (path "/b6d86c58-c81a-4559-8a2c-381053bf6fb0"
+    (path "/af0d216a-c9e8-4539-a4e3-8c671bbb073c"
       (reference "DAY39") (unit 1) (value "WS2812B") (footprint "calendar:LED_WS2812C-2020-V1_2.0x2.0mm")
     )
-    (path "/1ecbc610-077c-4442-9cd4-b0b863413e95"
+    (path "/7303e60a-7d46-46e5-b4a2-ec9cb0e1b167"
       (reference "DAY40") (unit 1) (value "WS2812B") (footprint "calendar:LED_WS2812C-2020-V1_2.0x2.0mm")
     )
-    (path "/f4cd435b-9144-479a-913c-8f310d34e8c7"
+    (path "/646ac386-b274-49fc-b67d-97e340e20756"
       (reference "DAY41") (unit 1) (value "WS2812B") (footprint "calendar:LED_WS2812C-2020-V1_2.0x2.0mm")
     )
     (path "/4e8b3199-6855-4f19-be6c-6eb44d2fc04b"
@@ -8084,8 +8067,17 @@
     (path "/e5595970-e327-46e1-80a4-f269807e0849"
       (reference "D_S3") (unit 1) (value "WS2812B") (footprint "calendar:LED_WS2812C-2020-V1_2.0x2.0mm")
     )
+    (path "/0d452324-858f-4bd6-a936-f8e478811a0b"
+      (reference "GND1") (unit 1) (value "TestPoint") (footprint "TestPoint:TestPoint_Pad_2.5x2.5mm")
+    )
+    (path "/37b33f1b-aa00-4047-9d53-2621fe291352"
+      (reference "GND2") (unit 1) (value "TestPoint") (footprint "TestPoint:TestPoint_Pad_2.5x2.5mm")
+    )
+    (path "/ef35c61f-ddc4-4b83-93cd-283cfd2965c6"
+      (reference "GND3") (unit 1) (value "TestPoint") (footprint "TestPoint:TestPoint_Pad_2.5x2.5mm")
+    )
     (path "/7b5cd6f3-f591-4c08-b5a5-39d81918f5fc"
-      (reference "GND") (unit 1) (value "TestPoint") (footprint "TestPoint:TestPoint_Pad_2.5x2.5mm")
+      (reference "GND4") (unit 1) (value "TestPoint") (footprint "TestPoint:TestPoint_Pad_2.5x2.5mm")
     )
     (path "/8bbc953d-12b2-4e6b-87b4-2064c0f15b50"
       (reference "J2_POWER_IN1") (unit 1) (value "Conn_01x02") (footprint "Connector_Phoenix_MC:PhoenixContact_MCV_1,5_2-G-3.81_1x02_P3.81mm_Vertical")
@@ -8094,13 +8086,22 @@
       (reference "J3_PROGRAMING_PIN1") (unit 1) (value "Conn_01x06") (footprint "Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Vertical")
     )
     (path "/7d535c57-26b3-4d48-87e7-7f8db2eeb930"
-      (reference "LED_IN") (unit 1) (value "TestPoint") (footprint "TestPoint:TestPoint_Pad_2.5x2.5mm")
+      (reference "LED_IN1") (unit 1) (value "TestPoint") (footprint "TestPoint:TestPoint_Pad_2.5x2.5mm")
     )
     (path "/6dd7985d-dca0-41e4-ab7c-21fbfe33a081"
-      (reference "LED_OUT") (unit 1) (value "TestPoint") (footprint "TestPoint:TestPoint_Pad_2.5x2.5mm")
+      (reference "LED_OUT1") (unit 1) (value "TestPoint") (footprint "TestPoint:TestPoint_Pad_2.5x2.5mm")
+    )
+    (path "/f12cd6a6-e285-4e92-8b75-d4da8a94cce0"
+      (reference "MODE1") (unit 1) (value "Switch_SW_Push") (footprint "calendar:SW_Push_1P1T_NO_6x6mm_H9.5mm")
+    )
+    (path "/1b06ff24-2237-45c9-812b-4b606d4d146a"
+      (reference "NEXT1") (unit 1) (value "Switch_SW_Push") (footprint "calendar:SW_Push_1P1T_NO_6x6mm_H9.5mm")
     )
     (path "/d14bd5d6-1332-4c0c-b6ef-8f16c66dc11f"
-      (reference "ONE_WIRE") (unit 1) (value "Conn_01x03") (footprint "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical")
+      (reference "ONE_WIRE1") (unit 1) (value "Conn_01x03") (footprint "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical")
+    )
+    (path "/befa23ae-69ac-4c39-b4f3-94ed728669a7"
+      (reference "PREV1") (unit 1) (value "Switch_SW_Push") (footprint "calendar:SW_Push_1P1T_NO_6x6mm_H9.5mm")
     )
     (path "/ac54c097-a30f-4633-8dc5-321bb13c9afe"
       (reference "Q1") (unit 1) (value "PN2222A") (footprint "Package_TO_SOT_SMD:SOT-23")
@@ -8126,14 +8127,26 @@
     (path "/41b117ac-139b-4a0f-bad1-f84cc30e3e53"
       (reference "R6") (unit 1) (value "10k") (footprint "tom-passives:R_0402_1005Metric")
     )
+    (path "/8e2a9caa-69a7-418c-8add-2cd62ed745dc"
+      (reference "ROW1") (unit 1) (value "10uF,10V,X5R ") (footprint "tom-passives:C_0603_1608Metric")
+    )
+    (path "/86d99946-035d-40cc-995f-cc6b770948ad"
+      (reference "ROW2") (unit 1) (value "10uF,10V,X5R ") (footprint "tom-passives:C_0603_1608Metric")
+    )
+    (path "/11fdffee-6c8f-42c5-9e2c-b81e5b169dc8"
+      (reference "ROW3") (unit 1) (value "10uF,10V,X5R ") (footprint "tom-passives:C_0603_1608Metric")
+    )
+    (path "/6c946ff6-66a2-40c0-98d3-f4ff61a27d28"
+      (reference "ROW4") (unit 1) (value "10uF,10V,X5R ") (footprint "tom-passives:C_0603_1608Metric")
+    )
+    (path "/811917cf-6d53-4c31-b734-2830b8b68334"
+      (reference "ROW5") (unit 1) (value "10uF,10V,X5R ") (footprint "tom-passives:C_0603_1608Metric")
+    )
+    (path "/c52760d8-774c-4bf2-86a2-f7fb120c9d3c"
+      (reference "ROW6") (unit 1) (value "10uF,10V,X5R ") (footprint "tom-passives:C_0603_1608Metric")
+    )
     (path "/46367948-f714-4823-abcd-d0f6ac397d76"
       (reference "SW_BOOTLOAD1") (unit 1) (value "Switch_SW_Push") (footprint "calendar:SW_Push_1P1T_NO_6x6mm_H9.5mm")
-    )
-    (path "/f12cd6a6-e285-4e92-8b75-d4da8a94cce0"
-      (reference "SW_CAL_MODE1") (unit 1) (value "Switch_SW_Push") (footprint "calendar:SW_Push_1P1T_NO_6x6mm_H9.5mm")
-    )
-    (path "/befa23ae-69ac-4c39-b4f3-94ed728669a7"
-      (reference "SW_CAL_PREV1") (unit 1) (value "Switch_SW_Push") (footprint "calendar:SW_Push_1P1T_NO_6x6mm_H9.5mm")
     )
     (path "/f53cca4b-b39c-40af-9baf-9849c4f4b0f4"
       (reference "SW_DAY1") (unit 1) (value "Switch_SW_Push") (footprint "calendar:SW_Push_1P1T_NO_6x6mm_H9.5mm")
@@ -8177,24 +8190,6 @@
     (path "/a95b89b3-4538-4da9-b307-fd479a3f54f2"
       (reference "SW_WEEK6") (unit 1) (value "Switch_SW_Push") (footprint "calendar:SW_Push_1P1T_NO_6x6mm_H9.5mm")
     )
-    (path "/eb346a01-654a-4a8f-9fc6-84f57ec5c44d"
-      (reference "SW_WIN1") (unit 1) (value "Switch_SW_Push") (footprint "calendar:SW_Push_1P1T_NO_6x6mm_H9.5mm")
-    )
-    (path "/068764eb-f496-4001-875a-752c9b009f36"
-      (reference "SW_WIN2") (unit 1) (value "Switch_SW_Push") (footprint "calendar:SW_Push_1P1T_NO_6x6mm_H9.5mm")
-    )
-    (path "/ef35c61f-ddc4-4b83-93cd-283cfd2965c6"
-      (reference "TP_LEFT_GND1") (unit 1) (value "TestPoint") (footprint "TestPoint:TestPoint_Pad_2.5x2.5mm")
-    )
-    (path "/37b33f1b-aa00-4047-9d53-2621fe291352"
-      (reference "TP_RIGHT_GND1") (unit 1) (value "TestPoint") (footprint "TestPoint:TestPoint_Pad_2.5x2.5mm")
-    )
-    (path "/baa15f43-fb4f-447d-ab86-6d970f312735"
-      (reference "TP_TOP_5V1") (unit 1) (value "TestPoint") (footprint "TestPoint:TestPoint_Pad_2.5x2.5mm")
-    )
-    (path "/0d452324-858f-4bd6-a936-f8e478811a0b"
-      (reference "TP_TOP_GND1") (unit 1) (value "TestPoint") (footprint "TestPoint:TestPoint_Pad_2.5x2.5mm")
-    )
     (path "/80a94872-46d7-484e-9a3c-47123ec339d2"
       (reference "U1") (unit 1) (value "74AHC1G125") (footprint "calendar:SOT-23-5")
     )
@@ -8203,6 +8198,12 @@
     )
     (path "/e4c4e9ac-083d-4b74-888c-b88d4b80a19c"
       (reference "U_POWER1") (unit 1) (value "LT1117-3.3") (footprint "Package_TO_SOT_SMD:TO-263-3_TabPin2")
+    )
+    (path "/eb346a01-654a-4a8f-9fc6-84f57ec5c44d"
+      (reference "WIN1") (unit 1) (value "Switch_SW_Push") (footprint "calendar:SW_Push_1P1T_NO_6x6mm_H9.5mm")
+    )
+    (path "/068764eb-f496-4001-875a-752c9b009f36"
+      (reference "WIN2") (unit 1) (value "Switch_SW_Push") (footprint "calendar:SW_Push_1P1T_NO_6x6mm_H9.5mm")
     )
   )
 )
