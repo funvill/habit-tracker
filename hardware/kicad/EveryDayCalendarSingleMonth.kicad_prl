@@ -20,7 +20,7 @@
       "keepouts": true,
       "lockedItems": true,
       "otherItems": true,
-      "pads": true,
+      "pads": false,
       "text": true,
       "tracks": true,
       "vias": true,
@@ -62,8 +62,8 @@
       35,
       36
     ],
-    "visible_layers": "800b320_7fffffff",
-    "zone_display_mode": 0
+    "visible_layers": "800b320_ffffffff",
+    "zone_display_mode": 1
   },
   "meta": {
     "filename": "EveryDayCalendarSingleMonth.kicad_prl",
