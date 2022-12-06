@@ -3986,7 +3986,7 @@
   (symbol (lib_id "tom-mechanical:SW_SPST") (at 36.195 236.855 0) (unit 1)
     (in_bom yes) (on_board yes)
     (uuid 1b06ff24-2237-45c9-812b-4b606d4d146a)
-    (property "Reference" "SW_CAL_NEXT1" (id 0) (at 36.195 231.14 0))
+    (property "Reference" "CAL_NEXT" (id 0) (at 36.195 231.14 0))
     (property "Value" "Switch_SW_Push" (id 1) (at 36.195 233.4514 0))
     (property "Footprint" "calendar:SW_Push_1P1T_NO_6x6mm_H9.5mm" (id 2) (at 36.195 231.775 0)
       (effects (font (size 1.27 1.27)) hide)
@@ -4318,7 +4318,7 @@
   (symbol (lib_id "Transistor_BJT:MMBT3904") (at 466.09 103.505 0) (mirror x) (unit 1)
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid 27175b01-f5c2-49d3-a0ee-fe570424005b)
-    (property "Reference" "Q2_PROGRAMING1" (id 0) (at 471.17 102.2349 0)
+    (property "Reference" "Q2" (id 0) (at 471.17 102.2349 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "PN2222A" (id 1) (at 471.17 104.7749 0)
@@ -4499,7 +4499,7 @@
   (symbol (lib_id "Connector:TestPoint") (at 263.525 92.71 0) (unit 1)
     (in_bom yes) (on_board yes)
     (uuid 32b46005-ffe7-4b2f-95ab-039506cdc1b7)
-    (property "Reference" "TP_BOTTOM_5V1" (id 0) (at 264.795 91.44 0)
+    (property "Reference" "5V" (id 0) (at 264.795 91.44 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "TestPoint" (id 1) (at 264.795 93.98 0)
@@ -4739,7 +4739,7 @@
   (symbol (lib_id "Connector:TestPoint") (at 273.05 69.85 90) (mirror x) (unit 1)
     (in_bom yes) (on_board yes)
     (uuid 3c88e646-5c38-44c0-8ccf-1f487b84aebb)
-    (property "Reference" "TP_RIGHT_5V1" (id 0) (at 271.78 64.77 90))
+    (property "Reference" "5V" (id 0) (at 271.78 64.77 90))
     (property "Value" "TestPoint" (id 1) (at 271.78 67.31 90))
     (property "Footprint" "TestPoint:TestPoint_Pad_2.5x2.5mm" (id 2) (at 273.05 74.93 0)
       (effects (font (size 1.27 1.27)) hide)
@@ -5461,7 +5461,7 @@
   (symbol (lib_id "Connector:TestPoint") (at 226.06 330.2 180) (unit 1)
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid 6dd7985d-dca0-41e4-ab7c-21fbfe33a081)
-    (property "Reference" "TP_LEDLINK_OUT1" (id 0) (at 227.965 332.2319 0)
+    (property "Reference" "LED_OUT" (id 0) (at 227.965 332.2319 0)
       (effects (font (size 1.27 1.27)) (justify right))
     )
     (property "Value" "TestPoint" (id 1) (at 227.965 334.7719 0)
@@ -5581,7 +5581,7 @@
   (symbol (lib_id "Connector:TestPoint") (at 244.475 93.345 0) (unit 1)
     (in_bom yes) (on_board yes)
     (uuid 7b5cd6f3-f591-4c08-b5a5-39d81918f5fc)
-    (property "Reference" "TP_BOTTOM_GND1" (id 0) (at 245.745 91.44 0)
+    (property "Reference" "GND" (id 0) (at 245.745 91.44 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "TestPoint" (id 1) (at 245.745 93.98 0)
@@ -5622,7 +5622,7 @@
   (symbol (lib_id "Connector:TestPoint") (at 129.54 173.355 180) (unit 1)
     (in_bom yes) (on_board yes)
     (uuid 7d535c57-26b3-4d48-87e7-7f8db2eeb930)
-    (property "Reference" "TP_LEDLINK_IN1" (id 0) (at 128.27 179.07 0)
+    (property "Reference" "LED_IN" (id 0) (at 128.27 179.07 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "TestPoint" (id 1) (at 128.27 176.53 0)
@@ -6348,7 +6348,7 @@
   (symbol (lib_id "Transistor_BJT:MMBT3904") (at 466.09 88.9 0) (unit 1)
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid ac54c097-a30f-4633-8dc5-321bb13c9afe)
-    (property "Reference" "Q1_PROGRAMING1" (id 0) (at 471.17 87.6299 0)
+    (property "Reference" "Q1" (id 0) (at 471.17 87.6299 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "PN2222A" (id 1) (at 471.17 90.1699 0)
@@ -6697,7 +6697,7 @@
   (symbol (lib_id "Connector:TestPoint") (at 232.41 71.12 90) (unit 1)
     (in_bom yes) (on_board yes)
     (uuid c2fa4bb1-f04a-4a45-9656-6b3c72f0c28a)
-    (property "Reference" "TP_LEFT_5V1" (id 0) (at 237.49 64.77 90)
+    (property "Reference" "5V" (id 0) (at 237.49 64.77 90)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "TestPoint" (id 1) (at 236.22 67.31 90)
@@ -6953,7 +6953,7 @@
   (symbol (lib_id "Connector_Generic:Conn_01x03") (at 324.485 73.66 0) (unit 1)
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid d14bd5d6-1332-4c0c-b6ef-8f16c66dc11f)
-    (property "Reference" "J1_ONE_WIRE1" (id 0) (at 327.66 72.3899 0)
+    (property "Reference" "ONE_WIRE" (id 0) (at 327.66 72.3899 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "Conn_01x03" (id 1) (at 327.66 74.9299 0)
@@ -7790,6 +7790,15 @@
     (path "/21fa4bc0-c521-47e2-b8e8-d30a6449e2f7"
       (reference "#PWR055") (unit 1) (value "+5V") (footprint "")
     )
+    (path "/32b46005-ffe7-4b2f-95ab-039506cdc1b7"
+      (reference "5V") (unit 1) (value "TestPoint") (footprint "TestPoint:TestPoint_Pad_2.5x2.5mm")
+    )
+    (path "/3c88e646-5c38-44c0-8ccf-1f487b84aebb"
+      (reference "5V") (unit 1) (value "TestPoint") (footprint "TestPoint:TestPoint_Pad_2.5x2.5mm")
+    )
+    (path "/c2fa4bb1-f04a-4a45-9656-6b3c72f0c28a"
+      (reference "5V") (unit 1) (value "TestPoint") (footprint "TestPoint:TestPoint_Pad_2.5x2.5mm")
+    )
     (path "/5e5ca5be-5de2-4ecc-85e6-8fbbed803745"
       (reference "C1") (unit 1) (value "10uF,10V,X5R ") (footprint "tom-passives:C_0603_1608Metric")
     )
@@ -7912,6 +7921,9 @@
     )
     (path "/1fd2707a-91df-4e69-9f21-8aab932d35fa"
       (reference "C43") (unit 1) (value "1uF,25V,X5R ") (footprint "tom-passives:C_0402_1005Metric")
+    )
+    (path "/1b06ff24-2237-45c9-812b-4b606d4d146a"
+      (reference "CAL_NEXT") (unit 1) (value "Switch_SW_Push") (footprint "calendar:SW_Push_1P1T_NO_6x6mm_H9.5mm")
     )
     (path "/8e2a9caa-69a7-418c-8add-2cd62ed745dc"
       (reference "C_ROW1") (unit 1) (value "10uF,10V,X5R ") (footprint "tom-passives:C_0603_1608Metric")
@@ -8072,8 +8084,8 @@
     (path "/e5595970-e327-46e1-80a4-f269807e0849"
       (reference "D_S3") (unit 1) (value "WS2812B") (footprint "calendar:LED_WS2812C-2020-V1_2.0x2.0mm")
     )
-    (path "/d14bd5d6-1332-4c0c-b6ef-8f16c66dc11f"
-      (reference "J1_ONE_WIRE1") (unit 1) (value "Conn_01x03") (footprint "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical")
+    (path "/7b5cd6f3-f591-4c08-b5a5-39d81918f5fc"
+      (reference "GND") (unit 1) (value "TestPoint") (footprint "TestPoint:TestPoint_Pad_2.5x2.5mm")
     )
     (path "/8bbc953d-12b2-4e6b-87b4-2064c0f15b50"
       (reference "J2_POWER_IN1") (unit 1) (value "Conn_01x02") (footprint "Connector_Phoenix_MC:PhoenixContact_MCV_1,5_2-G-3.81_1x02_P3.81mm_Vertical")
@@ -8081,11 +8093,20 @@
     (path "/7c99678a-153e-4e67-8aaa-b1b3ec3a6a0e"
       (reference "J3_PROGRAMING_PIN1") (unit 1) (value "Conn_01x06") (footprint "Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Vertical")
     )
+    (path "/7d535c57-26b3-4d48-87e7-7f8db2eeb930"
+      (reference "LED_IN") (unit 1) (value "TestPoint") (footprint "TestPoint:TestPoint_Pad_2.5x2.5mm")
+    )
+    (path "/6dd7985d-dca0-41e4-ab7c-21fbfe33a081"
+      (reference "LED_OUT") (unit 1) (value "TestPoint") (footprint "TestPoint:TestPoint_Pad_2.5x2.5mm")
+    )
+    (path "/d14bd5d6-1332-4c0c-b6ef-8f16c66dc11f"
+      (reference "ONE_WIRE") (unit 1) (value "Conn_01x03") (footprint "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical")
+    )
     (path "/ac54c097-a30f-4633-8dc5-321bb13c9afe"
-      (reference "Q1_PROGRAMING1") (unit 1) (value "PN2222A") (footprint "Package_TO_SOT_SMD:SOT-23")
+      (reference "Q1") (unit 1) (value "PN2222A") (footprint "Package_TO_SOT_SMD:SOT-23")
     )
     (path "/27175b01-f5c2-49d3-a0ee-fe570424005b"
-      (reference "Q2_PROGRAMING1") (unit 1) (value "PN2222A") (footprint "Package_TO_SOT_SMD:SOT-23")
+      (reference "Q2") (unit 1) (value "PN2222A") (footprint "Package_TO_SOT_SMD:SOT-23")
     )
     (path "/381f13c1-d635-4de7-8de0-848cc86a7093"
       (reference "R1") (unit 1) (value "0") (footprint "tom-passives:R_0402_1005Metric")
@@ -8110,9 +8131,6 @@
     )
     (path "/f12cd6a6-e285-4e92-8b75-d4da8a94cce0"
       (reference "SW_CAL_MODE1") (unit 1) (value "Switch_SW_Push") (footprint "calendar:SW_Push_1P1T_NO_6x6mm_H9.5mm")
-    )
-    (path "/1b06ff24-2237-45c9-812b-4b606d4d146a"
-      (reference "SW_CAL_NEXT1") (unit 1) (value "Switch_SW_Push") (footprint "calendar:SW_Push_1P1T_NO_6x6mm_H9.5mm")
     )
     (path "/befa23ae-69ac-4c39-b4f3-94ed728669a7"
       (reference "SW_CAL_PREV1") (unit 1) (value "Switch_SW_Push") (footprint "calendar:SW_Push_1P1T_NO_6x6mm_H9.5mm")
@@ -8165,26 +8183,8 @@
     (path "/068764eb-f496-4001-875a-752c9b009f36"
       (reference "SW_WIN2") (unit 1) (value "Switch_SW_Push") (footprint "calendar:SW_Push_1P1T_NO_6x6mm_H9.5mm")
     )
-    (path "/32b46005-ffe7-4b2f-95ab-039506cdc1b7"
-      (reference "TP_BOTTOM_5V1") (unit 1) (value "TestPoint") (footprint "TestPoint:TestPoint_Pad_2.5x2.5mm")
-    )
-    (path "/7b5cd6f3-f591-4c08-b5a5-39d81918f5fc"
-      (reference "TP_BOTTOM_GND1") (unit 1) (value "TestPoint") (footprint "TestPoint:TestPoint_Pad_2.5x2.5mm")
-    )
-    (path "/7d535c57-26b3-4d48-87e7-7f8db2eeb930"
-      (reference "TP_LEDLINK_IN1") (unit 1) (value "TestPoint") (footprint "TestPoint:TestPoint_Pad_2.5x2.5mm")
-    )
-    (path "/6dd7985d-dca0-41e4-ab7c-21fbfe33a081"
-      (reference "TP_LEDLINK_OUT1") (unit 1) (value "TestPoint") (footprint "TestPoint:TestPoint_Pad_2.5x2.5mm")
-    )
-    (path "/c2fa4bb1-f04a-4a45-9656-6b3c72f0c28a"
-      (reference "TP_LEFT_5V1") (unit 1) (value "TestPoint") (footprint "TestPoint:TestPoint_Pad_2.5x2.5mm")
-    )
     (path "/ef35c61f-ddc4-4b83-93cd-283cfd2965c6"
       (reference "TP_LEFT_GND1") (unit 1) (value "TestPoint") (footprint "TestPoint:TestPoint_Pad_2.5x2.5mm")
-    )
-    (path "/3c88e646-5c38-44c0-8ccf-1f487b84aebb"
-      (reference "TP_RIGHT_5V1") (unit 1) (value "TestPoint") (footprint "TestPoint:TestPoint_Pad_2.5x2.5mm")
     )
     (path "/37b33f1b-aa00-4047-9d53-2621fe291352"
       (reference "TP_RIGHT_GND1") (unit 1) (value "TestPoint") (footprint "TestPoint:TestPoint_Pad_2.5x2.5mm")
