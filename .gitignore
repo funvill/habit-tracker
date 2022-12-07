@@ -25,3 +25,4 @@ fp-info-cache
 *.xml
 *.csv
 hardware/kicad/EveryDayCalendarSingleMonth-backups/
+hardware/kicad/EveryDayCalendarSingleMonth.round-tracks-config
