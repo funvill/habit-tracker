@@ -2,7 +2,11 @@
 <export version="E">
   <design>
     <source>C:\Users\funvill\Documents\git\kicad-everydaycalendar-singlemonth\hardware\kicad\EveryDayCalendarSingleMonth.kicad_sch</source>
+<<<<<<< Updated upstream
     <date>06-Dec-2022 09:44:27 PM</date>
+=======
+    <date>10-Dec-2022 05:32:22 PM</date>
+>>>>>>> Stashed changes
     <tool>Eeschema (6.0.8)</tool>
     <sheet number="1" name="/" tstamps="/">
       <title_block>
@@ -95,6 +99,24 @@
       <property name="Sheetfile" value="File: EveryDayCalendarSingleMonth.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamps>66b58148-ab70-4e68-a74e-83548a6b2aab</tstamps>
+    </comp>
+    <comp ref="C3">
+      <value>1uF,25V,X5R </value>
+      <footprint>tom-passives:C_0402_1005Metric</footprint>
+      <datasheet>https://datasheet.lcsc.com/lcsc/1811091611_Samsung-Electro-Mechanics-CL05A105KA5NQNC_C52923.pdf</datasheet>
+      <fields>
+        <field name="LCSC">C52923</field>
+        <field name="MFG">Samsung Electro-Mechanics</field>
+        <field name="MFGPN">CL05A105KA5NQNC</field>
+      </fields>
+      <libsource lib="jlcpcb-basic-capacitor-0402" part="1uF,25V,X5R " description="25V 1uF X5R   10% 0402 Multilayer Ceramic Capacitors MLCC - SMD SMT ROHS"/>
+      <property name="LCSC" value="C52923"/>
+      <property name="MFG" value="Samsung Electro-Mechanics"/>
+      <property name="MFGPN" value="CL05A105KA5NQNC"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="File: EveryDayCalendarSingleMonth.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>140b29b3-f0c0-40eb-855f-d120a8581d4e</tstamps>
     </comp>
     <comp ref="C4">
       <value>1uF,25V,X5R </value>
@@ -239,6 +261,24 @@
       <property name="Sheetfile" value="File: EveryDayCalendarSingleMonth.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamps>f824ef37-8797-4827-b47e-981b74625a9f</tstamps>
+    </comp>
+    <comp ref="C12">
+      <value>1uF,25V,X5R </value>
+      <footprint>tom-passives:C_0402_1005Metric</footprint>
+      <datasheet>https://datasheet.lcsc.com/lcsc/1811091611_Samsung-Electro-Mechanics-CL05A105KA5NQNC_C52923.pdf</datasheet>
+      <fields>
+        <field name="LCSC">C52923</field>
+        <field name="MFG">Samsung Electro-Mechanics</field>
+        <field name="MFGPN">CL05A105KA5NQNC</field>
+      </fields>
+      <libsource lib="jlcpcb-basic-capacitor-0402" part="1uF,25V,X5R " description="25V 1uF X5R   10% 0402 Multilayer Ceramic Capacitors MLCC - SMD SMT ROHS"/>
+      <property name="LCSC" value="C52923"/>
+      <property name="MFG" value="Samsung Electro-Mechanics"/>
+      <property name="MFGPN" value="CL05A105KA5NQNC"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="File: EveryDayCalendarSingleMonth.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>64ff1ce7-47b2-4825-af35-a189acb12cf8</tstamps>
     </comp>
     <comp ref="C13">
       <value>1uF,25V,X5R </value>
@@ -672,24 +712,6 @@
       <sheetpath names="/" tstamps="/"/>
       <tstamps>2f1c9f32-63cb-4f31-9ffd-762852744841</tstamps>
     </comp>
-    <comp ref="C37">
-      <value>1uF,25V,X5R </value>
-      <footprint>tom-passives:C_0402_1005Metric</footprint>
-      <datasheet>https://datasheet.lcsc.com/lcsc/1811091611_Samsung-Electro-Mechanics-CL05A105KA5NQNC_C52923.pdf</datasheet>
-      <fields>
-        <field name="LCSC">C52923</field>
-        <field name="MFG">Samsung Electro-Mechanics</field>
-        <field name="MFGPN">CL05A105KA5NQNC</field>
-      </fields>
-      <libsource lib="jlcpcb-basic-capacitor-0402" part="1uF,25V,X5R " description="25V 1uF X5R   10% 0402 Multilayer Ceramic Capacitors MLCC - SMD SMT ROHS"/>
-      <property name="LCSC" value="C52923"/>
-      <property name="MFG" value="Samsung Electro-Mechanics"/>
-      <property name="MFGPN" value="CL05A105KA5NQNC"/>
-      <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="File: EveryDayCalendarSingleMonth.kicad_sch"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>4af444d8-b552-4b07-a163-a8896bc07327</tstamps>
-    </comp>
     <comp ref="C38">
       <value>1uF,25V,X5R </value>
       <footprint>tom-passives:C_0402_1005Metric</footprint>
@@ -762,24 +784,6 @@
       <sheetpath names="/" tstamps="/"/>
       <tstamps>99275791-b2a8-4a5f-be9b-91cb5400721a</tstamps>
     </comp>
-    <comp ref="C42">
-      <value>1uF,25V,X5R </value>
-      <footprint>tom-passives:C_0402_1005Metric</footprint>
-      <datasheet>https://datasheet.lcsc.com/lcsc/1811091611_Samsung-Electro-Mechanics-CL05A105KA5NQNC_C52923.pdf</datasheet>
-      <fields>
-        <field name="LCSC">C52923</field>
-        <field name="MFG">Samsung Electro-Mechanics</field>
-        <field name="MFGPN">CL05A105KA5NQNC</field>
-      </fields>
-      <libsource lib="jlcpcb-basic-capacitor-0402" part="1uF,25V,X5R " description="25V 1uF X5R   10% 0402 Multilayer Ceramic Capacitors MLCC - SMD SMT ROHS"/>
-      <property name="LCSC" value="C52923"/>
-      <property name="MFG" value="Samsung Electro-Mechanics"/>
-      <property name="MFGPN" value="CL05A105KA5NQNC"/>
-      <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="File: EveryDayCalendarSingleMonth.kicad_sch"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>36fb4b12-f978-4c74-9891-e0d767df7dfc</tstamps>
-    </comp>
     <comp ref="C43">
       <value>1uF,25V,X5R </value>
       <footprint>tom-passives:C_0402_1005Metric</footprint>
@@ -836,8 +840,13 @@
       <fields>
         <field name="LCSC">C2976072</field>
       </fields>
+<<<<<<< Updated upstream
       <libsource lib="calendar" part="WS2812B" description="RGB LED with integrated controller"/>
       <property name="LCSC" value="C2976072"/>
+=======
+      <libsource lib="calendar" part="XL-5050RGBC-WS2812B" description="RGB LED with integrated controller"/>
+      <property name="LCSC" value="C2843785"/>
+>>>>>>> Stashed changes
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="File: EveryDayCalendarSingleMonth.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
@@ -845,13 +854,18 @@
     </comp>
     <comp ref="DAY2">
       <value>WS2812B</value>
+<<<<<<< Updated upstream
       <footprint>calendar:LED_WS2812C-2020-V1_2.0x2.0mm</footprint>
       <datasheet>https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf</datasheet>
+=======
+      <footprint>LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm</footprint>
+      <datasheet>https://jlcpcb.com/partdetail/Xinglight-XL_5050RGBCWS2812B/C2843785</datasheet>
+>>>>>>> Stashed changes
       <fields>
-        <field name="LCSC">C2976072</field>
+        <field name="LCSC">C2843785</field>
       </fields>
-      <libsource lib="calendar" part="WS2812B" description="RGB LED with integrated controller"/>
-      <property name="LCSC" value="C2976072"/>
+      <libsource lib="calendar" part="XL-5050RGBC-WS2812B" description="RGB LED with integrated controller"/>
+      <property name="LCSC" value="C2843785"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="File: EveryDayCalendarSingleMonth.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
@@ -859,13 +873,18 @@
     </comp>
     <comp ref="DAY3">
       <value>WS2812B</value>
+<<<<<<< Updated upstream
       <footprint>calendar:LED_WS2812C-2020-V1_2.0x2.0mm</footprint>
       <datasheet>https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf</datasheet>
+=======
+      <footprint>LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm</footprint>
+      <datasheet>https://jlcpcb.com/partdetail/Xinglight-XL_5050RGBCWS2812B/C2843785</datasheet>
+>>>>>>> Stashed changes
       <fields>
-        <field name="LCSC">C2976072</field>
+        <field name="LCSC">C2843785</field>
       </fields>
-      <libsource lib="calendar" part="WS2812B" description="RGB LED with integrated controller"/>
-      <property name="LCSC" value="C2976072"/>
+      <libsource lib="calendar" part="XL-5050RGBC-WS2812B" description="RGB LED with integrated controller"/>
+      <property name="LCSC" value="C2843785"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="File: EveryDayCalendarSingleMonth.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
@@ -873,13 +892,18 @@
     </comp>
     <comp ref="DAY4">
       <value>WS2812B</value>
+<<<<<<< Updated upstream
       <footprint>calendar:LED_WS2812C-2020-V1_2.0x2.0mm</footprint>
       <datasheet>https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf</datasheet>
+=======
+      <footprint>LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm</footprint>
+      <datasheet>https://jlcpcb.com/partdetail/Xinglight-XL_5050RGBCWS2812B/C2843785</datasheet>
+>>>>>>> Stashed changes
       <fields>
-        <field name="LCSC">C2976072</field>
+        <field name="LCSC">C2843785</field>
       </fields>
-      <libsource lib="calendar" part="WS2812B" description="RGB LED with integrated controller"/>
-      <property name="LCSC" value="C2976072"/>
+      <libsource lib="calendar" part="XL-5050RGBC-WS2812B" description="RGB LED with integrated controller"/>
+      <property name="LCSC" value="C2843785"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="File: EveryDayCalendarSingleMonth.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
@@ -887,13 +911,18 @@
     </comp>
     <comp ref="DAY5">
       <value>WS2812B</value>
+<<<<<<< Updated upstream
       <footprint>calendar:LED_WS2812C-2020-V1_2.0x2.0mm</footprint>
       <datasheet>https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf</datasheet>
+=======
+      <footprint>LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm</footprint>
+      <datasheet>https://jlcpcb.com/partdetail/Xinglight-XL_5050RGBCWS2812B/C2843785</datasheet>
+>>>>>>> Stashed changes
       <fields>
-        <field name="LCSC">C2976072</field>
+        <field name="LCSC">C2843785</field>
       </fields>
-      <libsource lib="calendar" part="WS2812B" description="RGB LED with integrated controller"/>
-      <property name="LCSC" value="C2976072"/>
+      <libsource lib="calendar" part="XL-5050RGBC-WS2812B" description="RGB LED with integrated controller"/>
+      <property name="LCSC" value="C2843785"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="File: EveryDayCalendarSingleMonth.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
@@ -901,13 +930,18 @@
     </comp>
     <comp ref="DAY6">
       <value>WS2812B</value>
+<<<<<<< Updated upstream
       <footprint>calendar:LED_WS2812C-2020-V1_2.0x2.0mm</footprint>
       <datasheet>https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf</datasheet>
+=======
+      <footprint>LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm</footprint>
+      <datasheet>https://jlcpcb.com/partdetail/Xinglight-XL_5050RGBCWS2812B/C2843785</datasheet>
+>>>>>>> Stashed changes
       <fields>
-        <field name="LCSC">C2976072</field>
+        <field name="LCSC">C2843785</field>
       </fields>
-      <libsource lib="calendar" part="WS2812B" description="RGB LED with integrated controller"/>
-      <property name="LCSC" value="C2976072"/>
+      <libsource lib="calendar" part="XL-5050RGBC-WS2812B" description="RGB LED with integrated controller"/>
+      <property name="LCSC" value="C2843785"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="File: EveryDayCalendarSingleMonth.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
@@ -915,13 +949,18 @@
     </comp>
     <comp ref="DAY7">
       <value>WS2812B</value>
+<<<<<<< Updated upstream
       <footprint>calendar:LED_WS2812C-2020-V1_2.0x2.0mm</footprint>
       <datasheet>https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf</datasheet>
+=======
+      <footprint>LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm</footprint>
+      <datasheet>https://jlcpcb.com/partdetail/Xinglight-XL_5050RGBCWS2812B/C2843785</datasheet>
+>>>>>>> Stashed changes
       <fields>
-        <field name="LCSC">C2976072</field>
+        <field name="LCSC">C2843785</field>
       </fields>
-      <libsource lib="calendar" part="WS2812B" description="RGB LED with integrated controller"/>
-      <property name="LCSC" value="C2976072"/>
+      <libsource lib="calendar" part="XL-5050RGBC-WS2812B" description="RGB LED with integrated controller"/>
+      <property name="LCSC" value="C2843785"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="File: EveryDayCalendarSingleMonth.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
@@ -929,13 +968,18 @@
     </comp>
     <comp ref="DAY8">
       <value>WS2812B</value>
+<<<<<<< Updated upstream
       <footprint>calendar:LED_WS2812C-2020-V1_2.0x2.0mm</footprint>
       <datasheet>https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf</datasheet>
+=======
+      <footprint>LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm</footprint>
+      <datasheet>https://jlcpcb.com/partdetail/Xinglight-XL_5050RGBCWS2812B/C2843785</datasheet>
+>>>>>>> Stashed changes
       <fields>
-        <field name="LCSC">C2976072</field>
+        <field name="LCSC">C2843785</field>
       </fields>
-      <libsource lib="calendar" part="WS2812B" description="RGB LED with integrated controller"/>
-      <property name="LCSC" value="C2976072"/>
+      <libsource lib="calendar" part="XL-5050RGBC-WS2812B" description="RGB LED with integrated controller"/>
+      <property name="LCSC" value="C2843785"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="File: EveryDayCalendarSingleMonth.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
@@ -943,13 +987,18 @@
     </comp>
     <comp ref="DAY9">
       <value>WS2812B</value>
+<<<<<<< Updated upstream
       <footprint>calendar:LED_WS2812C-2020-V1_2.0x2.0mm</footprint>
       <datasheet>https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf</datasheet>
+=======
+      <footprint>LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm</footprint>
+      <datasheet>https://jlcpcb.com/partdetail/Xinglight-XL_5050RGBCWS2812B/C2843785</datasheet>
+>>>>>>> Stashed changes
       <fields>
-        <field name="LCSC">C2976072</field>
+        <field name="LCSC">C2843785</field>
       </fields>
-      <libsource lib="calendar" part="WS2812B" description="RGB LED with integrated controller"/>
-      <property name="LCSC" value="C2976072"/>
+      <libsource lib="calendar" part="XL-5050RGBC-WS2812B" description="RGB LED with integrated controller"/>
+      <property name="LCSC" value="C2843785"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="File: EveryDayCalendarSingleMonth.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
@@ -957,13 +1006,18 @@
     </comp>
     <comp ref="DAY10">
       <value>WS2812B</value>
+<<<<<<< Updated upstream
       <footprint>calendar:LED_WS2812C-2020-V1_2.0x2.0mm</footprint>
       <datasheet>https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf</datasheet>
+=======
+      <footprint>LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm</footprint>
+      <datasheet>https://jlcpcb.com/partdetail/Xinglight-XL_5050RGBCWS2812B/C2843785</datasheet>
+>>>>>>> Stashed changes
       <fields>
-        <field name="LCSC">C2976072</field>
+        <field name="LCSC">C2843785</field>
       </fields>
-      <libsource lib="calendar" part="WS2812B" description="RGB LED with integrated controller"/>
-      <property name="LCSC" value="C2976072"/>
+      <libsource lib="calendar" part="XL-5050RGBC-WS2812B" description="RGB LED with integrated controller"/>
+      <property name="LCSC" value="C2843785"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="File: EveryDayCalendarSingleMonth.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
@@ -971,13 +1025,18 @@
     </comp>
     <comp ref="DAY11">
       <value>WS2812B</value>
+<<<<<<< Updated upstream
       <footprint>calendar:LED_WS2812C-2020-V1_2.0x2.0mm</footprint>
       <datasheet>https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf</datasheet>
+=======
+      <footprint>LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm</footprint>
+      <datasheet>https://jlcpcb.com/partdetail/Xinglight-XL_5050RGBCWS2812B/C2843785</datasheet>
+>>>>>>> Stashed changes
       <fields>
-        <field name="LCSC">C2976072</field>
+        <field name="LCSC">C2843785</field>
       </fields>
-      <libsource lib="calendar" part="WS2812B" description="RGB LED with integrated controller"/>
-      <property name="LCSC" value="C2976072"/>
+      <libsource lib="calendar" part="XL-5050RGBC-WS2812B" description="RGB LED with integrated controller"/>
+      <property name="LCSC" value="C2843785"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="File: EveryDayCalendarSingleMonth.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
@@ -985,13 +1044,18 @@
     </comp>
     <comp ref="DAY12">
       <value>WS2812B</value>
+<<<<<<< Updated upstream
       <footprint>calendar:LED_WS2812C-2020-V1_2.0x2.0mm</footprint>
       <datasheet>https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf</datasheet>
+=======
+      <footprint>LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm</footprint>
+      <datasheet>https://jlcpcb.com/partdetail/Xinglight-XL_5050RGBCWS2812B/C2843785</datasheet>
+>>>>>>> Stashed changes
       <fields>
-        <field name="LCSC">C2976072</field>
+        <field name="LCSC">C2843785</field>
       </fields>
-      <libsource lib="calendar" part="WS2812B" description="RGB LED with integrated controller"/>
-      <property name="LCSC" value="C2976072"/>
+      <libsource lib="calendar" part="XL-5050RGBC-WS2812B" description="RGB LED with integrated controller"/>
+      <property name="LCSC" value="C2843785"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="File: EveryDayCalendarSingleMonth.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
@@ -999,13 +1063,18 @@
     </comp>
     <comp ref="DAY13">
       <value>WS2812B</value>
+<<<<<<< Updated upstream
       <footprint>calendar:LED_WS2812C-2020-V1_2.0x2.0mm</footprint>
       <datasheet>https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf</datasheet>
+=======
+      <footprint>LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm</footprint>
+      <datasheet>https://jlcpcb.com/partdetail/Xinglight-XL_5050RGBCWS2812B/C2843785</datasheet>
+>>>>>>> Stashed changes
       <fields>
-        <field name="LCSC">C2976072</field>
+        <field name="LCSC">C2843785</field>
       </fields>
-      <libsource lib="calendar" part="WS2812B" description="RGB LED with integrated controller"/>
-      <property name="LCSC" value="C2976072"/>
+      <libsource lib="calendar" part="XL-5050RGBC-WS2812B" description="RGB LED with integrated controller"/>
+      <property name="LCSC" value="C2843785"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="File: EveryDayCalendarSingleMonth.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
@@ -1013,13 +1082,18 @@
     </comp>
     <comp ref="DAY14">
       <value>WS2812B</value>
+<<<<<<< Updated upstream
       <footprint>calendar:LED_WS2812C-2020-V1_2.0x2.0mm</footprint>
       <datasheet>https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf</datasheet>
+=======
+      <footprint>LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm</footprint>
+      <datasheet>https://jlcpcb.com/partdetail/Xinglight-XL_5050RGBCWS2812B/C2843785</datasheet>
+>>>>>>> Stashed changes
       <fields>
-        <field name="LCSC">C2976072</field>
+        <field name="LCSC">C2843785</field>
       </fields>
-      <libsource lib="calendar" part="WS2812B" description="RGB LED with integrated controller"/>
-      <property name="LCSC" value="C2976072"/>
+      <libsource lib="calendar" part="XL-5050RGBC-WS2812B" description="RGB LED with integrated controller"/>
+      <property name="LCSC" value="C2843785"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="File: EveryDayCalendarSingleMonth.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
@@ -1027,13 +1101,18 @@
     </comp>
     <comp ref="DAY15">
       <value>WS2812B</value>
+<<<<<<< Updated upstream
       <footprint>calendar:LED_WS2812C-2020-V1_2.0x2.0mm</footprint>
       <datasheet>https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf</datasheet>
+=======
+      <footprint>LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm</footprint>
+      <datasheet>https://jlcpcb.com/partdetail/Xinglight-XL_5050RGBCWS2812B/C2843785</datasheet>
+>>>>>>> Stashed changes
       <fields>
-        <field name="LCSC">C2976072</field>
+        <field name="LCSC">C2843785</field>
       </fields>
-      <libsource lib="calendar" part="WS2812B" description="RGB LED with integrated controller"/>
-      <property name="LCSC" value="C2976072"/>
+      <libsource lib="calendar" part="XL-5050RGBC-WS2812B" description="RGB LED with integrated controller"/>
+      <property name="LCSC" value="C2843785"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="File: EveryDayCalendarSingleMonth.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
@@ -1041,13 +1120,18 @@
     </comp>
     <comp ref="DAY16">
       <value>WS2812B</value>
+<<<<<<< Updated upstream
       <footprint>calendar:LED_WS2812C-2020-V1_2.0x2.0mm</footprint>
       <datasheet>https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf</datasheet>
+=======
+      <footprint>LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm</footprint>
+      <datasheet>https://jlcpcb.com/partdetail/Xinglight-XL_5050RGBCWS2812B/C2843785</datasheet>
+>>>>>>> Stashed changes
       <fields>
-        <field name="LCSC">C2976072</field>
+        <field name="LCSC">C2843785</field>
       </fields>
-      <libsource lib="calendar" part="WS2812B" description="RGB LED with integrated controller"/>
-      <property name="LCSC" value="C2976072"/>
+      <libsource lib="calendar" part="XL-5050RGBC-WS2812B" description="RGB LED with integrated controller"/>
+      <property name="LCSC" value="C2843785"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="File: EveryDayCalendarSingleMonth.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
@@ -1055,13 +1139,18 @@
     </comp>
     <comp ref="DAY17">
       <value>WS2812B</value>
+<<<<<<< Updated upstream
       <footprint>calendar:LED_WS2812C-2020-V1_2.0x2.0mm</footprint>
       <datasheet>https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf</datasheet>
+=======
+      <footprint>LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm</footprint>
+      <datasheet>https://jlcpcb.com/partdetail/Xinglight-XL_5050RGBCWS2812B/C2843785</datasheet>
+>>>>>>> Stashed changes
       <fields>
-        <field name="LCSC">C2976072</field>
+        <field name="LCSC">C2843785</field>
       </fields>
-      <libsource lib="calendar" part="WS2812B" description="RGB LED with integrated controller"/>
-      <property name="LCSC" value="C2976072"/>
+      <libsource lib="calendar" part="XL-5050RGBC-WS2812B" description="RGB LED with integrated controller"/>
+      <property name="LCSC" value="C2843785"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="File: EveryDayCalendarSingleMonth.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
@@ -1069,13 +1158,18 @@
     </comp>
     <comp ref="DAY18">
       <value>WS2812B</value>
+<<<<<<< Updated upstream
       <footprint>calendar:LED_WS2812C-2020-V1_2.0x2.0mm</footprint>
       <datasheet>https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf</datasheet>
+=======
+      <footprint>LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm</footprint>
+      <datasheet>https://jlcpcb.com/partdetail/Xinglight-XL_5050RGBCWS2812B/C2843785</datasheet>
+>>>>>>> Stashed changes
       <fields>
-        <field name="LCSC">C2976072</field>
+        <field name="LCSC">C2843785</field>
       </fields>
-      <libsource lib="calendar" part="WS2812B" description="RGB LED with integrated controller"/>
-      <property name="LCSC" value="C2976072"/>
+      <libsource lib="calendar" part="XL-5050RGBC-WS2812B" description="RGB LED with integrated controller"/>
+      <property name="LCSC" value="C2843785"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="File: EveryDayCalendarSingleMonth.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
@@ -1083,13 +1177,18 @@
     </comp>
     <comp ref="DAY19">
       <value>WS2812B</value>
+<<<<<<< Updated upstream
       <footprint>calendar:LED_WS2812C-2020-V1_2.0x2.0mm</footprint>
       <datasheet>https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf</datasheet>
+=======
+      <footprint>LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm</footprint>
+      <datasheet>https://jlcpcb.com/partdetail/Xinglight-XL_5050RGBCWS2812B/C2843785</datasheet>
+>>>>>>> Stashed changes
       <fields>
-        <field name="LCSC">C2976072</field>
+        <field name="LCSC">C2843785</field>
       </fields>
-      <libsource lib="calendar" part="WS2812B" description="RGB LED with integrated controller"/>
-      <property name="LCSC" value="C2976072"/>
+      <libsource lib="calendar" part="XL-5050RGBC-WS2812B" description="RGB LED with integrated controller"/>
+      <property name="LCSC" value="C2843785"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="File: EveryDayCalendarSingleMonth.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
@@ -1097,13 +1196,18 @@
     </comp>
     <comp ref="DAY20">
       <value>WS2812B</value>
+<<<<<<< Updated upstream
       <footprint>calendar:LED_WS2812C-2020-V1_2.0x2.0mm</footprint>
       <datasheet>https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf</datasheet>
+=======
+      <footprint>LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm</footprint>
+      <datasheet>https://jlcpcb.com/partdetail/Xinglight-XL_5050RGBCWS2812B/C2843785</datasheet>
+>>>>>>> Stashed changes
       <fields>
-        <field name="LCSC">C2976072</field>
+        <field name="LCSC">C2843785</field>
       </fields>
-      <libsource lib="calendar" part="WS2812B" description="RGB LED with integrated controller"/>
-      <property name="LCSC" value="C2976072"/>
+      <libsource lib="calendar" part="XL-5050RGBC-WS2812B" description="RGB LED with integrated controller"/>
+      <property name="LCSC" value="C2843785"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="File: EveryDayCalendarSingleMonth.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
@@ -1111,13 +1215,18 @@
     </comp>
     <comp ref="DAY21">
       <value>WS2812B</value>
+<<<<<<< Updated upstream
       <footprint>calendar:LED_WS2812C-2020-V1_2.0x2.0mm</footprint>
       <datasheet>https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf</datasheet>
+=======
+      <footprint>LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm</footprint>
+      <datasheet>https://jlcpcb.com/partdetail/Xinglight-XL_5050RGBCWS2812B/C2843785</datasheet>
+>>>>>>> Stashed changes
       <fields>
-        <field name="LCSC">C2976072</field>
+        <field name="LCSC">C2843785</field>
       </fields>
-      <libsource lib="calendar" part="WS2812B" description="RGB LED with integrated controller"/>
-      <property name="LCSC" value="C2976072"/>
+      <libsource lib="calendar" part="XL-5050RGBC-WS2812B" description="RGB LED with integrated controller"/>
+      <property name="LCSC" value="C2843785"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="File: EveryDayCalendarSingleMonth.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
@@ -1125,13 +1234,18 @@
     </comp>
     <comp ref="DAY22">
       <value>WS2812B</value>
+<<<<<<< Updated upstream
       <footprint>calendar:LED_WS2812C-2020-V1_2.0x2.0mm</footprint>
       <datasheet>https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf</datasheet>
+=======
+      <footprint>LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm</footprint>
+      <datasheet>https://jlcpcb.com/partdetail/Xinglight-XL_5050RGBCWS2812B/C2843785</datasheet>
+>>>>>>> Stashed changes
       <fields>
-        <field name="LCSC">C2976072</field>
+        <field name="LCSC">C2843785</field>
       </fields>
-      <libsource lib="calendar" part="WS2812B" description="RGB LED with integrated controller"/>
-      <property name="LCSC" value="C2976072"/>
+      <libsource lib="calendar" part="XL-5050RGBC-WS2812B" description="RGB LED with integrated controller"/>
+      <property name="LCSC" value="C2843785"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="File: EveryDayCalendarSingleMonth.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
@@ -1139,13 +1253,18 @@
     </comp>
     <comp ref="DAY23">
       <value>WS2812B</value>
+<<<<<<< Updated upstream
       <footprint>calendar:LED_WS2812C-2020-V1_2.0x2.0mm</footprint>
       <datasheet>https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf</datasheet>
+=======
+      <footprint>LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm</footprint>
+      <datasheet>https://jlcpcb.com/partdetail/Xinglight-XL_5050RGBCWS2812B/C2843785</datasheet>
+>>>>>>> Stashed changes
       <fields>
-        <field name="LCSC">C2976072</field>
+        <field name="LCSC">C2843785</field>
       </fields>
-      <libsource lib="calendar" part="WS2812B" description="RGB LED with integrated controller"/>
-      <property name="LCSC" value="C2976072"/>
+      <libsource lib="calendar" part="XL-5050RGBC-WS2812B" description="RGB LED with integrated controller"/>
+      <property name="LCSC" value="C2843785"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="File: EveryDayCalendarSingleMonth.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
@@ -1153,13 +1272,18 @@
     </comp>
     <comp ref="DAY24">
       <value>WS2812B</value>
+<<<<<<< Updated upstream
       <footprint>calendar:LED_WS2812C-2020-V1_2.0x2.0mm</footprint>
       <datasheet>https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf</datasheet>
+=======
+      <footprint>LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm</footprint>
+      <datasheet>https://jlcpcb.com/partdetail/Xinglight-XL_5050RGBCWS2812B/C2843785</datasheet>
+>>>>>>> Stashed changes
       <fields>
-        <field name="LCSC">C2976072</field>
+        <field name="LCSC">C2843785</field>
       </fields>
-      <libsource lib="calendar" part="WS2812B" description="RGB LED with integrated controller"/>
-      <property name="LCSC" value="C2976072"/>
+      <libsource lib="calendar" part="XL-5050RGBC-WS2812B" description="RGB LED with integrated controller"/>
+      <property name="LCSC" value="C2843785"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="File: EveryDayCalendarSingleMonth.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
@@ -1167,13 +1291,18 @@
     </comp>
     <comp ref="DAY25">
       <value>WS2812B</value>
+<<<<<<< Updated upstream
       <footprint>calendar:LED_WS2812C-2020-V1_2.0x2.0mm</footprint>
       <datasheet>https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf</datasheet>
+=======
+      <footprint>LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm</footprint>
+      <datasheet>https://jlcpcb.com/partdetail/Xinglight-XL_5050RGBCWS2812B/C2843785</datasheet>
+>>>>>>> Stashed changes
       <fields>
-        <field name="LCSC">C2976072</field>
+        <field name="LCSC">C2843785</field>
       </fields>
-      <libsource lib="calendar" part="WS2812B" description="RGB LED with integrated controller"/>
-      <property name="LCSC" value="C2976072"/>
+      <libsource lib="calendar" part="XL-5050RGBC-WS2812B" description="RGB LED with integrated controller"/>
+      <property name="LCSC" value="C2843785"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="File: EveryDayCalendarSingleMonth.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
@@ -1181,13 +1310,18 @@
     </comp>
     <comp ref="DAY26">
       <value>WS2812B</value>
+<<<<<<< Updated upstream
       <footprint>calendar:LED_WS2812C-2020-V1_2.0x2.0mm</footprint>
       <datasheet>https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf</datasheet>
+=======
+      <footprint>LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm</footprint>
+      <datasheet>https://jlcpcb.com/partdetail/Xinglight-XL_5050RGBCWS2812B/C2843785</datasheet>
+>>>>>>> Stashed changes
       <fields>
-        <field name="LCSC">C2976072</field>
+        <field name="LCSC">C2843785</field>
       </fields>
-      <libsource lib="calendar" part="WS2812B" description="RGB LED with integrated controller"/>
-      <property name="LCSC" value="C2976072"/>
+      <libsource lib="calendar" part="XL-5050RGBC-WS2812B" description="RGB LED with integrated controller"/>
+      <property name="LCSC" value="C2843785"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="File: EveryDayCalendarSingleMonth.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
@@ -1195,13 +1329,18 @@
     </comp>
     <comp ref="DAY27">
       <value>WS2812B</value>
+<<<<<<< Updated upstream
       <footprint>calendar:LED_WS2812C-2020-V1_2.0x2.0mm</footprint>
       <datasheet>https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf</datasheet>
+=======
+      <footprint>LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm</footprint>
+      <datasheet>https://jlcpcb.com/partdetail/Xinglight-XL_5050RGBCWS2812B/C2843785</datasheet>
+>>>>>>> Stashed changes
       <fields>
-        <field name="LCSC">C2976072</field>
+        <field name="LCSC">C2843785</field>
       </fields>
-      <libsource lib="calendar" part="WS2812B" description="RGB LED with integrated controller"/>
-      <property name="LCSC" value="C2976072"/>
+      <libsource lib="calendar" part="XL-5050RGBC-WS2812B" description="RGB LED with integrated controller"/>
+      <property name="LCSC" value="C2843785"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="File: EveryDayCalendarSingleMonth.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
@@ -1209,13 +1348,18 @@
     </comp>
     <comp ref="DAY28">
       <value>WS2812B</value>
+<<<<<<< Updated upstream
       <footprint>calendar:LED_WS2812C-2020-V1_2.0x2.0mm</footprint>
       <datasheet>https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf</datasheet>
+=======
+      <footprint>LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm</footprint>
+      <datasheet>https://jlcpcb.com/partdetail/Xinglight-XL_5050RGBCWS2812B/C2843785</datasheet>
+>>>>>>> Stashed changes
       <fields>
-        <field name="LCSC">C2976072</field>
+        <field name="LCSC">C2843785</field>
       </fields>
-      <libsource lib="calendar" part="WS2812B" description="RGB LED with integrated controller"/>
-      <property name="LCSC" value="C2976072"/>
+      <libsource lib="calendar" part="XL-5050RGBC-WS2812B" description="RGB LED with integrated controller"/>
+      <property name="LCSC" value="C2843785"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="File: EveryDayCalendarSingleMonth.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
@@ -1223,13 +1367,18 @@
     </comp>
     <comp ref="DAY29">
       <value>WS2812B</value>
+<<<<<<< Updated upstream
       <footprint>calendar:LED_WS2812C-2020-V1_2.0x2.0mm</footprint>
       <datasheet>https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf</datasheet>
+=======
+      <footprint>LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm</footprint>
+      <datasheet>https://jlcpcb.com/partdetail/Xinglight-XL_5050RGBCWS2812B/C2843785</datasheet>
+>>>>>>> Stashed changes
       <fields>
-        <field name="LCSC">C2976072</field>
+        <field name="LCSC">C2843785</field>
       </fields>
-      <libsource lib="calendar" part="WS2812B" description="RGB LED with integrated controller"/>
-      <property name="LCSC" value="C2976072"/>
+      <libsource lib="calendar" part="XL-5050RGBC-WS2812B" description="RGB LED with integrated controller"/>
+      <property name="LCSC" value="C2843785"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="File: EveryDayCalendarSingleMonth.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
@@ -1237,13 +1386,18 @@
     </comp>
     <comp ref="DAY30">
       <value>WS2812B</value>
+<<<<<<< Updated upstream
       <footprint>calendar:LED_WS2812C-2020-V1_2.0x2.0mm</footprint>
       <datasheet>https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf</datasheet>
+=======
+      <footprint>LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm</footprint>
+      <datasheet>https://jlcpcb.com/partdetail/Xinglight-XL_5050RGBCWS2812B/C2843785</datasheet>
+>>>>>>> Stashed changes
       <fields>
-        <field name="LCSC">C2976072</field>
+        <field name="LCSC">C2843785</field>
       </fields>
-      <libsource lib="calendar" part="WS2812B" description="RGB LED with integrated controller"/>
-      <property name="LCSC" value="C2976072"/>
+      <libsource lib="calendar" part="XL-5050RGBC-WS2812B" description="RGB LED with integrated controller"/>
+      <property name="LCSC" value="C2843785"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="File: EveryDayCalendarSingleMonth.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
@@ -1251,13 +1405,18 @@
     </comp>
     <comp ref="DAY31">
       <value>WS2812B</value>
+<<<<<<< Updated upstream
       <footprint>calendar:LED_WS2812C-2020-V1_2.0x2.0mm</footprint>
       <datasheet>https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf</datasheet>
+=======
+      <footprint>LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm</footprint>
+      <datasheet>https://jlcpcb.com/partdetail/Xinglight-XL_5050RGBCWS2812B/C2843785</datasheet>
+>>>>>>> Stashed changes
       <fields>
-        <field name="LCSC">C2976072</field>
+        <field name="LCSC">C2843785</field>
       </fields>
-      <libsource lib="calendar" part="WS2812B" description="RGB LED with integrated controller"/>
-      <property name="LCSC" value="C2976072"/>
+      <libsource lib="calendar" part="XL-5050RGBC-WS2812B" description="RGB LED with integrated controller"/>
+      <property name="LCSC" value="C2843785"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="File: EveryDayCalendarSingleMonth.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
@@ -1265,13 +1424,18 @@
     </comp>
     <comp ref="DAY32">
       <value>WS2812B</value>
+<<<<<<< Updated upstream
       <footprint>calendar:LED_WS2812C-2020-V1_2.0x2.0mm</footprint>
       <datasheet>https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf</datasheet>
+=======
+      <footprint>LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm</footprint>
+      <datasheet>https://jlcpcb.com/partdetail/Xinglight-XL_5050RGBCWS2812B/C2843785</datasheet>
+>>>>>>> Stashed changes
       <fields>
-        <field name="LCSC">C2976072</field>
+        <field name="LCSC">C2843785</field>
       </fields>
-      <libsource lib="calendar" part="WS2812B" description="RGB LED with integrated controller"/>
-      <property name="LCSC" value="C2976072"/>
+      <libsource lib="calendar" part="XL-5050RGBC-WS2812B" description="RGB LED with integrated controller"/>
+      <property name="LCSC" value="C2843785"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="File: EveryDayCalendarSingleMonth.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
@@ -1279,13 +1443,18 @@
     </comp>
     <comp ref="DAY33">
       <value>WS2812B</value>
+<<<<<<< Updated upstream
       <footprint>calendar:LED_WS2812C-2020-V1_2.0x2.0mm</footprint>
       <datasheet>https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf</datasheet>
+=======
+      <footprint>LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm</footprint>
+      <datasheet>https://jlcpcb.com/partdetail/Xinglight-XL_5050RGBCWS2812B/C2843785</datasheet>
+>>>>>>> Stashed changes
       <fields>
-        <field name="LCSC">C2976072</field>
+        <field name="LCSC">C2843785</field>
       </fields>
-      <libsource lib="calendar" part="WS2812B" description="RGB LED with integrated controller"/>
-      <property name="LCSC" value="C2976072"/>
+      <libsource lib="calendar" part="XL-5050RGBC-WS2812B" description="RGB LED with integrated controller"/>
+      <property name="LCSC" value="C2843785"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="File: EveryDayCalendarSingleMonth.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
@@ -1293,13 +1462,18 @@
     </comp>
     <comp ref="DAY34">
       <value>WS2812B</value>
+<<<<<<< Updated upstream
       <footprint>calendar:LED_WS2812C-2020-V1_2.0x2.0mm</footprint>
       <datasheet>https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf</datasheet>
+=======
+      <footprint>LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm</footprint>
+      <datasheet>https://jlcpcb.com/partdetail/Xinglight-XL_5050RGBCWS2812B/C2843785</datasheet>
+>>>>>>> Stashed changes
       <fields>
-        <field name="LCSC">C2976072</field>
+        <field name="LCSC">C2843785</field>
       </fields>
-      <libsource lib="calendar" part="WS2812B" description="RGB LED with integrated controller"/>
-      <property name="LCSC" value="C2976072"/>
+      <libsource lib="calendar" part="XL-5050RGBC-WS2812B" description="RGB LED with integrated controller"/>
+      <property name="LCSC" value="C2843785"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="File: EveryDayCalendarSingleMonth.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
@@ -1307,13 +1481,18 @@
     </comp>
     <comp ref="DAY35">
       <value>WS2812B</value>
+<<<<<<< Updated upstream
       <footprint>calendar:LED_WS2812C-2020-V1_2.0x2.0mm</footprint>
       <datasheet>https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf</datasheet>
+=======
+      <footprint>LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm</footprint>
+      <datasheet>https://jlcpcb.com/partdetail/Xinglight-XL_5050RGBCWS2812B/C2843785</datasheet>
+>>>>>>> Stashed changes
       <fields>
-        <field name="LCSC">C2976072</field>
+        <field name="LCSC">C2843785</field>
       </fields>
-      <libsource lib="calendar" part="WS2812B" description="RGB LED with integrated controller"/>
-      <property name="LCSC" value="C2976072"/>
+      <libsource lib="calendar" part="XL-5050RGBC-WS2812B" description="RGB LED with integrated controller"/>
+      <property name="LCSC" value="C2843785"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="File: EveryDayCalendarSingleMonth.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
@@ -1321,13 +1500,18 @@
     </comp>
     <comp ref="DAY36">
       <value>WS2812B</value>
+<<<<<<< Updated upstream
       <footprint>calendar:LED_WS2812C-2020-V1_2.0x2.0mm</footprint>
       <datasheet>https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf</datasheet>
+=======
+      <footprint>LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm</footprint>
+      <datasheet>https://jlcpcb.com/partdetail/Xinglight-XL_5050RGBCWS2812B/C2843785</datasheet>
+>>>>>>> Stashed changes
       <fields>
-        <field name="LCSC">C2976072</field>
+        <field name="LCSC">C2843785</field>
       </fields>
-      <libsource lib="calendar" part="WS2812B" description="RGB LED with integrated controller"/>
-      <property name="LCSC" value="C2976072"/>
+      <libsource lib="calendar" part="XL-5050RGBC-WS2812B" description="RGB LED with integrated controller"/>
+      <property name="LCSC" value="C2843785"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="File: EveryDayCalendarSingleMonth.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
@@ -1335,13 +1519,18 @@
     </comp>
     <comp ref="DAY37">
       <value>WS2812B</value>
+<<<<<<< Updated upstream
       <footprint>calendar:LED_WS2812C-2020-V1_2.0x2.0mm</footprint>
       <datasheet>https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf</datasheet>
+=======
+      <footprint>LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm</footprint>
+      <datasheet>https://jlcpcb.com/partdetail/Xinglight-XL_5050RGBCWS2812B/C2843785</datasheet>
+>>>>>>> Stashed changes
       <fields>
-        <field name="LCSC">C2976072</field>
+        <field name="LCSC">C2843785</field>
       </fields>
-      <libsource lib="calendar" part="WS2812B" description="RGB LED with integrated controller"/>
-      <property name="LCSC" value="C2976072"/>
+      <libsource lib="calendar" part="XL-5050RGBC-WS2812B" description="RGB LED with integrated controller"/>
+      <property name="LCSC" value="C2843785"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="File: EveryDayCalendarSingleMonth.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
@@ -1349,13 +1538,18 @@
     </comp>
     <comp ref="DAY38">
       <value>WS2812B</value>
+<<<<<<< Updated upstream
       <footprint>calendar:LED_WS2812C-2020-V1_2.0x2.0mm</footprint>
       <datasheet>https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf</datasheet>
+=======
+      <footprint>LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm</footprint>
+      <datasheet>https://jlcpcb.com/partdetail/Xinglight-XL_5050RGBCWS2812B/C2843785</datasheet>
+>>>>>>> Stashed changes
       <fields>
-        <field name="LCSC">C2976072</field>
+        <field name="LCSC">C2843785</field>
       </fields>
-      <libsource lib="calendar" part="WS2812B" description="RGB LED with integrated controller"/>
-      <property name="LCSC" value="C2976072"/>
+      <libsource lib="calendar" part="XL-5050RGBC-WS2812B" description="RGB LED with integrated controller"/>
+      <property name="LCSC" value="C2843785"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="File: EveryDayCalendarSingleMonth.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
@@ -1363,13 +1557,18 @@
     </comp>
     <comp ref="DAY39">
       <value>WS2812B</value>
+<<<<<<< Updated upstream
       <footprint>calendar:LED_WS2812C-2020-V1_2.0x2.0mm</footprint>
       <datasheet>https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf</datasheet>
+=======
+      <footprint>LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm</footprint>
+      <datasheet>https://jlcpcb.com/partdetail/Xinglight-XL_5050RGBCWS2812B/C2843785</datasheet>
+>>>>>>> Stashed changes
       <fields>
-        <field name="LCSC">C2976072</field>
+        <field name="LCSC">C2843785</field>
       </fields>
-      <libsource lib="calendar" part="WS2812B" description="RGB LED with integrated controller"/>
-      <property name="LCSC" value="C2976072"/>
+      <libsource lib="calendar" part="XL-5050RGBC-WS2812B" description="RGB LED with integrated controller"/>
+      <property name="LCSC" value="C2843785"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="File: EveryDayCalendarSingleMonth.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
@@ -1377,13 +1576,18 @@
     </comp>
     <comp ref="DAY40">
       <value>WS2812B</value>
+<<<<<<< Updated upstream
       <footprint>calendar:LED_WS2812C-2020-V1_2.0x2.0mm</footprint>
       <datasheet>https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf</datasheet>
+=======
+      <footprint>LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm</footprint>
+      <datasheet>https://jlcpcb.com/partdetail/Xinglight-XL_5050RGBCWS2812B/C2843785</datasheet>
+>>>>>>> Stashed changes
       <fields>
-        <field name="LCSC">C2976072</field>
+        <field name="LCSC">C2843785</field>
       </fields>
-      <libsource lib="calendar" part="WS2812B" description="RGB LED with integrated controller"/>
-      <property name="LCSC" value="C2976072"/>
+      <libsource lib="calendar" part="XL-5050RGBC-WS2812B" description="RGB LED with integrated controller"/>
+      <property name="LCSC" value="C2843785"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="File: EveryDayCalendarSingleMonth.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
@@ -1391,13 +1595,18 @@
     </comp>
     <comp ref="DAY41">
       <value>WS2812B</value>
+<<<<<<< Updated upstream
       <footprint>calendar:LED_WS2812C-2020-V1_2.0x2.0mm</footprint>
       <datasheet>https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf</datasheet>
+=======
+      <footprint>LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm</footprint>
+      <datasheet>https://jlcpcb.com/partdetail/Xinglight-XL_5050RGBCWS2812B/C2843785</datasheet>
+>>>>>>> Stashed changes
       <fields>
-        <field name="LCSC">C2976072</field>
+        <field name="LCSC">C2843785</field>
       </fields>
-      <libsource lib="calendar" part="WS2812B" description="RGB LED with integrated controller"/>
-      <property name="LCSC" value="C2976072"/>
+      <libsource lib="calendar" part="XL-5050RGBC-WS2812B" description="RGB LED with integrated controller"/>
+      <property name="LCSC" value="C2843785"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="File: EveryDayCalendarSingleMonth.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
@@ -1405,13 +1614,18 @@
     </comp>
     <comp ref="DAY42">
       <value>WS2812B</value>
+<<<<<<< Updated upstream
       <footprint>calendar:LED_WS2812C-2020-V1_2.0x2.0mm</footprint>
       <datasheet>https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf</datasheet>
+=======
+      <footprint>LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm</footprint>
+      <datasheet>https://jlcpcb.com/partdetail/Xinglight-XL_5050RGBCWS2812B/C2843785</datasheet>
+>>>>>>> Stashed changes
       <fields>
-        <field name="LCSC">C2976072</field>
+        <field name="LCSC">C2843785</field>
       </fields>
-      <libsource lib="calendar" part="WS2812B" description="RGB LED with integrated controller"/>
-      <property name="LCSC" value="C2976072"/>
+      <libsource lib="calendar" part="XL-5050RGBC-WS2812B" description="RGB LED with integrated controller"/>
+      <property name="LCSC" value="C2843785"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="File: EveryDayCalendarSingleMonth.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
@@ -1581,7 +1795,7 @@
     </comp>
     <comp ref="Q1">
       <value>PN2222A</value>
-      <footprint>Package_TO_SOT_SMD:SOT-23</footprint>
+      <footprint>Package_TO_SOT_SMD:SOT-416</footprint>
       <datasheet>https://www.onsemi.com/pub/Collateral/2N3903-D.PDF</datasheet>
       <fields>
         <field name="LCSC">C242260</field>
@@ -1595,7 +1809,7 @@
     </comp>
     <comp ref="Q2">
       <value>PN2222A</value>
-      <footprint>Package_TO_SOT_SMD:SOT-23</footprint>
+      <footprint>Package_TO_SOT_SMD:SOT-416</footprint>
       <datasheet>https://www.onsemi.com/pub/Collateral/2N3903-D.PDF</datasheet>
       <fields>
         <field name="LCSC">C242260</field>
@@ -2330,24 +2544,24 @@
         <pin num="39" name="GND" type="passive"/>
       </pins>
     </libpart>
-    <libpart lib="calendar" part="WS2812B">
+    <libpart lib="calendar" part="XL-5050RGBC-WS2812B">
       <description>RGB LED with integrated controller</description>
-      <docs>https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf</docs>
+      <docs>https://jlcpcb.com/partdetail/Xinglight-XL_5050RGBCWS2812B/C2843785</docs>
       <footprints>
         <fp>LED*WS2812*PLCC*5.0x5.0mm*P3.2mm*</fp>
       </footprints>
       <fields>
-        <field name="Reference">D</field>
-        <field name="Value">WS2812B</field>
-        <field name="Footprint">calendar:LED_WS2812C-2020-V1_2.0x2.0mm</field>
-        <field name="Datasheet">https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf</field>
-        <field name="LCSC">C2976072</field>
+        <field name="Reference">DAY1</field>
+        <field name="Value">XL-5050RGBC-WS2812B</field>
+        <field name="Footprint">LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm</field>
+        <field name="Datasheet">https://jlcpcb.com/partdetail/Xinglight-XL_5050RGBCWS2812B/C2843785</field>
+        <field name="LCSC">C2843785</field>
       </fields>
       <pins>
-        <pin num="1" name="DOUT" type="output"/>
-        <pin num="2" name="VSS" type="power_in"/>
-        <pin num="3" name="DIN" type="input"/>
-        <pin num="4" name="VDD" type="power_in"/>
+        <pin num="1" name="VDD" type="power_in"/>
+        <pin num="2" name="DOU" type="output"/>
+        <pin num="3" name="GND" type="power_in"/>
+        <pin num="4" name="DIN" type="input"/>
       </pins>
     </libpart>
     <libpart lib="jlcpcb-basic-capacitor-0402" part="1uF,25V,X5R ">
@@ -2515,6 +2729,7 @@
       <node ref="5V3" pin="1" pinfunction="1" pintype="passive"/>
       <node ref="5V4" pin="1" pinfunction="1" pintype="passive"/>
       <node ref="C1" pin="1" pintype="passive"/>
+      <node ref="C12" pin="1" pintype="passive"/>
       <node ref="C13" pin="1" pintype="passive"/>
       <node ref="C14" pin="1" pintype="passive"/>
       <node ref="C15" pin="1" pintype="passive"/>
@@ -2533,6 +2748,7 @@
       <node ref="C27" pin="1" pintype="passive"/>
       <node ref="C28" pin="1" pintype="passive"/>
       <node ref="C29" pin="1" pintype="passive"/>
+      <node ref="C3" pin="1" pintype="passive"/>
       <node ref="C30" pin="1" pintype="passive"/>
       <node ref="C31" pin="1" pintype="passive"/>
       <node ref="C32" pin="1" pintype="passive"/>
@@ -2540,18 +2756,17 @@
       <node ref="C34" pin="1" pintype="passive"/>
       <node ref="C35" pin="1" pintype="passive"/>
       <node ref="C36" pin="1" pintype="passive"/>
-      <node ref="C37" pin="1" pintype="passive"/>
       <node ref="C38" pin="1" pintype="passive"/>
       <node ref="C39" pin="1" pintype="passive"/>
       <node ref="C4" pin="1" pintype="passive"/>
       <node ref="C40" pin="1" pintype="passive"/>
       <node ref="C41" pin="1" pintype="passive"/>
-      <node ref="C42" pin="1" pintype="passive"/>
       <node ref="C5" pin="1" pintype="passive"/>
       <node ref="C6" pin="1" pintype="passive"/>
       <node ref="C7" pin="1" pintype="passive"/>
       <node ref="C8" pin="1" pintype="passive"/>
       <node ref="C9" pin="1" pintype="passive"/>
+<<<<<<< Updated upstream
       <node ref="C_ROW_STATUS1" pin="2" pintype="passive"/>
       <node ref="DAY1" pin="4" pinfunction="VDD" pintype="power_in"/>
       <node ref="DAY10" pin="4" pinfunction="VDD" pintype="power_in"/>
@@ -2598,6 +2813,50 @@
       <node ref="D_S1" pin="4" pinfunction="VDD" pintype="power_in"/>
       <node ref="D_S2" pin="4" pinfunction="VDD" pintype="power_in"/>
       <node ref="D_S3" pin="4" pinfunction="VDD" pintype="power_in"/>
+=======
+      <node ref="DAY1" pin="1" pinfunction="VDD" pintype="power_in"/>
+      <node ref="DAY10" pin="1" pinfunction="VDD" pintype="power_in"/>
+      <node ref="DAY11" pin="1" pinfunction="VDD" pintype="power_in"/>
+      <node ref="DAY12" pin="1" pinfunction="VDD" pintype="power_in"/>
+      <node ref="DAY13" pin="1" pinfunction="VDD" pintype="power_in"/>
+      <node ref="DAY14" pin="1" pinfunction="VDD" pintype="power_in"/>
+      <node ref="DAY15" pin="1" pinfunction="VDD" pintype="power_in"/>
+      <node ref="DAY16" pin="1" pinfunction="VDD" pintype="power_in"/>
+      <node ref="DAY17" pin="1" pinfunction="VDD" pintype="power_in"/>
+      <node ref="DAY18" pin="1" pinfunction="VDD" pintype="power_in"/>
+      <node ref="DAY19" pin="1" pinfunction="VDD" pintype="power_in"/>
+      <node ref="DAY2" pin="1" pinfunction="VDD" pintype="power_in"/>
+      <node ref="DAY20" pin="1" pinfunction="VDD" pintype="power_in"/>
+      <node ref="DAY21" pin="1" pinfunction="VDD" pintype="power_in"/>
+      <node ref="DAY22" pin="1" pinfunction="VDD" pintype="power_in"/>
+      <node ref="DAY23" pin="1" pinfunction="VDD" pintype="power_in"/>
+      <node ref="DAY24" pin="1" pinfunction="VDD" pintype="power_in"/>
+      <node ref="DAY25" pin="1" pinfunction="VDD" pintype="power_in"/>
+      <node ref="DAY26" pin="1" pinfunction="VDD" pintype="power_in"/>
+      <node ref="DAY27" pin="1" pinfunction="VDD" pintype="power_in"/>
+      <node ref="DAY28" pin="1" pinfunction="VDD" pintype="power_in"/>
+      <node ref="DAY29" pin="1" pinfunction="VDD" pintype="power_in"/>
+      <node ref="DAY3" pin="1" pinfunction="VDD" pintype="power_in"/>
+      <node ref="DAY30" pin="1" pinfunction="VDD" pintype="power_in"/>
+      <node ref="DAY31" pin="1" pinfunction="VDD" pintype="power_in"/>
+      <node ref="DAY32" pin="1" pinfunction="VDD" pintype="power_in"/>
+      <node ref="DAY33" pin="1" pinfunction="VDD" pintype="power_in"/>
+      <node ref="DAY34" pin="1" pinfunction="VDD" pintype="power_in"/>
+      <node ref="DAY35" pin="1" pinfunction="VDD" pintype="power_in"/>
+      <node ref="DAY36" pin="1" pinfunction="VDD" pintype="power_in"/>
+      <node ref="DAY37" pin="1" pinfunction="VDD" pintype="power_in"/>
+      <node ref="DAY38" pin="1" pinfunction="VDD" pintype="power_in"/>
+      <node ref="DAY39" pin="1" pinfunction="VDD" pintype="power_in"/>
+      <node ref="DAY4" pin="1" pinfunction="VDD" pintype="power_in"/>
+      <node ref="DAY40" pin="1" pinfunction="VDD" pintype="power_in"/>
+      <node ref="DAY41" pin="1" pinfunction="VDD" pintype="power_in"/>
+      <node ref="DAY42" pin="1" pinfunction="VDD" pintype="power_in"/>
+      <node ref="DAY5" pin="1" pinfunction="VDD" pintype="power_in"/>
+      <node ref="DAY6" pin="1" pinfunction="VDD" pintype="power_in"/>
+      <node ref="DAY7" pin="1" pinfunction="VDD" pintype="power_in"/>
+      <node ref="DAY8" pin="1" pinfunction="VDD" pintype="power_in"/>
+      <node ref="DAY9" pin="1" pinfunction="VDD" pintype="power_in"/>
+>>>>>>> Stashed changes
       <node ref="J2_POWER_IN1" pin="1" pinfunction="Pin_1" pintype="passive"/>
       <node ref="J3_PROGRAMING_PIN1" pin="3" pinfunction="Pin_3" pintype="passive"/>
       <node ref="ONE_WIRE1" pin="1" pinfunction="Pin_1" pintype="passive"/>
@@ -2732,6 +2991,7 @@
       <node ref="C1" pin="2" pintype="passive"/>
       <node ref="C10" pin="2" pintype="passive"/>
       <node ref="C11" pin="2" pintype="passive"/>
+      <node ref="C12" pin="2" pintype="passive"/>
       <node ref="C13" pin="2" pintype="passive"/>
       <node ref="C14" pin="2" pintype="passive"/>
       <node ref="C15" pin="2" pintype="passive"/>
@@ -2750,6 +3010,7 @@
       <node ref="C27" pin="2" pintype="passive"/>
       <node ref="C28" pin="2" pintype="passive"/>
       <node ref="C29" pin="2" pintype="passive"/>
+      <node ref="C3" pin="2" pintype="passive"/>
       <node ref="C30" pin="2" pintype="passive"/>
       <node ref="C31" pin="2" pintype="passive"/>
       <node ref="C32" pin="2" pintype="passive"/>
@@ -2757,13 +3018,11 @@
       <node ref="C34" pin="2" pintype="passive"/>
       <node ref="C35" pin="2" pintype="passive"/>
       <node ref="C36" pin="2" pintype="passive"/>
-      <node ref="C37" pin="2" pintype="passive"/>
       <node ref="C38" pin="2" pintype="passive"/>
       <node ref="C39" pin="2" pintype="passive"/>
       <node ref="C4" pin="2" pintype="passive"/>
       <node ref="C40" pin="2" pintype="passive"/>
       <node ref="C41" pin="2" pintype="passive"/>
-      <node ref="C42" pin="2" pintype="passive"/>
       <node ref="C43" pin="2" pintype="passive"/>
       <node ref="C5" pin="2" pintype="passive"/>
       <node ref="C6" pin="2" pintype="passive"/>
@@ -2772,6 +3031,7 @@
       <node ref="C9" pin="2" pintype="passive"/>
       <node ref="C_ROW_STATUS1" pin="1" pintype="passive"/>
       <node ref="D1" pin="1" pinfunction="K" pintype="passive"/>
+<<<<<<< Updated upstream
       <node ref="DAY1" pin="2" pinfunction="VSS" pintype="power_in"/>
       <node ref="DAY10" pin="2" pinfunction="VSS" pintype="power_in"/>
       <node ref="DAY11" pin="2" pinfunction="VSS" pintype="power_in"/>
@@ -2817,6 +3077,50 @@
       <node ref="D_S1" pin="2" pinfunction="VSS" pintype="power_in"/>
       <node ref="D_S2" pin="2" pinfunction="VSS" pintype="power_in"/>
       <node ref="D_S3" pin="2" pinfunction="VSS" pintype="power_in"/>
+=======
+      <node ref="DAY1" pin="3" pinfunction="GND" pintype="power_in"/>
+      <node ref="DAY10" pin="3" pinfunction="GND" pintype="power_in"/>
+      <node ref="DAY11" pin="3" pinfunction="GND" pintype="power_in"/>
+      <node ref="DAY12" pin="3" pinfunction="GND" pintype="power_in"/>
+      <node ref="DAY13" pin="3" pinfunction="GND" pintype="power_in"/>
+      <node ref="DAY14" pin="3" pinfunction="GND" pintype="power_in"/>
+      <node ref="DAY15" pin="3" pinfunction="GND" pintype="power_in"/>
+      <node ref="DAY16" pin="3" pinfunction="GND" pintype="power_in"/>
+      <node ref="DAY17" pin="3" pinfunction="GND" pintype="power_in"/>
+      <node ref="DAY18" pin="3" pinfunction="GND" pintype="power_in"/>
+      <node ref="DAY19" pin="3" pinfunction="GND" pintype="power_in"/>
+      <node ref="DAY2" pin="3" pinfunction="GND" pintype="power_in"/>
+      <node ref="DAY20" pin="3" pinfunction="GND" pintype="power_in"/>
+      <node ref="DAY21" pin="3" pinfunction="GND" pintype="power_in"/>
+      <node ref="DAY22" pin="3" pinfunction="GND" pintype="power_in"/>
+      <node ref="DAY23" pin="3" pinfunction="GND" pintype="power_in"/>
+      <node ref="DAY24" pin="3" pinfunction="GND" pintype="power_in"/>
+      <node ref="DAY25" pin="3" pinfunction="GND" pintype="power_in"/>
+      <node ref="DAY26" pin="3" pinfunction="GND" pintype="power_in"/>
+      <node ref="DAY27" pin="3" pinfunction="GND" pintype="power_in"/>
+      <node ref="DAY28" pin="3" pinfunction="GND" pintype="power_in"/>
+      <node ref="DAY29" pin="3" pinfunction="GND" pintype="power_in"/>
+      <node ref="DAY3" pin="3" pinfunction="GND" pintype="power_in"/>
+      <node ref="DAY30" pin="3" pinfunction="GND" pintype="power_in"/>
+      <node ref="DAY31" pin="3" pinfunction="GND" pintype="power_in"/>
+      <node ref="DAY32" pin="3" pinfunction="GND" pintype="power_in"/>
+      <node ref="DAY33" pin="3" pinfunction="GND" pintype="power_in"/>
+      <node ref="DAY34" pin="3" pinfunction="GND" pintype="power_in"/>
+      <node ref="DAY35" pin="3" pinfunction="GND" pintype="power_in"/>
+      <node ref="DAY36" pin="3" pinfunction="GND" pintype="power_in"/>
+      <node ref="DAY37" pin="3" pinfunction="GND" pintype="power_in"/>
+      <node ref="DAY38" pin="3" pinfunction="GND" pintype="power_in"/>
+      <node ref="DAY39" pin="3" pinfunction="GND" pintype="power_in"/>
+      <node ref="DAY4" pin="3" pinfunction="GND" pintype="power_in"/>
+      <node ref="DAY40" pin="3" pinfunction="GND" pintype="power_in"/>
+      <node ref="DAY41" pin="3" pinfunction="GND" pintype="power_in"/>
+      <node ref="DAY42" pin="3" pinfunction="GND" pintype="power_in"/>
+      <node ref="DAY5" pin="3" pinfunction="GND" pintype="power_in"/>
+      <node ref="DAY6" pin="3" pinfunction="GND" pintype="power_in"/>
+      <node ref="DAY7" pin="3" pinfunction="GND" pintype="power_in"/>
+      <node ref="DAY8" pin="3" pinfunction="GND" pintype="power_in"/>
+      <node ref="DAY9" pin="3" pinfunction="GND" pintype="power_in"/>
+>>>>>>> Stashed changes
       <node ref="GND1" pin="1" pinfunction="1" pintype="passive"/>
       <node ref="GND2" pin="1" pinfunction="1" pintype="passive"/>
       <node ref="GND3" pin="1" pinfunction="1" pintype="passive"/>
@@ -2862,174 +3166,175 @@
       <node ref="D1" pin="2" pinfunction="A" pintype="passive"/>
       <node ref="R2" pin="1" pintype="passive"/>
     </net>
-    <net code="32" name="Net-(DAY1-Pad1)">
-      <node ref="DAY1" pin="1" pinfunction="DOUT" pintype="output"/>
-      <node ref="DAY2" pin="3" pinfunction="DIN" pintype="input"/>
+    <net code="32" name="Net-(DAY1-Pad2)">
+      <node ref="DAY1" pin="2" pinfunction="DOU" pintype="output"/>
+      <node ref="DAY2" pin="4" pinfunction="DIN" pintype="input"/>
     </net>
-    <net code="33" name="Net-(DAY1-Pad3)">
-      <node ref="DAY1" pin="3" pinfunction="DIN" pintype="input"/>
+    <net code="33" name="Net-(DAY1-Pad4)">
+      <node ref="DAY1" pin="4" pinfunction="DIN" pintype="input"/>
       <node ref="U1" pin="4" pintype="tri_state"/>
     </net>
-    <net code="34" name="Net-(DAY2-Pad1)">
-      <node ref="DAY2" pin="1" pinfunction="DOUT" pintype="output"/>
-      <node ref="DAY3" pin="3" pinfunction="DIN" pintype="input"/>
+    <net code="34" name="Net-(DAY2-Pad2)">
+      <node ref="DAY2" pin="2" pinfunction="DOU" pintype="output"/>
+      <node ref="DAY3" pin="4" pinfunction="DIN" pintype="input"/>
     </net>
-    <net code="35" name="Net-(DAY3-Pad1)">
-      <node ref="DAY3" pin="1" pinfunction="DOUT" pintype="output"/>
-      <node ref="DAY4" pin="3" pinfunction="DIN" pintype="input"/>
+    <net code="35" name="Net-(DAY3-Pad2)">
+      <node ref="DAY3" pin="2" pinfunction="DOU" pintype="output"/>
+      <node ref="DAY4" pin="4" pinfunction="DIN" pintype="input"/>
     </net>
-    <net code="36" name="Net-(DAY4-Pad1)">
-      <node ref="DAY4" pin="1" pinfunction="DOUT" pintype="output"/>
-      <node ref="DAY5" pin="3" pinfunction="DIN" pintype="input"/>
+    <net code="36" name="Net-(DAY4-Pad2)">
+      <node ref="DAY4" pin="2" pinfunction="DOU" pintype="output"/>
+      <node ref="DAY5" pin="4" pinfunction="DIN" pintype="input"/>
     </net>
-    <net code="37" name="Net-(DAY5-Pad1)">
-      <node ref="DAY5" pin="1" pinfunction="DOUT" pintype="output"/>
-      <node ref="DAY6" pin="3" pinfunction="DIN" pintype="input"/>
+    <net code="37" name="Net-(DAY5-Pad2)">
+      <node ref="DAY5" pin="2" pinfunction="DOU" pintype="output"/>
+      <node ref="DAY6" pin="4" pinfunction="DIN" pintype="input"/>
     </net>
-    <net code="38" name="Net-(DAY6-Pad1)">
-      <node ref="DAY6" pin="1" pinfunction="DOUT" pintype="output"/>
-      <node ref="DAY7" pin="3" pinfunction="DIN" pintype="input"/>
+    <net code="38" name="Net-(DAY6-Pad2)">
+      <node ref="DAY6" pin="2" pinfunction="DOU" pintype="output"/>
+      <node ref="DAY7" pin="4" pinfunction="DIN" pintype="input"/>
     </net>
-    <net code="39" name="Net-(DAY7-Pad1)">
-      <node ref="DAY7" pin="1" pinfunction="DOUT" pintype="output"/>
-      <node ref="DAY8" pin="3" pinfunction="DIN" pintype="input"/>
+    <net code="39" name="Net-(DAY7-Pad2)">
+      <node ref="DAY7" pin="2" pinfunction="DOU" pintype="output"/>
+      <node ref="DAY8" pin="4" pinfunction="DIN" pintype="input"/>
     </net>
-    <net code="40" name="Net-(DAY8-Pad1)">
-      <node ref="DAY8" pin="1" pinfunction="DOUT" pintype="output"/>
-      <node ref="DAY9" pin="3" pinfunction="DIN" pintype="input"/>
+    <net code="40" name="Net-(DAY8-Pad2)">
+      <node ref="DAY8" pin="2" pinfunction="DOU" pintype="output"/>
+      <node ref="DAY9" pin="4" pinfunction="DIN" pintype="input"/>
     </net>
-    <net code="41" name="Net-(DAY10-Pad1)">
-      <node ref="DAY10" pin="1" pinfunction="DOUT" pintype="output"/>
-      <node ref="DAY11" pin="3" pinfunction="DIN" pintype="input"/>
+    <net code="41" name="Net-(DAY10-Pad2)">
+      <node ref="DAY10" pin="2" pinfunction="DOU" pintype="output"/>
+      <node ref="DAY11" pin="4" pinfunction="DIN" pintype="input"/>
     </net>
-    <net code="42" name="Net-(DAY10-Pad3)">
-      <node ref="DAY10" pin="3" pinfunction="DIN" pintype="input"/>
-      <node ref="DAY9" pin="1" pinfunction="DOUT" pintype="output"/>
+    <net code="42" name="Net-(DAY10-Pad4)">
+      <node ref="DAY10" pin="4" pinfunction="DIN" pintype="input"/>
+      <node ref="DAY9" pin="2" pinfunction="DOU" pintype="output"/>
     </net>
-    <net code="43" name="Net-(DAY11-Pad1)">
-      <node ref="DAY11" pin="1" pinfunction="DOUT" pintype="output"/>
-      <node ref="DAY12" pin="3" pinfunction="DIN" pintype="input"/>
+    <net code="43" name="Net-(DAY11-Pad2)">
+      <node ref="DAY11" pin="2" pinfunction="DOU" pintype="output"/>
+      <node ref="DAY12" pin="4" pinfunction="DIN" pintype="input"/>
     </net>
-    <net code="44" name="Net-(DAY12-Pad1)">
-      <node ref="DAY12" pin="1" pinfunction="DOUT" pintype="output"/>
-      <node ref="DAY13" pin="3" pinfunction="DIN" pintype="input"/>
+    <net code="44" name="Net-(DAY12-Pad2)">
+      <node ref="DAY12" pin="2" pinfunction="DOU" pintype="output"/>
+      <node ref="DAY13" pin="4" pinfunction="DIN" pintype="input"/>
     </net>
-    <net code="45" name="Net-(DAY13-Pad1)">
-      <node ref="DAY13" pin="1" pinfunction="DOUT" pintype="output"/>
-      <node ref="DAY14" pin="3" pinfunction="DIN" pintype="input"/>
+    <net code="45" name="Net-(DAY13-Pad2)">
+      <node ref="DAY13" pin="2" pinfunction="DOU" pintype="output"/>
+      <node ref="DAY14" pin="4" pinfunction="DIN" pintype="input"/>
     </net>
-    <net code="46" name="Net-(DAY14-Pad1)">
-      <node ref="DAY14" pin="1" pinfunction="DOUT" pintype="output"/>
-      <node ref="DAY15" pin="3" pinfunction="DIN" pintype="input"/>
+    <net code="46" name="Net-(DAY14-Pad2)">
+      <node ref="DAY14" pin="2" pinfunction="DOU" pintype="output"/>
+      <node ref="DAY15" pin="4" pinfunction="DIN" pintype="input"/>
     </net>
-    <net code="47" name="Net-(DAY15-Pad1)">
-      <node ref="DAY15" pin="1" pinfunction="DOUT" pintype="output"/>
-      <node ref="DAY16" pin="3" pinfunction="DIN" pintype="input"/>
+    <net code="47" name="Net-(DAY15-Pad2)">
+      <node ref="DAY15" pin="2" pinfunction="DOU" pintype="output"/>
+      <node ref="DAY16" pin="4" pinfunction="DIN" pintype="input"/>
     </net>
-    <net code="48" name="Net-(DAY16-Pad1)">
-      <node ref="DAY16" pin="1" pinfunction="DOUT" pintype="output"/>
-      <node ref="DAY17" pin="3" pinfunction="DIN" pintype="input"/>
+    <net code="48" name="Net-(DAY16-Pad2)">
+      <node ref="DAY16" pin="2" pinfunction="DOU" pintype="output"/>
+      <node ref="DAY17" pin="4" pinfunction="DIN" pintype="input"/>
     </net>
-    <net code="49" name="Net-(DAY17-Pad1)">
-      <node ref="DAY17" pin="1" pinfunction="DOUT" pintype="output"/>
-      <node ref="DAY18" pin="3" pinfunction="DIN" pintype="input"/>
+    <net code="49" name="Net-(DAY17-Pad2)">
+      <node ref="DAY17" pin="2" pinfunction="DOU" pintype="output"/>
+      <node ref="DAY18" pin="4" pinfunction="DIN" pintype="input"/>
     </net>
-    <net code="50" name="Net-(DAY18-Pad1)">
-      <node ref="DAY18" pin="1" pinfunction="DOUT" pintype="output"/>
-      <node ref="DAY19" pin="3" pinfunction="DIN" pintype="input"/>
+    <net code="50" name="Net-(DAY18-Pad2)">
+      <node ref="DAY18" pin="2" pinfunction="DOU" pintype="output"/>
+      <node ref="DAY19" pin="4" pinfunction="DIN" pintype="input"/>
     </net>
-    <net code="51" name="Net-(DAY19-Pad1)">
-      <node ref="DAY19" pin="1" pinfunction="DOUT" pintype="output"/>
-      <node ref="DAY20" pin="3" pinfunction="DIN" pintype="input"/>
+    <net code="51" name="Net-(DAY19-Pad2)">
+      <node ref="DAY19" pin="2" pinfunction="DOU" pintype="output"/>
+      <node ref="DAY20" pin="4" pinfunction="DIN" pintype="input"/>
     </net>
-    <net code="52" name="Net-(DAY20-Pad1)">
-      <node ref="DAY20" pin="1" pinfunction="DOUT" pintype="output"/>
-      <node ref="DAY21" pin="3" pinfunction="DIN" pintype="input"/>
+    <net code="52" name="Net-(DAY20-Pad2)">
+      <node ref="DAY20" pin="2" pinfunction="DOU" pintype="output"/>
+      <node ref="DAY21" pin="4" pinfunction="DIN" pintype="input"/>
     </net>
-    <net code="53" name="Net-(DAY21-Pad1)">
-      <node ref="DAY21" pin="1" pinfunction="DOUT" pintype="output"/>
-      <node ref="DAY22" pin="3" pinfunction="DIN" pintype="input"/>
+    <net code="53" name="Net-(DAY21-Pad2)">
+      <node ref="DAY21" pin="2" pinfunction="DOU" pintype="output"/>
+      <node ref="DAY22" pin="4" pinfunction="DIN" pintype="input"/>
     </net>
-    <net code="54" name="Net-(DAY22-Pad1)">
-      <node ref="DAY22" pin="1" pinfunction="DOUT" pintype="output"/>
-      <node ref="DAY23" pin="3" pinfunction="DIN" pintype="input"/>
+    <net code="54" name="Net-(DAY22-Pad2)">
+      <node ref="DAY22" pin="2" pinfunction="DOU" pintype="output"/>
+      <node ref="DAY23" pin="4" pinfunction="DIN" pintype="input"/>
     </net>
-    <net code="55" name="Net-(DAY23-Pad1)">
-      <node ref="DAY23" pin="1" pinfunction="DOUT" pintype="output"/>
-      <node ref="DAY24" pin="3" pinfunction="DIN" pintype="input"/>
+    <net code="55" name="Net-(DAY23-Pad2)">
+      <node ref="DAY23" pin="2" pinfunction="DOU" pintype="output"/>
+      <node ref="DAY24" pin="4" pinfunction="DIN" pintype="input"/>
     </net>
-    <net code="56" name="Net-(DAY24-Pad1)">
-      <node ref="DAY24" pin="1" pinfunction="DOUT" pintype="output"/>
-      <node ref="DAY25" pin="3" pinfunction="DIN" pintype="input"/>
+    <net code="56" name="Net-(DAY24-Pad2)">
+      <node ref="DAY24" pin="2" pinfunction="DOU" pintype="output"/>
+      <node ref="DAY25" pin="4" pinfunction="DIN" pintype="input"/>
     </net>
-    <net code="57" name="Net-(DAY25-Pad1)">
-      <node ref="DAY25" pin="1" pinfunction="DOUT" pintype="output"/>
-      <node ref="DAY26" pin="3" pinfunction="DIN" pintype="input"/>
+    <net code="57" name="Net-(DAY25-Pad2)">
+      <node ref="DAY25" pin="2" pinfunction="DOU" pintype="output"/>
+      <node ref="DAY26" pin="4" pinfunction="DIN" pintype="input"/>
     </net>
-    <net code="58" name="Net-(DAY26-Pad1)">
-      <node ref="DAY26" pin="1" pinfunction="DOUT" pintype="output"/>
-      <node ref="DAY27" pin="3" pinfunction="DIN" pintype="input"/>
+    <net code="58" name="Net-(DAY26-Pad2)">
+      <node ref="DAY26" pin="2" pinfunction="DOU" pintype="output"/>
+      <node ref="DAY27" pin="4" pinfunction="DIN" pintype="input"/>
     </net>
-    <net code="59" name="Net-(DAY27-Pad1)">
-      <node ref="DAY27" pin="1" pinfunction="DOUT" pintype="output"/>
-      <node ref="DAY28" pin="3" pinfunction="DIN" pintype="input"/>
+    <net code="59" name="Net-(DAY27-Pad2)">
+      <node ref="DAY27" pin="2" pinfunction="DOU" pintype="output"/>
+      <node ref="DAY28" pin="4" pinfunction="DIN" pintype="input"/>
     </net>
-    <net code="60" name="Net-(DAY28-Pad1)">
-      <node ref="DAY28" pin="1" pinfunction="DOUT" pintype="output"/>
-      <node ref="DAY29" pin="3" pinfunction="DIN" pintype="input"/>
+    <net code="60" name="Net-(DAY28-Pad2)">
+      <node ref="DAY28" pin="2" pinfunction="DOU" pintype="output"/>
+      <node ref="DAY29" pin="4" pinfunction="DIN" pintype="input"/>
     </net>
-    <net code="61" name="Net-(DAY29-Pad1)">
-      <node ref="DAY29" pin="1" pinfunction="DOUT" pintype="output"/>
-      <node ref="DAY30" pin="3" pinfunction="DIN" pintype="input"/>
+    <net code="61" name="Net-(DAY29-Pad2)">
+      <node ref="DAY29" pin="2" pinfunction="DOU" pintype="output"/>
+      <node ref="DAY30" pin="4" pinfunction="DIN" pintype="input"/>
     </net>
-    <net code="62" name="Net-(DAY30-Pad1)">
-      <node ref="DAY30" pin="1" pinfunction="DOUT" pintype="output"/>
-      <node ref="DAY31" pin="3" pinfunction="DIN" pintype="input"/>
+    <net code="62" name="Net-(DAY30-Pad2)">
+      <node ref="DAY30" pin="2" pinfunction="DOU" pintype="output"/>
+      <node ref="DAY31" pin="4" pinfunction="DIN" pintype="input"/>
     </net>
-    <net code="63" name="Net-(DAY31-Pad1)">
-      <node ref="DAY31" pin="1" pinfunction="DOUT" pintype="output"/>
-      <node ref="DAY32" pin="3" pinfunction="DIN" pintype="input"/>
+    <net code="63" name="Net-(DAY31-Pad2)">
+      <node ref="DAY31" pin="2" pinfunction="DOU" pintype="output"/>
+      <node ref="DAY32" pin="4" pinfunction="DIN" pintype="input"/>
     </net>
-    <net code="64" name="Net-(DAY32-Pad1)">
-      <node ref="DAY32" pin="1" pinfunction="DOUT" pintype="output"/>
-      <node ref="DAY33" pin="3" pinfunction="DIN" pintype="input"/>
+    <net code="64" name="Net-(DAY32-Pad2)">
+      <node ref="DAY32" pin="2" pinfunction="DOU" pintype="output"/>
+      <node ref="DAY33" pin="4" pinfunction="DIN" pintype="input"/>
     </net>
-    <net code="65" name="Net-(DAY33-Pad1)">
-      <node ref="DAY33" pin="1" pinfunction="DOUT" pintype="output"/>
-      <node ref="DAY34" pin="3" pinfunction="DIN" pintype="input"/>
+    <net code="65" name="Net-(DAY33-Pad2)">
+      <node ref="DAY33" pin="2" pinfunction="DOU" pintype="output"/>
+      <node ref="DAY34" pin="4" pinfunction="DIN" pintype="input"/>
     </net>
-    <net code="66" name="Net-(DAY34-Pad1)">
-      <node ref="DAY34" pin="1" pinfunction="DOUT" pintype="output"/>
-      <node ref="DAY35" pin="3" pinfunction="DIN" pintype="input"/>
+    <net code="66" name="Net-(DAY34-Pad2)">
+      <node ref="DAY34" pin="2" pinfunction="DOU" pintype="output"/>
+      <node ref="DAY35" pin="4" pinfunction="DIN" pintype="input"/>
     </net>
-    <net code="67" name="Net-(DAY35-Pad1)">
-      <node ref="DAY35" pin="1" pinfunction="DOUT" pintype="output"/>
-      <node ref="DAY36" pin="3" pinfunction="DIN" pintype="input"/>
+    <net code="67" name="Net-(DAY35-Pad2)">
+      <node ref="DAY35" pin="2" pinfunction="DOU" pintype="output"/>
+      <node ref="DAY36" pin="4" pinfunction="DIN" pintype="input"/>
     </net>
-    <net code="68" name="Net-(DAY36-Pad1)">
-      <node ref="DAY36" pin="1" pinfunction="DOUT" pintype="output"/>
-      <node ref="DAY37" pin="3" pinfunction="DIN" pintype="input"/>
+    <net code="68" name="Net-(DAY36-Pad2)">
+      <node ref="DAY36" pin="2" pinfunction="DOU" pintype="output"/>
+      <node ref="DAY37" pin="4" pinfunction="DIN" pintype="input"/>
     </net>
-    <net code="69" name="Net-(DAY37-Pad1)">
-      <node ref="DAY37" pin="1" pinfunction="DOUT" pintype="output"/>
-      <node ref="DAY38" pin="3" pinfunction="DIN" pintype="input"/>
+    <net code="69" name="Net-(DAY37-Pad2)">
+      <node ref="DAY37" pin="2" pinfunction="DOU" pintype="output"/>
+      <node ref="DAY38" pin="4" pinfunction="DIN" pintype="input"/>
     </net>
-    <net code="70" name="Net-(DAY38-Pad1)">
-      <node ref="DAY38" pin="1" pinfunction="DOUT" pintype="output"/>
-      <node ref="DAY39" pin="3" pinfunction="DIN" pintype="input"/>
+    <net code="70" name="Net-(DAY38-Pad2)">
+      <node ref="DAY38" pin="2" pinfunction="DOU" pintype="output"/>
+      <node ref="DAY39" pin="4" pinfunction="DIN" pintype="input"/>
     </net>
-    <net code="71" name="Net-(DAY39-Pad1)">
-      <node ref="DAY39" pin="1" pinfunction="DOUT" pintype="output"/>
-      <node ref="DAY40" pin="3" pinfunction="DIN" pintype="input"/>
+    <net code="71" name="Net-(DAY39-Pad2)">
+      <node ref="DAY39" pin="2" pinfunction="DOU" pintype="output"/>
+      <node ref="DAY40" pin="4" pinfunction="DIN" pintype="input"/>
     </net>
-    <net code="72" name="Net-(DAY40-Pad1)">
-      <node ref="DAY40" pin="1" pinfunction="DOUT" pintype="output"/>
-      <node ref="DAY41" pin="3" pinfunction="DIN" pintype="input"/>
+    <net code="72" name="Net-(DAY40-Pad2)">
+      <node ref="DAY40" pin="2" pinfunction="DOU" pintype="output"/>
+      <node ref="DAY41" pin="4" pinfunction="DIN" pintype="input"/>
     </net>
-    <net code="73" name="Net-(DAY41-Pad1)">
-      <node ref="DAY41" pin="1" pinfunction="DOUT" pintype="output"/>
-      <node ref="DAY42" pin="3" pinfunction="DIN" pintype="input"/>
+    <net code="73" name="Net-(DAY41-Pad2)">
+      <node ref="DAY41" pin="2" pinfunction="DOU" pintype="output"/>
+      <node ref="DAY42" pin="4" pinfunction="DIN" pintype="input"/>
     </net>
+<<<<<<< Updated upstream
     <net code="74" name="Net-(DAY42-Pad1)">
       <node ref="DAY42" pin="1" pinfunction="DOUT" pintype="output"/>
       <node ref="D_S1" pin="3" pinfunction="DIN" pintype="input"/>
@@ -3044,6 +3349,10 @@
     </net>
     <net code="77" name="Net-(D_S3-Pad1)">
       <node ref="D_S3" pin="1" pinfunction="DOUT" pintype="output"/>
+=======
+    <net code="74" name="Net-(DAY42-Pad2)">
+      <node ref="DAY42" pin="2" pinfunction="DOU" pintype="output"/>
+>>>>>>> Stashed changes
       <node ref="LED_OUT1" pin="1" pinfunction="1" pintype="passive"/>
     </net>
     <net code="78" name="Net-(LED_IN1-Pad1)">
