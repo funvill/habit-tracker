@@ -2,11 +2,7 @@
 <export version="E">
   <design>
     <source>C:\Users\funvill\Documents\git\kicad-everydaycalendar-singlemonth\hardware\kicad\EveryDayCalendarSingleMonth.kicad_sch</source>
-<<<<<<< Updated upstream
-    <date>06-Dec-2022 09:44:27 PM</date>
-=======
-    <date>10-Dec-2022 05:32:22 PM</date>
->>>>>>> Stashed changes
+    <date>11-Dec-2022 08:06:46 PM</date>
     <tool>Eeschema (6.0.8)</tool>
     <sheet number="1" name="/" tstamps="/">
       <title_block>
@@ -802,24 +798,6 @@
       <sheetpath names="/" tstamps="/"/>
       <tstamps>1fd2707a-91df-4e69-9f21-8aab932d35fa</tstamps>
     </comp>
-    <comp ref="C_ROW_STATUS1">
-      <value>10uF,10V,X5R </value>
-      <footprint>tom-passives:C_0603_1608Metric</footprint>
-      <datasheet>https://datasheet.lcsc.com/lcsc/1810191219_Samsung-Electro-Mechanics-CL10A106KP8NNNC_C19702.pdf</datasheet>
-      <fields>
-        <field name="LCSC">C19702</field>
-        <field name="MFG">Samsung Electro-Mechanics</field>
-        <field name="MFGPN">CL10A106KP8NNNC</field>
-      </fields>
-      <libsource lib="jlcpcb-basic-capacitor-0603" part="10uF,10V,X5R " description="10V 10uF X5R   10% 0603 Multilayer Ceramic Capacitors MLCC - SMD SMT ROHS"/>
-      <property name="LCSC" value="C19702"/>
-      <property name="MFG" value="Samsung Electro-Mechanics"/>
-      <property name="MFGPN" value="CL10A106KP8NNNC"/>
-      <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="File: EveryDayCalendarSingleMonth.kicad_sch"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>1ea6dd4a-8e24-4b6b-a05e-b4c01a45d8c0</tstamps>
-    </comp>
     <comp ref="D1">
       <value>STATUS_LED</value>
       <footprint>tom-opto:LED_0603_1608Metric</footprint>
@@ -835,18 +813,13 @@
     </comp>
     <comp ref="DAY1">
       <value>WS2812B</value>
-      <footprint>calendar:LED_WS2812C-2020-V1_2.0x2.0mm</footprint>
-      <datasheet>https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf</datasheet>
+      <footprint>LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm</footprint>
+      <datasheet>https://jlcpcb.com/partdetail/Xinglight-XL_5050RGBCWS2812B/C2843785</datasheet>
       <fields>
-        <field name="LCSC">C2976072</field>
+        <field name="LCSC">C2843785</field>
       </fields>
-<<<<<<< Updated upstream
-      <libsource lib="calendar" part="WS2812B" description="RGB LED with integrated controller"/>
-      <property name="LCSC" value="C2976072"/>
-=======
       <libsource lib="calendar" part="XL-5050RGBC-WS2812B" description="RGB LED with integrated controller"/>
       <property name="LCSC" value="C2843785"/>
->>>>>>> Stashed changes
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="File: EveryDayCalendarSingleMonth.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
@@ -854,13 +827,8 @@
     </comp>
     <comp ref="DAY2">
       <value>WS2812B</value>
-<<<<<<< Updated upstream
-      <footprint>calendar:LED_WS2812C-2020-V1_2.0x2.0mm</footprint>
-      <datasheet>https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf</datasheet>
-=======
       <footprint>LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm</footprint>
       <datasheet>https://jlcpcb.com/partdetail/Xinglight-XL_5050RGBCWS2812B/C2843785</datasheet>
->>>>>>> Stashed changes
       <fields>
         <field name="LCSC">C2843785</field>
       </fields>
@@ -873,13 +841,8 @@
     </comp>
     <comp ref="DAY3">
       <value>WS2812B</value>
-<<<<<<< Updated upstream
-      <footprint>calendar:LED_WS2812C-2020-V1_2.0x2.0mm</footprint>
-      <datasheet>https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf</datasheet>
-=======
       <footprint>LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm</footprint>
       <datasheet>https://jlcpcb.com/partdetail/Xinglight-XL_5050RGBCWS2812B/C2843785</datasheet>
->>>>>>> Stashed changes
       <fields>
         <field name="LCSC">C2843785</field>
       </fields>
@@ -892,13 +855,8 @@
     </comp>
     <comp ref="DAY4">
       <value>WS2812B</value>
-<<<<<<< Updated upstream
-      <footprint>calendar:LED_WS2812C-2020-V1_2.0x2.0mm</footprint>
-      <datasheet>https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf</datasheet>
-=======
       <footprint>LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm</footprint>
       <datasheet>https://jlcpcb.com/partdetail/Xinglight-XL_5050RGBCWS2812B/C2843785</datasheet>
->>>>>>> Stashed changes
       <fields>
         <field name="LCSC">C2843785</field>
       </fields>
@@ -911,13 +869,8 @@
     </comp>
     <comp ref="DAY5">
       <value>WS2812B</value>
-<<<<<<< Updated upstream
-      <footprint>calendar:LED_WS2812C-2020-V1_2.0x2.0mm</footprint>
-      <datasheet>https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf</datasheet>
-=======
       <footprint>LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm</footprint>
       <datasheet>https://jlcpcb.com/partdetail/Xinglight-XL_5050RGBCWS2812B/C2843785</datasheet>
->>>>>>> Stashed changes
       <fields>
         <field name="LCSC">C2843785</field>
       </fields>
@@ -930,13 +883,8 @@
     </comp>
     <comp ref="DAY6">
       <value>WS2812B</value>
-<<<<<<< Updated upstream
-      <footprint>calendar:LED_WS2812C-2020-V1_2.0x2.0mm</footprint>
-      <datasheet>https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf</datasheet>
-=======
       <footprint>LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm</footprint>
       <datasheet>https://jlcpcb.com/partdetail/Xinglight-XL_5050RGBCWS2812B/C2843785</datasheet>
->>>>>>> Stashed changes
       <fields>
         <field name="LCSC">C2843785</field>
       </fields>
@@ -949,13 +897,8 @@
     </comp>
     <comp ref="DAY7">
       <value>WS2812B</value>
-<<<<<<< Updated upstream
-      <footprint>calendar:LED_WS2812C-2020-V1_2.0x2.0mm</footprint>
-      <datasheet>https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf</datasheet>
-=======
       <footprint>LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm</footprint>
       <datasheet>https://jlcpcb.com/partdetail/Xinglight-XL_5050RGBCWS2812B/C2843785</datasheet>
->>>>>>> Stashed changes
       <fields>
         <field name="LCSC">C2843785</field>
       </fields>
@@ -968,13 +911,8 @@
     </comp>
     <comp ref="DAY8">
       <value>WS2812B</value>
-<<<<<<< Updated upstream
-      <footprint>calendar:LED_WS2812C-2020-V1_2.0x2.0mm</footprint>
-      <datasheet>https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf</datasheet>
-=======
       <footprint>LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm</footprint>
       <datasheet>https://jlcpcb.com/partdetail/Xinglight-XL_5050RGBCWS2812B/C2843785</datasheet>
->>>>>>> Stashed changes
       <fields>
         <field name="LCSC">C2843785</field>
       </fields>
@@ -987,13 +925,8 @@
     </comp>
     <comp ref="DAY9">
       <value>WS2812B</value>
-<<<<<<< Updated upstream
-      <footprint>calendar:LED_WS2812C-2020-V1_2.0x2.0mm</footprint>
-      <datasheet>https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf</datasheet>
-=======
       <footprint>LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm</footprint>
       <datasheet>https://jlcpcb.com/partdetail/Xinglight-XL_5050RGBCWS2812B/C2843785</datasheet>
->>>>>>> Stashed changes
       <fields>
         <field name="LCSC">C2843785</field>
       </fields>
@@ -1006,13 +939,8 @@
     </comp>
     <comp ref="DAY10">
       <value>WS2812B</value>
-<<<<<<< Updated upstream
-      <footprint>calendar:LED_WS2812C-2020-V1_2.0x2.0mm</footprint>
-      <datasheet>https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf</datasheet>
-=======
       <footprint>LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm</footprint>
       <datasheet>https://jlcpcb.com/partdetail/Xinglight-XL_5050RGBCWS2812B/C2843785</datasheet>
->>>>>>> Stashed changes
       <fields>
         <field name="LCSC">C2843785</field>
       </fields>
@@ -1025,13 +953,8 @@
     </comp>
     <comp ref="DAY11">
       <value>WS2812B</value>
-<<<<<<< Updated upstream
-      <footprint>calendar:LED_WS2812C-2020-V1_2.0x2.0mm</footprint>
-      <datasheet>https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf</datasheet>
-=======
       <footprint>LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm</footprint>
       <datasheet>https://jlcpcb.com/partdetail/Xinglight-XL_5050RGBCWS2812B/C2843785</datasheet>
->>>>>>> Stashed changes
       <fields>
         <field name="LCSC">C2843785</field>
       </fields>
@@ -1044,13 +967,8 @@
     </comp>
     <comp ref="DAY12">
       <value>WS2812B</value>
-<<<<<<< Updated upstream
-      <footprint>calendar:LED_WS2812C-2020-V1_2.0x2.0mm</footprint>
-      <datasheet>https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf</datasheet>
-=======
       <footprint>LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm</footprint>
       <datasheet>https://jlcpcb.com/partdetail/Xinglight-XL_5050RGBCWS2812B/C2843785</datasheet>
->>>>>>> Stashed changes
       <fields>
         <field name="LCSC">C2843785</field>
       </fields>
@@ -1063,13 +981,8 @@
     </comp>
     <comp ref="DAY13">
       <value>WS2812B</value>
-<<<<<<< Updated upstream
-      <footprint>calendar:LED_WS2812C-2020-V1_2.0x2.0mm</footprint>
-      <datasheet>https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf</datasheet>
-=======
       <footprint>LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm</footprint>
       <datasheet>https://jlcpcb.com/partdetail/Xinglight-XL_5050RGBCWS2812B/C2843785</datasheet>
->>>>>>> Stashed changes
       <fields>
         <field name="LCSC">C2843785</field>
       </fields>
@@ -1082,13 +995,8 @@
     </comp>
     <comp ref="DAY14">
       <value>WS2812B</value>
-<<<<<<< Updated upstream
-      <footprint>calendar:LED_WS2812C-2020-V1_2.0x2.0mm</footprint>
-      <datasheet>https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf</datasheet>
-=======
       <footprint>LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm</footprint>
       <datasheet>https://jlcpcb.com/partdetail/Xinglight-XL_5050RGBCWS2812B/C2843785</datasheet>
->>>>>>> Stashed changes
       <fields>
         <field name="LCSC">C2843785</field>
       </fields>
@@ -1101,13 +1009,8 @@
     </comp>
     <comp ref="DAY15">
       <value>WS2812B</value>
-<<<<<<< Updated upstream
-      <footprint>calendar:LED_WS2812C-2020-V1_2.0x2.0mm</footprint>
-      <datasheet>https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf</datasheet>
-=======
       <footprint>LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm</footprint>
       <datasheet>https://jlcpcb.com/partdetail/Xinglight-XL_5050RGBCWS2812B/C2843785</datasheet>
->>>>>>> Stashed changes
       <fields>
         <field name="LCSC">C2843785</field>
       </fields>
@@ -1120,13 +1023,8 @@
     </comp>
     <comp ref="DAY16">
       <value>WS2812B</value>
-<<<<<<< Updated upstream
-      <footprint>calendar:LED_WS2812C-2020-V1_2.0x2.0mm</footprint>
-      <datasheet>https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf</datasheet>
-=======
       <footprint>LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm</footprint>
       <datasheet>https://jlcpcb.com/partdetail/Xinglight-XL_5050RGBCWS2812B/C2843785</datasheet>
->>>>>>> Stashed changes
       <fields>
         <field name="LCSC">C2843785</field>
       </fields>
@@ -1139,13 +1037,8 @@
     </comp>
     <comp ref="DAY17">
       <value>WS2812B</value>
-<<<<<<< Updated upstream
-      <footprint>calendar:LED_WS2812C-2020-V1_2.0x2.0mm</footprint>
-      <datasheet>https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf</datasheet>
-=======
       <footprint>LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm</footprint>
       <datasheet>https://jlcpcb.com/partdetail/Xinglight-XL_5050RGBCWS2812B/C2843785</datasheet>
->>>>>>> Stashed changes
       <fields>
         <field name="LCSC">C2843785</field>
       </fields>
@@ -1158,13 +1051,8 @@
     </comp>
     <comp ref="DAY18">
       <value>WS2812B</value>
-<<<<<<< Updated upstream
-      <footprint>calendar:LED_WS2812C-2020-V1_2.0x2.0mm</footprint>
-      <datasheet>https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf</datasheet>
-=======
       <footprint>LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm</footprint>
       <datasheet>https://jlcpcb.com/partdetail/Xinglight-XL_5050RGBCWS2812B/C2843785</datasheet>
->>>>>>> Stashed changes
       <fields>
         <field name="LCSC">C2843785</field>
       </fields>
@@ -1177,13 +1065,8 @@
     </comp>
     <comp ref="DAY19">
       <value>WS2812B</value>
-<<<<<<< Updated upstream
-      <footprint>calendar:LED_WS2812C-2020-V1_2.0x2.0mm</footprint>
-      <datasheet>https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf</datasheet>
-=======
       <footprint>LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm</footprint>
       <datasheet>https://jlcpcb.com/partdetail/Xinglight-XL_5050RGBCWS2812B/C2843785</datasheet>
->>>>>>> Stashed changes
       <fields>
         <field name="LCSC">C2843785</field>
       </fields>
@@ -1196,13 +1079,8 @@
     </comp>
     <comp ref="DAY20">
       <value>WS2812B</value>
-<<<<<<< Updated upstream
-      <footprint>calendar:LED_WS2812C-2020-V1_2.0x2.0mm</footprint>
-      <datasheet>https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf</datasheet>
-=======
       <footprint>LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm</footprint>
       <datasheet>https://jlcpcb.com/partdetail/Xinglight-XL_5050RGBCWS2812B/C2843785</datasheet>
->>>>>>> Stashed changes
       <fields>
         <field name="LCSC">C2843785</field>
       </fields>
@@ -1215,13 +1093,8 @@
     </comp>
     <comp ref="DAY21">
       <value>WS2812B</value>
-<<<<<<< Updated upstream
-      <footprint>calendar:LED_WS2812C-2020-V1_2.0x2.0mm</footprint>
-      <datasheet>https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf</datasheet>
-=======
       <footprint>LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm</footprint>
       <datasheet>https://jlcpcb.com/partdetail/Xinglight-XL_5050RGBCWS2812B/C2843785</datasheet>
->>>>>>> Stashed changes
       <fields>
         <field name="LCSC">C2843785</field>
       </fields>
@@ -1234,13 +1107,8 @@
     </comp>
     <comp ref="DAY22">
       <value>WS2812B</value>
-<<<<<<< Updated upstream
-      <footprint>calendar:LED_WS2812C-2020-V1_2.0x2.0mm</footprint>
-      <datasheet>https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf</datasheet>
-=======
       <footprint>LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm</footprint>
       <datasheet>https://jlcpcb.com/partdetail/Xinglight-XL_5050RGBCWS2812B/C2843785</datasheet>
->>>>>>> Stashed changes
       <fields>
         <field name="LCSC">C2843785</field>
       </fields>
@@ -1253,13 +1121,8 @@
     </comp>
     <comp ref="DAY23">
       <value>WS2812B</value>
-<<<<<<< Updated upstream
-      <footprint>calendar:LED_WS2812C-2020-V1_2.0x2.0mm</footprint>
-      <datasheet>https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf</datasheet>
-=======
       <footprint>LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm</footprint>
       <datasheet>https://jlcpcb.com/partdetail/Xinglight-XL_5050RGBCWS2812B/C2843785</datasheet>
->>>>>>> Stashed changes
       <fields>
         <field name="LCSC">C2843785</field>
       </fields>
@@ -1272,13 +1135,8 @@
     </comp>
     <comp ref="DAY24">
       <value>WS2812B</value>
-<<<<<<< Updated upstream
-      <footprint>calendar:LED_WS2812C-2020-V1_2.0x2.0mm</footprint>
-      <datasheet>https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf</datasheet>
-=======
       <footprint>LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm</footprint>
       <datasheet>https://jlcpcb.com/partdetail/Xinglight-XL_5050RGBCWS2812B/C2843785</datasheet>
->>>>>>> Stashed changes
       <fields>
         <field name="LCSC">C2843785</field>
       </fields>
@@ -1291,13 +1149,8 @@
     </comp>
     <comp ref="DAY25">
       <value>WS2812B</value>
-<<<<<<< Updated upstream
-      <footprint>calendar:LED_WS2812C-2020-V1_2.0x2.0mm</footprint>
-      <datasheet>https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf</datasheet>
-=======
       <footprint>LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm</footprint>
       <datasheet>https://jlcpcb.com/partdetail/Xinglight-XL_5050RGBCWS2812B/C2843785</datasheet>
->>>>>>> Stashed changes
       <fields>
         <field name="LCSC">C2843785</field>
       </fields>
@@ -1310,13 +1163,8 @@
     </comp>
     <comp ref="DAY26">
       <value>WS2812B</value>
-<<<<<<< Updated upstream
-      <footprint>calendar:LED_WS2812C-2020-V1_2.0x2.0mm</footprint>
-      <datasheet>https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf</datasheet>
-=======
       <footprint>LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm</footprint>
       <datasheet>https://jlcpcb.com/partdetail/Xinglight-XL_5050RGBCWS2812B/C2843785</datasheet>
->>>>>>> Stashed changes
       <fields>
         <field name="LCSC">C2843785</field>
       </fields>
@@ -1329,13 +1177,8 @@
     </comp>
     <comp ref="DAY27">
       <value>WS2812B</value>
-<<<<<<< Updated upstream
-      <footprint>calendar:LED_WS2812C-2020-V1_2.0x2.0mm</footprint>
-      <datasheet>https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf</datasheet>
-=======
       <footprint>LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm</footprint>
       <datasheet>https://jlcpcb.com/partdetail/Xinglight-XL_5050RGBCWS2812B/C2843785</datasheet>
->>>>>>> Stashed changes
       <fields>
         <field name="LCSC">C2843785</field>
       </fields>
@@ -1348,13 +1191,8 @@
     </comp>
     <comp ref="DAY28">
       <value>WS2812B</value>
-<<<<<<< Updated upstream
-      <footprint>calendar:LED_WS2812C-2020-V1_2.0x2.0mm</footprint>
-      <datasheet>https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf</datasheet>
-=======
       <footprint>LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm</footprint>
       <datasheet>https://jlcpcb.com/partdetail/Xinglight-XL_5050RGBCWS2812B/C2843785</datasheet>
->>>>>>> Stashed changes
       <fields>
         <field name="LCSC">C2843785</field>
       </fields>
@@ -1367,13 +1205,8 @@
     </comp>
     <comp ref="DAY29">
       <value>WS2812B</value>
-<<<<<<< Updated upstream
-      <footprint>calendar:LED_WS2812C-2020-V1_2.0x2.0mm</footprint>
-      <datasheet>https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf</datasheet>
-=======
       <footprint>LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm</footprint>
       <datasheet>https://jlcpcb.com/partdetail/Xinglight-XL_5050RGBCWS2812B/C2843785</datasheet>
->>>>>>> Stashed changes
       <fields>
         <field name="LCSC">C2843785</field>
       </fields>
@@ -1386,13 +1219,8 @@
     </comp>
     <comp ref="DAY30">
       <value>WS2812B</value>
-<<<<<<< Updated upstream
-      <footprint>calendar:LED_WS2812C-2020-V1_2.0x2.0mm</footprint>
-      <datasheet>https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf</datasheet>
-=======
       <footprint>LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm</footprint>
       <datasheet>https://jlcpcb.com/partdetail/Xinglight-XL_5050RGBCWS2812B/C2843785</datasheet>
->>>>>>> Stashed changes
       <fields>
         <field name="LCSC">C2843785</field>
       </fields>
@@ -1405,13 +1233,8 @@
     </comp>
     <comp ref="DAY31">
       <value>WS2812B</value>
-<<<<<<< Updated upstream
-      <footprint>calendar:LED_WS2812C-2020-V1_2.0x2.0mm</footprint>
-      <datasheet>https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf</datasheet>
-=======
       <footprint>LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm</footprint>
       <datasheet>https://jlcpcb.com/partdetail/Xinglight-XL_5050RGBCWS2812B/C2843785</datasheet>
->>>>>>> Stashed changes
       <fields>
         <field name="LCSC">C2843785</field>
       </fields>
@@ -1424,13 +1247,8 @@
     </comp>
     <comp ref="DAY32">
       <value>WS2812B</value>
-<<<<<<< Updated upstream
-      <footprint>calendar:LED_WS2812C-2020-V1_2.0x2.0mm</footprint>
-      <datasheet>https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf</datasheet>
-=======
       <footprint>LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm</footprint>
       <datasheet>https://jlcpcb.com/partdetail/Xinglight-XL_5050RGBCWS2812B/C2843785</datasheet>
->>>>>>> Stashed changes
       <fields>
         <field name="LCSC">C2843785</field>
       </fields>
@@ -1443,13 +1261,8 @@
     </comp>
     <comp ref="DAY33">
       <value>WS2812B</value>
-<<<<<<< Updated upstream
-      <footprint>calendar:LED_WS2812C-2020-V1_2.0x2.0mm</footprint>
-      <datasheet>https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf</datasheet>
-=======
       <footprint>LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm</footprint>
       <datasheet>https://jlcpcb.com/partdetail/Xinglight-XL_5050RGBCWS2812B/C2843785</datasheet>
->>>>>>> Stashed changes
       <fields>
         <field name="LCSC">C2843785</field>
       </fields>
@@ -1462,13 +1275,8 @@
     </comp>
     <comp ref="DAY34">
       <value>WS2812B</value>
-<<<<<<< Updated upstream
-      <footprint>calendar:LED_WS2812C-2020-V1_2.0x2.0mm</footprint>
-      <datasheet>https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf</datasheet>
-=======
       <footprint>LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm</footprint>
       <datasheet>https://jlcpcb.com/partdetail/Xinglight-XL_5050RGBCWS2812B/C2843785</datasheet>
->>>>>>> Stashed changes
       <fields>
         <field name="LCSC">C2843785</field>
       </fields>
@@ -1481,13 +1289,8 @@
     </comp>
     <comp ref="DAY35">
       <value>WS2812B</value>
-<<<<<<< Updated upstream
-      <footprint>calendar:LED_WS2812C-2020-V1_2.0x2.0mm</footprint>
-      <datasheet>https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf</datasheet>
-=======
       <footprint>LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm</footprint>
       <datasheet>https://jlcpcb.com/partdetail/Xinglight-XL_5050RGBCWS2812B/C2843785</datasheet>
->>>>>>> Stashed changes
       <fields>
         <field name="LCSC">C2843785</field>
       </fields>
@@ -1500,13 +1303,8 @@
     </comp>
     <comp ref="DAY36">
       <value>WS2812B</value>
-<<<<<<< Updated upstream
-      <footprint>calendar:LED_WS2812C-2020-V1_2.0x2.0mm</footprint>
-      <datasheet>https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf</datasheet>
-=======
       <footprint>LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm</footprint>
       <datasheet>https://jlcpcb.com/partdetail/Xinglight-XL_5050RGBCWS2812B/C2843785</datasheet>
->>>>>>> Stashed changes
       <fields>
         <field name="LCSC">C2843785</field>
       </fields>
@@ -1519,13 +1317,8 @@
     </comp>
     <comp ref="DAY37">
       <value>WS2812B</value>
-<<<<<<< Updated upstream
-      <footprint>calendar:LED_WS2812C-2020-V1_2.0x2.0mm</footprint>
-      <datasheet>https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf</datasheet>
-=======
       <footprint>LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm</footprint>
       <datasheet>https://jlcpcb.com/partdetail/Xinglight-XL_5050RGBCWS2812B/C2843785</datasheet>
->>>>>>> Stashed changes
       <fields>
         <field name="LCSC">C2843785</field>
       </fields>
@@ -1538,13 +1331,8 @@
     </comp>
     <comp ref="DAY38">
       <value>WS2812B</value>
-<<<<<<< Updated upstream
-      <footprint>calendar:LED_WS2812C-2020-V1_2.0x2.0mm</footprint>
-      <datasheet>https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf</datasheet>
-=======
       <footprint>LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm</footprint>
       <datasheet>https://jlcpcb.com/partdetail/Xinglight-XL_5050RGBCWS2812B/C2843785</datasheet>
->>>>>>> Stashed changes
       <fields>
         <field name="LCSC">C2843785</field>
       </fields>
@@ -1557,13 +1345,8 @@
     </comp>
     <comp ref="DAY39">
       <value>WS2812B</value>
-<<<<<<< Updated upstream
-      <footprint>calendar:LED_WS2812C-2020-V1_2.0x2.0mm</footprint>
-      <datasheet>https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf</datasheet>
-=======
       <footprint>LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm</footprint>
       <datasheet>https://jlcpcb.com/partdetail/Xinglight-XL_5050RGBCWS2812B/C2843785</datasheet>
->>>>>>> Stashed changes
       <fields>
         <field name="LCSC">C2843785</field>
       </fields>
@@ -1576,13 +1359,8 @@
     </comp>
     <comp ref="DAY40">
       <value>WS2812B</value>
-<<<<<<< Updated upstream
-      <footprint>calendar:LED_WS2812C-2020-V1_2.0x2.0mm</footprint>
-      <datasheet>https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf</datasheet>
-=======
       <footprint>LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm</footprint>
       <datasheet>https://jlcpcb.com/partdetail/Xinglight-XL_5050RGBCWS2812B/C2843785</datasheet>
->>>>>>> Stashed changes
       <fields>
         <field name="LCSC">C2843785</field>
       </fields>
@@ -1595,13 +1373,8 @@
     </comp>
     <comp ref="DAY41">
       <value>WS2812B</value>
-<<<<<<< Updated upstream
-      <footprint>calendar:LED_WS2812C-2020-V1_2.0x2.0mm</footprint>
-      <datasheet>https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf</datasheet>
-=======
       <footprint>LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm</footprint>
       <datasheet>https://jlcpcb.com/partdetail/Xinglight-XL_5050RGBCWS2812B/C2843785</datasheet>
->>>>>>> Stashed changes
       <fields>
         <field name="LCSC">C2843785</field>
       </fields>
@@ -1614,13 +1387,8 @@
     </comp>
     <comp ref="DAY42">
       <value>WS2812B</value>
-<<<<<<< Updated upstream
-      <footprint>calendar:LED_WS2812C-2020-V1_2.0x2.0mm</footprint>
-      <datasheet>https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf</datasheet>
-=======
       <footprint>LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm</footprint>
       <datasheet>https://jlcpcb.com/partdetail/Xinglight-XL_5050RGBCWS2812B/C2843785</datasheet>
->>>>>>> Stashed changes
       <fields>
         <field name="LCSC">C2843785</field>
       </fields>
@@ -1630,48 +1398,6 @@
       <property name="Sheetfile" value="File: EveryDayCalendarSingleMonth.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamps>4e8b3199-6855-4f19-be6c-6eb44d2fc04b</tstamps>
-    </comp>
-    <comp ref="D_S1">
-      <value>WS2812B</value>
-      <footprint>calendar:LED_WS2812C-2020-V1_2.0x2.0mm</footprint>
-      <datasheet>https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf</datasheet>
-      <fields>
-        <field name="LCSC">C2976072</field>
-      </fields>
-      <libsource lib="calendar" part="WS2812B" description="RGB LED with integrated controller"/>
-      <property name="LCSC" value="C2976072"/>
-      <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="File: EveryDayCalendarSingleMonth.kicad_sch"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>0700a4fb-3a08-4979-b540-4056726559fa</tstamps>
-    </comp>
-    <comp ref="D_S2">
-      <value>WS2812B</value>
-      <footprint>calendar:LED_WS2812C-2020-V1_2.0x2.0mm</footprint>
-      <datasheet>https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf</datasheet>
-      <fields>
-        <field name="LCSC">C2976072</field>
-      </fields>
-      <libsource lib="calendar" part="WS2812B" description="RGB LED with integrated controller"/>
-      <property name="LCSC" value="C2976072"/>
-      <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="File: EveryDayCalendarSingleMonth.kicad_sch"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>3f678446-786b-4c26-8283-93d008f5690c</tstamps>
-    </comp>
-    <comp ref="D_S3">
-      <value>WS2812B</value>
-      <footprint>calendar:LED_WS2812C-2020-V1_2.0x2.0mm</footprint>
-      <datasheet>https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf</datasheet>
-      <fields>
-        <field name="LCSC">C2976072</field>
-      </fields>
-      <libsource lib="calendar" part="WS2812B" description="RGB LED with integrated controller"/>
-      <property name="LCSC" value="C2976072"/>
-      <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="File: EveryDayCalendarSingleMonth.kicad_sch"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>e5595970-e327-46e1-80a4-f269807e0849</tstamps>
     </comp>
     <comp ref="GND1">
       <value>TestPoint</value>
@@ -2766,54 +2492,6 @@
       <node ref="C7" pin="1" pintype="passive"/>
       <node ref="C8" pin="1" pintype="passive"/>
       <node ref="C9" pin="1" pintype="passive"/>
-<<<<<<< Updated upstream
-      <node ref="C_ROW_STATUS1" pin="2" pintype="passive"/>
-      <node ref="DAY1" pin="4" pinfunction="VDD" pintype="power_in"/>
-      <node ref="DAY10" pin="4" pinfunction="VDD" pintype="power_in"/>
-      <node ref="DAY11" pin="4" pinfunction="VDD" pintype="power_in"/>
-      <node ref="DAY12" pin="4" pinfunction="VDD" pintype="power_in"/>
-      <node ref="DAY13" pin="4" pinfunction="VDD" pintype="power_in"/>
-      <node ref="DAY14" pin="4" pinfunction="VDD" pintype="power_in"/>
-      <node ref="DAY15" pin="4" pinfunction="VDD" pintype="power_in"/>
-      <node ref="DAY16" pin="4" pinfunction="VDD" pintype="power_in"/>
-      <node ref="DAY17" pin="4" pinfunction="VDD" pintype="power_in"/>
-      <node ref="DAY18" pin="4" pinfunction="VDD" pintype="power_in"/>
-      <node ref="DAY19" pin="4" pinfunction="VDD" pintype="power_in"/>
-      <node ref="DAY2" pin="4" pinfunction="VDD" pintype="power_in"/>
-      <node ref="DAY20" pin="4" pinfunction="VDD" pintype="power_in"/>
-      <node ref="DAY21" pin="4" pinfunction="VDD" pintype="power_in"/>
-      <node ref="DAY22" pin="4" pinfunction="VDD" pintype="power_in"/>
-      <node ref="DAY23" pin="4" pinfunction="VDD" pintype="power_in"/>
-      <node ref="DAY24" pin="4" pinfunction="VDD" pintype="power_in"/>
-      <node ref="DAY25" pin="4" pinfunction="VDD" pintype="power_in"/>
-      <node ref="DAY26" pin="4" pinfunction="VDD" pintype="power_in"/>
-      <node ref="DAY27" pin="4" pinfunction="VDD" pintype="power_in"/>
-      <node ref="DAY28" pin="4" pinfunction="VDD" pintype="power_in"/>
-      <node ref="DAY29" pin="4" pinfunction="VDD" pintype="power_in"/>
-      <node ref="DAY3" pin="4" pinfunction="VDD" pintype="power_in"/>
-      <node ref="DAY30" pin="4" pinfunction="VDD" pintype="power_in"/>
-      <node ref="DAY31" pin="4" pinfunction="VDD" pintype="power_in"/>
-      <node ref="DAY32" pin="4" pinfunction="VDD" pintype="power_in"/>
-      <node ref="DAY33" pin="4" pinfunction="VDD" pintype="power_in"/>
-      <node ref="DAY34" pin="4" pinfunction="VDD" pintype="power_in"/>
-      <node ref="DAY35" pin="4" pinfunction="VDD" pintype="power_in"/>
-      <node ref="DAY36" pin="4" pinfunction="VDD" pintype="power_in"/>
-      <node ref="DAY37" pin="4" pinfunction="VDD" pintype="power_in"/>
-      <node ref="DAY38" pin="4" pinfunction="VDD" pintype="power_in"/>
-      <node ref="DAY39" pin="4" pinfunction="VDD" pintype="power_in"/>
-      <node ref="DAY4" pin="4" pinfunction="VDD" pintype="power_in"/>
-      <node ref="DAY40" pin="4" pinfunction="VDD" pintype="power_in"/>
-      <node ref="DAY41" pin="4" pinfunction="VDD" pintype="power_in"/>
-      <node ref="DAY42" pin="4" pinfunction="VDD" pintype="power_in"/>
-      <node ref="DAY5" pin="4" pinfunction="VDD" pintype="power_in"/>
-      <node ref="DAY6" pin="4" pinfunction="VDD" pintype="power_in"/>
-      <node ref="DAY7" pin="4" pinfunction="VDD" pintype="power_in"/>
-      <node ref="DAY8" pin="4" pinfunction="VDD" pintype="power_in"/>
-      <node ref="DAY9" pin="4" pinfunction="VDD" pintype="power_in"/>
-      <node ref="D_S1" pin="4" pinfunction="VDD" pintype="power_in"/>
-      <node ref="D_S2" pin="4" pinfunction="VDD" pintype="power_in"/>
-      <node ref="D_S3" pin="4" pinfunction="VDD" pintype="power_in"/>
-=======
       <node ref="DAY1" pin="1" pinfunction="VDD" pintype="power_in"/>
       <node ref="DAY10" pin="1" pinfunction="VDD" pintype="power_in"/>
       <node ref="DAY11" pin="1" pinfunction="VDD" pintype="power_in"/>
@@ -2856,7 +2534,6 @@
       <node ref="DAY7" pin="1" pinfunction="VDD" pintype="power_in"/>
       <node ref="DAY8" pin="1" pinfunction="VDD" pintype="power_in"/>
       <node ref="DAY9" pin="1" pinfunction="VDD" pintype="power_in"/>
->>>>>>> Stashed changes
       <node ref="J2_POWER_IN1" pin="1" pinfunction="Pin_1" pintype="passive"/>
       <node ref="J3_PROGRAMING_PIN1" pin="3" pinfunction="Pin_3" pintype="passive"/>
       <node ref="ONE_WIRE1" pin="1" pinfunction="Pin_1" pintype="passive"/>
@@ -3029,55 +2706,7 @@
       <node ref="C7" pin="2" pintype="passive"/>
       <node ref="C8" pin="2" pintype="passive"/>
       <node ref="C9" pin="2" pintype="passive"/>
-      <node ref="C_ROW_STATUS1" pin="1" pintype="passive"/>
       <node ref="D1" pin="1" pinfunction="K" pintype="passive"/>
-<<<<<<< Updated upstream
-      <node ref="DAY1" pin="2" pinfunction="VSS" pintype="power_in"/>
-      <node ref="DAY10" pin="2" pinfunction="VSS" pintype="power_in"/>
-      <node ref="DAY11" pin="2" pinfunction="VSS" pintype="power_in"/>
-      <node ref="DAY12" pin="2" pinfunction="VSS" pintype="power_in"/>
-      <node ref="DAY13" pin="2" pinfunction="VSS" pintype="power_in"/>
-      <node ref="DAY14" pin="2" pinfunction="VSS" pintype="power_in"/>
-      <node ref="DAY15" pin="2" pinfunction="VSS" pintype="power_in"/>
-      <node ref="DAY16" pin="2" pinfunction="VSS" pintype="power_in"/>
-      <node ref="DAY17" pin="2" pinfunction="VSS" pintype="power_in"/>
-      <node ref="DAY18" pin="2" pinfunction="VSS" pintype="power_in"/>
-      <node ref="DAY19" pin="2" pinfunction="VSS" pintype="power_in"/>
-      <node ref="DAY2" pin="2" pinfunction="VSS" pintype="power_in"/>
-      <node ref="DAY20" pin="2" pinfunction="VSS" pintype="power_in"/>
-      <node ref="DAY21" pin="2" pinfunction="VSS" pintype="power_in"/>
-      <node ref="DAY22" pin="2" pinfunction="VSS" pintype="power_in"/>
-      <node ref="DAY23" pin="2" pinfunction="VSS" pintype="power_in"/>
-      <node ref="DAY24" pin="2" pinfunction="VSS" pintype="power_in"/>
-      <node ref="DAY25" pin="2" pinfunction="VSS" pintype="power_in"/>
-      <node ref="DAY26" pin="2" pinfunction="VSS" pintype="power_in"/>
-      <node ref="DAY27" pin="2" pinfunction="VSS" pintype="power_in"/>
-      <node ref="DAY28" pin="2" pinfunction="VSS" pintype="power_in"/>
-      <node ref="DAY29" pin="2" pinfunction="VSS" pintype="power_in"/>
-      <node ref="DAY3" pin="2" pinfunction="VSS" pintype="power_in"/>
-      <node ref="DAY30" pin="2" pinfunction="VSS" pintype="power_in"/>
-      <node ref="DAY31" pin="2" pinfunction="VSS" pintype="power_in"/>
-      <node ref="DAY32" pin="2" pinfunction="VSS" pintype="power_in"/>
-      <node ref="DAY33" pin="2" pinfunction="VSS" pintype="power_in"/>
-      <node ref="DAY34" pin="2" pinfunction="VSS" pintype="power_in"/>
-      <node ref="DAY35" pin="2" pinfunction="VSS" pintype="power_in"/>
-      <node ref="DAY36" pin="2" pinfunction="VSS" pintype="power_in"/>
-      <node ref="DAY37" pin="2" pinfunction="VSS" pintype="power_in"/>
-      <node ref="DAY38" pin="2" pinfunction="VSS" pintype="power_in"/>
-      <node ref="DAY39" pin="2" pinfunction="VSS" pintype="power_in"/>
-      <node ref="DAY4" pin="2" pinfunction="VSS" pintype="power_in"/>
-      <node ref="DAY40" pin="2" pinfunction="VSS" pintype="power_in"/>
-      <node ref="DAY41" pin="2" pinfunction="VSS" pintype="power_in"/>
-      <node ref="DAY42" pin="2" pinfunction="VSS" pintype="power_in"/>
-      <node ref="DAY5" pin="2" pinfunction="VSS" pintype="power_in"/>
-      <node ref="DAY6" pin="2" pinfunction="VSS" pintype="power_in"/>
-      <node ref="DAY7" pin="2" pinfunction="VSS" pintype="power_in"/>
-      <node ref="DAY8" pin="2" pinfunction="VSS" pintype="power_in"/>
-      <node ref="DAY9" pin="2" pinfunction="VSS" pintype="power_in"/>
-      <node ref="D_S1" pin="2" pinfunction="VSS" pintype="power_in"/>
-      <node ref="D_S2" pin="2" pinfunction="VSS" pintype="power_in"/>
-      <node ref="D_S3" pin="2" pinfunction="VSS" pintype="power_in"/>
-=======
       <node ref="DAY1" pin="3" pinfunction="GND" pintype="power_in"/>
       <node ref="DAY10" pin="3" pinfunction="GND" pintype="power_in"/>
       <node ref="DAY11" pin="3" pinfunction="GND" pintype="power_in"/>
@@ -3120,7 +2749,6 @@
       <node ref="DAY7" pin="3" pinfunction="GND" pintype="power_in"/>
       <node ref="DAY8" pin="3" pinfunction="GND" pintype="power_in"/>
       <node ref="DAY9" pin="3" pinfunction="GND" pintype="power_in"/>
->>>>>>> Stashed changes
       <node ref="GND1" pin="1" pinfunction="1" pintype="passive"/>
       <node ref="GND2" pin="1" pinfunction="1" pintype="passive"/>
       <node ref="GND3" pin="1" pinfunction="1" pintype="passive"/>
@@ -3334,72 +2962,55 @@
       <node ref="DAY41" pin="2" pinfunction="DOU" pintype="output"/>
       <node ref="DAY42" pin="4" pinfunction="DIN" pintype="input"/>
     </net>
-<<<<<<< Updated upstream
-    <net code="74" name="Net-(DAY42-Pad1)">
-      <node ref="DAY42" pin="1" pinfunction="DOUT" pintype="output"/>
-      <node ref="D_S1" pin="3" pinfunction="DIN" pintype="input"/>
-    </net>
-    <net code="75" name="Net-(D_S1-Pad1)">
-      <node ref="D_S1" pin="1" pinfunction="DOUT" pintype="output"/>
-      <node ref="D_S2" pin="3" pinfunction="DIN" pintype="input"/>
-    </net>
-    <net code="76" name="Net-(D_S2-Pad1)">
-      <node ref="D_S2" pin="1" pinfunction="DOUT" pintype="output"/>
-      <node ref="D_S3" pin="3" pinfunction="DIN" pintype="input"/>
-    </net>
-    <net code="77" name="Net-(D_S3-Pad1)">
-      <node ref="D_S3" pin="1" pinfunction="DOUT" pintype="output"/>
-=======
     <net code="74" name="Net-(DAY42-Pad2)">
       <node ref="DAY42" pin="2" pinfunction="DOU" pintype="output"/>
->>>>>>> Stashed changes
       <node ref="LED_OUT1" pin="1" pinfunction="1" pintype="passive"/>
     </net>
-    <net code="78" name="Net-(LED_IN1-Pad1)">
+    <net code="75" name="Net-(LED_IN1-Pad1)">
       <node ref="LED_IN1" pin="1" pinfunction="1" pintype="passive"/>
       <node ref="R1" pin="2" pintype="passive"/>
       <node ref="U1" pin="2" pintype="input"/>
     </net>
-    <net code="79" name="Net-(ONE_WIRE1-Pad2)">
+    <net code="76" name="Net-(ONE_WIRE1-Pad2)">
       <node ref="ONE_WIRE1" pin="2" pinfunction="Pin_2" pintype="passive"/>
       <node ref="R3" pin="1" pintype="passive"/>
     </net>
-    <net code="80" name="Net-(Q1-Pad1)">
+    <net code="77" name="Net-(Q1-Pad1)">
       <node ref="Q1" pin="1" pinfunction="B" pintype="input"/>
       <node ref="R4" pin="2" pintype="passive"/>
     </net>
-    <net code="81" name="Net-(Q2-Pad1)">
+    <net code="78" name="Net-(Q2-Pad1)">
       <node ref="Q2" pin="1" pinfunction="B" pintype="input"/>
       <node ref="R5" pin="2" pintype="passive"/>
     </net>
-    <net code="82" name="unconnected-(J3_PROGRAMING_PIN1-Pad2)">
+    <net code="79" name="unconnected-(J3_PROGRAMING_PIN1-Pad2)">
       <node ref="J3_PROGRAMING_PIN1" pin="2" pinfunction="Pin_2" pintype="passive+no_connect"/>
     </net>
-    <net code="83" name="unconnected-(U_CPU1-Pad4)">
+    <net code="80" name="unconnected-(U_CPU1-Pad4)">
       <node ref="U_CPU1" pin="4" pinfunction="SENSOR_VP" pintype="input+no_connect"/>
     </net>
-    <net code="84" name="unconnected-(U_CPU1-Pad5)">
+    <net code="81" name="unconnected-(U_CPU1-Pad5)">
       <node ref="U_CPU1" pin="5" pinfunction="SENSOR_VN" pintype="input+no_connect"/>
     </net>
-    <net code="85" name="unconnected-(U_CPU1-Pad17)">
+    <net code="82" name="unconnected-(U_CPU1-Pad17)">
       <node ref="U_CPU1" pin="17" pinfunction="NC" pintype="no_connect"/>
     </net>
-    <net code="86" name="unconnected-(U_CPU1-Pad18)">
+    <net code="83" name="unconnected-(U_CPU1-Pad18)">
       <node ref="U_CPU1" pin="18" pinfunction="NC" pintype="no_connect"/>
     </net>
-    <net code="87" name="unconnected-(U_CPU1-Pad19)">
+    <net code="84" name="unconnected-(U_CPU1-Pad19)">
       <node ref="U_CPU1" pin="19" pinfunction="NC" pintype="no_connect"/>
     </net>
-    <net code="88" name="unconnected-(U_CPU1-Pad20)">
+    <net code="85" name="unconnected-(U_CPU1-Pad20)">
       <node ref="U_CPU1" pin="20" pinfunction="NC" pintype="no_connect"/>
     </net>
-    <net code="89" name="unconnected-(U_CPU1-Pad21)">
+    <net code="86" name="unconnected-(U_CPU1-Pad21)">
       <node ref="U_CPU1" pin="21" pinfunction="NC" pintype="no_connect"/>
     </net>
-    <net code="90" name="unconnected-(U_CPU1-Pad22)">
+    <net code="87" name="unconnected-(U_CPU1-Pad22)">
       <node ref="U_CPU1" pin="22" pinfunction="NC" pintype="no_connect"/>
     </net>
-    <net code="91" name="unconnected-(U_CPU1-Pad32)">
+    <net code="88" name="unconnected-(U_CPU1-Pad32)">
       <node ref="U_CPU1" pin="32" pinfunction="NC" pintype="no_connect"/>
     </net>
   </nets>

@@ -5,11 +5,7 @@
       "Application": "Pcbnew",
       "Version": "(6.0.8)"
     },
-<<<<<<< Updated upstream
-    "CreationDate": "2022-12-06T21:36:09-08:00"
-=======
-    "CreationDate": "2022-12-10T17:32:00-08:00"
->>>>>>> Stashed changes
+    "CreationDate": "2022-12-11T20:06:37-08:00"
   },
   "GeneralSpecs": {
     "ProjectId": {

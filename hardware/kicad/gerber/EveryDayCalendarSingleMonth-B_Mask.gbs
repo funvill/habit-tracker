@@ -1,20 +1,12 @@
 G04 #@! TF.GenerationSoftware,KiCad,Pcbnew,(6.0.8)*
-<<<<<<< Updated upstream
-G04 #@! TF.CreationDate,2022-12-06T21:36:09-08:00*
-=======
-G04 #@! TF.CreationDate,2022-12-10T17:32:00-08:00*
->>>>>>> Stashed changes
+G04 #@! TF.CreationDate,2022-12-11T20:06:37-08:00*
 G04 #@! TF.ProjectId,EveryDayCalendarSingleMonth,45766572-7944-4617-9943-616c656e6461,rev?*
 G04 #@! TF.SameCoordinates,Original*
 G04 #@! TF.FileFunction,Soldermask,Bot*
 G04 #@! TF.FilePolarity,Negative*
 %FSLAX46Y46*%
 G04 Gerber Fmt 4.6, Leading zero omitted, Abs format (unit mm)*
-<<<<<<< Updated upstream
-G04 Created by KiCad (PCBNEW (6.0.8)) date 2022-12-06 21:36:09*
-=======
-G04 Created by KiCad (PCBNEW (6.0.8)) date 2022-12-10 17:32:00*
->>>>>>> Stashed changes
+G04 Created by KiCad (PCBNEW (6.0.8)) date 2022-12-11 20:06:37*
 %MOMM*%
 %LPD*%
 G01*
@@ -97,7 +89,7 @@ D15*
 G04 #@! TO.C,LED_OUT1*
 X148000000Y-113000000D03*
 G04 #@! TD*
-G04 #@! TO.C,WIN2*
+G04 #@! TO.C,TP_WIN2*
 X148000000Y-65000000D03*
 G04 #@! TD*
 G04 #@! TO.C,GND2*
@@ -106,7 +98,7 @@ G04 #@! TD*
 G04 #@! TO.C,5V4*
 X140000000Y-138000000D03*
 G04 #@! TD*
-G04 #@! TO.C,CAL_PREV1*
+G04 #@! TO.C,TP_CAL_PREV1*
 X148000000Y-85000000D03*
 G04 #@! TD*
 G04 #@! TO.C,5V2*
@@ -124,16 +116,16 @@ G04 #@! TD*
 G04 #@! TO.C,GND4*
 X60000000Y-138000000D03*
 G04 #@! TD*
-G04 #@! TO.C,CAL_NEXT1*
+G04 #@! TO.C,TP_CAL_NEXT1*
 X148000000Y-95000000D03*
 G04 #@! TD*
 G04 #@! TO.C,GND3*
 X52000000Y-50000000D03*
 G04 #@! TD*
-G04 #@! TO.C,MODE1*
+G04 #@! TO.C,TP_MODE1*
 X148000000Y-75000000D03*
 G04 #@! TD*
-G04 #@! TO.C,WIN1*
+G04 #@! TO.C,TP_WIN1*
 X148000000Y-55000000D03*
 G04 #@! TD*
 D16*

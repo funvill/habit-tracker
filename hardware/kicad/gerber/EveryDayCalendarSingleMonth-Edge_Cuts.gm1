@@ -1,19 +1,11 @@
 G04 #@! TF.GenerationSoftware,KiCad,Pcbnew,(6.0.8)*
-<<<<<<< Updated upstream
-G04 #@! TF.CreationDate,2022-12-06T21:36:09-08:00*
-=======
-G04 #@! TF.CreationDate,2022-12-10T17:32:00-08:00*
->>>>>>> Stashed changes
+G04 #@! TF.CreationDate,2022-12-11T20:06:37-08:00*
 G04 #@! TF.ProjectId,EveryDayCalendarSingleMonth,45766572-7944-4617-9943-616c656e6461,rev?*
 G04 #@! TF.SameCoordinates,Original*
 G04 #@! TF.FileFunction,Profile,NP*
 %FSLAX46Y46*%
 G04 Gerber Fmt 4.6, Leading zero omitted, Abs format (unit mm)*
-<<<<<<< Updated upstream
-G04 Created by KiCad (PCBNEW (6.0.8)) date 2022-12-06 21:36:09*
-=======
-G04 Created by KiCad (PCBNEW (6.0.8)) date 2022-12-10 17:32:00*
->>>>>>> Stashed changes
+G04 Created by KiCad (PCBNEW (6.0.8)) date 2022-12-11 20:06:37*
 %MOMM*%
 %LPD*%
 G01*
