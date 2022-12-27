@@ -5,6 +5,7 @@
 #include <TimeLib.h>
 #include <NTPClient.h>
 #include <WiFiUdp.h>
+#include "EEPROM.h"
 
 const int timeZone = -8; // Pacific Standard Time (USA)
 const long utcOffsetInSeconds = 8 * 60 * 60;
@@ -24,7 +25,7 @@ int monthDays(uint8_t month, uint8_t year);
 void displayLEDsForMonth();
 
 void loadingAnimation();
-void cursorAnimation();
+void showWinningAnimation();
 
 // Pins
 // ESP32 Pin out
@@ -63,7 +64,7 @@ static uint8_t gHue = 0;
 
 // https://github.com/FastLED/FastLED/wiki/Pixel-reference
 
-const CHSV COLOR_SUCCESS = CHSV(96, 255, 255); // Green
+const CHSV COLOR_SUCCESS = CHSV(96, 255, 128); // Green
 const CHSV COLOR_FAIL = CHSV(0, 255, 128);     // RED
 const CHSV COLOR_FUTURE = CHSV(128, 255, 128); // Aqua
 const CHSV COLOR_NOT_IN_MONTH = CHSV(0, 0, 0); // Black
@@ -126,6 +127,39 @@ void loadsDatabase()
   {
     database[i] = 0; // OFF
   }
+
+  Serial.println("Loading database from EEPROM");
+  // Load the database from EEPROM
+  if( ! EEPROM.begin(DAYS_IN_YEAR) ) {
+    Serial.println("Failed to initialise EEPROM");
+    Serial.println("Restarting...");
+    delay(1000);
+    ESP.restart();
+  }
+  EEPROM.get(0, database);
+  EEPROM.end();  
+}
+
+void resetDatabase() {
+  Serial.println("Reseting the database, and saving it to EEPROM");
+  for (int i = 0; i < DAYS_IN_YEAR; i++) {
+    database[i] = 0; // OFF
+  }
+  saveDatabase();
+}
+
+
+bool saveDatabase() {
+
+  Serial.println("Saving database to EEPROM");
+
+
+  // Save the database to EEPROM
+  EEPROM.begin(DAYS_IN_YEAR);
+  EEPROM.put(0, database);
+  EEPROM.commit();
+  EEPROM.end();
+  return true;
 }
 
 void printDatabase()
@@ -179,6 +213,7 @@ void DatabaseSet(uint8_t year, uint8_t month, uint8_t day, uint8_t offset, bool 
 {
   uint dayOfTheYear = GetDayOfTheYear(year, month, day);
   database[dayOfTheYear] = bitWrite(database[dayOfTheYear], offset, success);
+  saveDatabase();
 
   Serial.print("DatabaseSet year: ");
   Serial.print(year);
@@ -283,8 +318,8 @@ void setup()
   pinMode(PIN_MODE, INPUT_PULLUP);
 
   // If Serial is active you can't use these pins
-  pinMode(PIN_PREV, INPUT_PULLUP);
-  pinMode(PIN_NEXT, INPUT_PULLUP);
+  // pinMode(PIN_PREV, INPUT_PULLUP);
+  // pinMode(PIN_NEXT, INPUT_PULLUP);
 
   // set master brightness control
   FastLED.setBrightness(LED_BRIGHTNESS);
@@ -294,6 +329,9 @@ void setup()
 
   // Loads the database
   loadsDatabase();
+
+  // ToDo: Detect that this is the first load of the database from the EEPOM and set it to all 0's
+  // resetDatabase();
 
   // Debug. Set some success over the last month.
   // DatabaseSet(year(), month(), 3, 0, true);
@@ -445,11 +483,13 @@ void checkInputs()
 
   if (digitalRead(PIN_WIN1) == BUTTON_DOWN_STATE)
   {
-    leds[7 - 1] = BUTTON_DOWN_COLOR;
+    showWinningAnimation();
+    DatabaseSet(year(), month(), day(), 0, true);
   }
   if (digitalRead(PIN_WIN2) == BUTTON_DOWN_STATE)
   {
-    leds[14 - 1] = BUTTON_DOWN_COLOR;
+    showWinningAnimation();
+    DatabaseSet(year(), month(), day(), 1, true);
   }
   if (digitalRead(PIN_MODE) == BUTTON_DOWN_STATE)
   {
@@ -630,8 +670,21 @@ void loadingAnimation()
   }
 }
 
-// The current day of the month should fade in and out of the cursor color (gold)
-// and the background color showing what values have been set so far.
-void cursorAnimation()
+void SetAllLEDs(CHSV color) {
+  for( int i = 0; i < PIXELS_COUNT; i++) {
+    leds[i] = color;
+  }
+  FastLED.show();
+}
+
+// scroll the words WIN across the display 7x6 pixels
+void showWinningAnimation()
 {
+  for (int offset = 0; offset < 2; offset++)
+  {
+    SetAllLEDs(COLOR_SUCCESS);    
+    delay(200);
+    SetAllLEDs(COLOR_NOT_IN_MONTH);
+    delay(200);
+  }
 }
