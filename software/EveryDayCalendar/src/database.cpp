@@ -3,24 +3,20 @@
 #include "globals.h"
 #include "database.h"
 
+uint8_t database[DAYS_IN_YEAR];
 
-
-uint16_t EEPROM_VERSION = 0x0001; 
-uint16_t EEPROM_OFFSET_VERSION  = 0x0000;
+uint16_t EEPROM_VERSION = 0x0001;
+uint16_t EEPROM_OFFSET_VERSION = 0x0000;
 uint16_t EEPROM_OFFSET_CALENDAR = 0x0002;
-uint16_t EEPROM_SIZE  = sizeof(uint16_t) + (sizeof(uint8_t) * DAYS_IN_YEAR );
+uint16_t EEPROM_SIZE = sizeof(uint16_t) + (sizeof(uint8_t) * DAYS_IN_YEAR);
 
-// EPROM version (0x0001) 
+// EPROM version (0x0001)
 // ---------------------------------
-// 
+//
 // [EEPROM_Version]       2 BYTES  | 0x0001
 // [CALENDAR]           366 BYTES  | 0x0002 - 0x0175
-// 
-// 
-
-
-
-
+//
+//
 
 // Helpers
 // =====================
@@ -58,8 +54,6 @@ int monthDays(uint8_t month, uint8_t year)
 
 // Database
 // ====================
-
-uint8_t database[DAYS_IN_YEAR];
 
 // loads the database from the EEPROM into memory
 void loadsDatabase()
@@ -192,10 +186,21 @@ void DatabaseSet(uint8_t year, uint8_t month, uint8_t day, uint8_t offset, bool 
   Serial.println(database[dayOfTheYear]);
 }
 
-bool DatabaseGet(uint8_t year, uint8_t month, uint8_t day, uint8_t offset)
+uint8_t DatabaseGetOffsetRaw(uint16_t dayOffset) {
+  if( dayOffset > DAYS_IN_YEAR ) {
+    return 0;
+  }
+  return database[dayOffset];
+}
+
+uint8_t DatabaseGetRaw(uint8_t year, uint8_t month, uint8_t day)
 {
   uint dayOfTheYear = GetDayOfTheYear(year, month, day);
-  return bitRead(database[dayOfTheYear], offset);
+  return database[dayOfTheYear];
+}
+bool DatabaseGet(uint8_t year, uint8_t month, uint8_t day, uint8_t offset)
+{
+  return bitRead(DatabaseGetRaw(year, month, day), offset);
 }
 
 // ====================

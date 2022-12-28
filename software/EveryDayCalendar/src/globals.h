@@ -8,6 +8,9 @@
 #include <Arduino.h> // Required for ESP32
 #include "FastLED.h" // Required for CHSV
 
+ // HTTP
+ #define HTTP_PORT 80
+
 // Pins
 // ESP32 Pins
 // https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-reference/peripherals/gpio.html

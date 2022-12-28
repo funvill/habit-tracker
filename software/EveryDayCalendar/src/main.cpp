@@ -19,9 +19,6 @@ const char *NTP_SERVER = "pool.ntp.org";
 WiFiUDP ntpUDP;
 NTPClient timeClient(ntpUDP, NTP_SERVER, utcOffsetInSeconds);
 
-const char *WIFI_SSID = "MagesticCanadianGoose";
-const char *WIFI_PASSWORD = "Good-Gray-Sloth";
-
 void flipTheStatusLED();
 void checkInputs();
 void getCurrentTime();
@@ -37,8 +34,112 @@ void showWinningAnimation();
 // NeoPixel
 CRGB leds[PIXELS_COUNT];
 
+#include <WiFi.h>
+#include <AsyncTCP.h>
+#include "ESPAsyncWebServer.h" // Used for displaying webpages
+#include <AsyncElegantOTA.h>   // Used for Update via webpage. https://github.com/ayushsharma82/AsyncElegantOTA
+
+// Set up the web server.
+AsyncWebServer webServer(HTTP_PORT);
+
+// DNS server used for captive portal
+#include <DNSServer.h>
+DNSServer dnsServer;
+
+#include <ESPConnect.h>
+
+void httpIndex(AsyncWebServerRequest *request)
+{
+  String html = "<!DOCTYPE html><html><head><title>EveryDayCalendar</title></head><body><h1>EveryDayCalendar</h1><p>Version 0.1.2 (2022-Dec-27)</p><p><a href='/update'>Firmware Update</a></p>";
+
+  html += "<p><strong>WiFi SSID</strong>: " + WiFi.SSID() + "</p>";
+  html += "<p><strong>WiFi RSSI</strong>: " + String(WiFi.RSSI()) + " dB</p>";
+  html += "<p><strong>WiFi IP</strong>: " + WiFi.localIP().toString() + "</p>";
+  html += "<p><strong>WiFi Gateway</strong>: " + WiFi.gatewayIP().toString() + "</p>";
+  html += "<p><strong>WiFi Subnet</strong>: " + WiFi.subnetMask().toString() + "</p>";
+  html += "<p><strong>WiFi MAC</strong>: " + WiFi.macAddress() + "</p>";
+  html += "<p><strong>WiFi BSSID</strong>: " + WiFi.BSSIDstr() + "</p>";
+
+  html += "<p><strong>Mode</strong>: " + String(gMode) + "</p>";
+  html += "<p><strong>LED_BRIGHTNESS</strong>: " + String(LED_BRIGHTNESS) + "</p>";
+  html += "<p><strong>HTTP_PORT</strong>: " + String(HTTP_PORT) + "</p>";
+
+  html += "<p><strong>Timezone</strong>: " + String(timeZone) + "</p>";
+  html += "<p><strong>UTC Offset</strong>: " + String(utcOffsetInSeconds) + "</p>";
+  html += "<p><strong>NTP Server</strong>: " + String(NTP_SERVER) + "</p>";
+  html += "<p><strong>Current Epoch Time</strong>: " + String(timeClient.getEpochTime()) + "</p>";
+  
+  // digital clock display of the time
+  html += "<p><strong>TimeLib</strong>: ";
+  html += (String)year();
+  html += "/";
+  html += (String)month();
+  html += "/";
+  html += (String)day();
+  html += " ";
+  html += (String)hour();
+  html += ":";
+  html += (String)minute();
+  html += ":";
+  html += (String)second();
+  html += "</p>";
+
+  html += "<h2>Database: </h2><p>";
+
+  for (int dayOffset = 0; dayOffset < DAYS_IN_YEAR; dayOffset++)
+  {
+    uint8_t value = DatabaseGetOffsetRaw(dayOffset);
+
+    if (value > 0)
+    {
+      // Base on the day of the year, print the month and day
+      uint8_t month = 1;
+      uint16_t dayOfTheYear = dayOffset;
+      while (dayOfTheYear > monthDays(month, year()))
+      {
+        dayOfTheYear -= monthDays(month, year());
+        month++;
+      }
+      uint8_t day = dayOfTheYear;
+
+      html += (String)(dayOffset);
+      html += " [";
+      html += (String)(month);
+      html += "/";
+      html += (String)(day);
+      html += "] = ";
+      html += (String)(value);
+      html += "[";
+      for (int bitOffset = 0; bitOffset < 7; bitOffset++)
+      {
+        if (value & (1 << bitOffset))
+        {
+          html += "1";
+        }
+        else
+        {
+          html += "0";
+        }
+        html += ",";
+      }
+      html += "],  <br />";
+    }
+  }
+  html += "</p>";
+
+  html += "</body></html>";
+
+  request->send_P(200, "text/html", html.c_str());
+}
+
+void setupServer()
+{
+  webServer.on("/", HTTP_GET, httpIndex);
+}
+
 void setup()
 {
+
   gMode = MODE_CALENDAR;
 
   // Add the LEDS first as we use them for status and loading animations
@@ -58,20 +159,29 @@ void setup()
   // Print a message to the serial port
   Serial.println("EveryDayCalendar v0.1.1 (2022-Dec-27)");
 
-  WiFi.mode(WIFI_STA); // Optional
-  WiFi.begin(WIFI_SSID, WIFI_PASSWORD);
-  Serial.println("\nConnecting");
-
-  while (WiFi.status() != WL_CONNECTED)
+  // WifiManager
+  ESPConnect.autoConnect("EveryDayCalendar");
+  if (ESPConnect.begin(&webServer))
   {
-    Serial.print(".");
-    loadingAnimation();
-    delay(100);
+    Serial.println("Connected to WiFi");
+    Serial.println("IPAddress: " + WiFi.localIP().toString());
   }
+  else
+  {
+    Serial.println("Failed to connect to WiFi");
+  }
+
+  // Start the DNS server
+  dnsServer.start(53, "*", WiFi.softAPIP());
+
+  // Configure the web server endpoints.
+  AsyncElegantOTA.begin(&webServer); // Start AsyncElegantOTA
+  setupServer();
+  webServer.begin();
 
   Serial.println("\nConnected to the WiFi network");
   Serial.print("Network information for ");
-  Serial.println(WIFI_SSID);
+  Serial.println(WiFi.SSID());
 
   Serial.println("BSSID : " + WiFi.BSSIDstr());
   Serial.print("MAC Address : ");
@@ -84,10 +194,10 @@ void setup()
   Serial.print("ESP32 IP : ");
   Serial.println(WiFi.localIP());
 
-  // Time server 
+  // Time server
   Serial.print("Connecting to time server NTP: ");
   Serial.println(NTP_SERVER);
-  timeClient.begin();  
+  timeClient.begin();
   getNtpTime(); // Get the current time from the NTP server
 
   // Set the time to the current time from the NTP server
@@ -129,7 +239,7 @@ void setup()
   FastLED.showColor(CRGB::Black);
 
   // Loads the database
-  loadsDatabase();  
+  loadsDatabase();
   printDatabase(year()); // Debug
 }
 
@@ -184,15 +294,15 @@ void checkInputs()
   // Mode selectors
   if (digitalRead(PIN_MODE) == BUTTON_DOWN_STATE)
   {
-    // Change the mode 
+    // Change the mode
     gMode++;
-    if(gMode > MODE_MAX)
+    if (gMode > MODE_MAX)
     {
       gMode = MODE_MIN;
-    }    
+    }
     leds[21 - 1] = BUTTON_DOWN_COLOR;
   }
-  
+
   // Win 1
   if (digitalRead(PIN_WIN1) == BUTTON_DOWN_STATE)
   {
@@ -205,11 +315,6 @@ void checkInputs()
     showWinningAnimation();
     DatabaseSet(year(), month(), day(), 1, true);
   }
-
-
-
-
-
 
   // Check to see if the buttons have been pressed.
 
@@ -307,7 +412,6 @@ void checkInputs()
       leds[offset] = BUTTON_DOWN_COLOR;
     }
   }
-
 
   // if (digitalRead(PIN_PREV) == BUTTON_DOWN_STATE) { leds[28-1] = BUTTON_DOWN_COLOR; }
   // if (digitalRead(PIN_NEXT) == BUTTON_DOWN_STATE) { leds[35-1] = BUTTON_DOWN_COLOR; }
