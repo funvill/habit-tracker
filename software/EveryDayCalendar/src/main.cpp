@@ -49,14 +49,95 @@ AsyncWebServer webServer(HTTP_PORT);
 #include <DNSServer.h>
 DNSServer dnsServer;
 
-// ESPAsync_WiFiManager ESPAsync_wifiManager(&webServer, &dnsServer);
+#include <ESPConnect.h>
+
+void httpIndex(AsyncWebServerRequest *request)
+{
+  String html = "<!DOCTYPE html><html><head><title>EveryDayCalendar</title></head><body><h1>EveryDayCalendar</h1><p>Version 0.1.2 (2022-Dec-27)</p><p><a href='/update'>Firmware Update</a></p>";
+
+  html += "<p><strong>WiFi SSID</strong>: " + WiFi.SSID() + "</p>";
+  html += "<p><strong>WiFi RSSI</strong>: " + String(WiFi.RSSI()) + " dB</p>";
+  html += "<p><strong>WiFi IP</strong>: " + WiFi.localIP().toString() + "</p>";
+  html += "<p><strong>WiFi Gateway</strong>: " + WiFi.gatewayIP().toString() + "</p>";
+  html += "<p><strong>WiFi Subnet</strong>: " + WiFi.subnetMask().toString() + "</p>";
+  html += "<p><strong>WiFi MAC</strong>: " + WiFi.macAddress() + "</p>";
+  html += "<p><strong>WiFi BSSID</strong>: " + WiFi.BSSIDstr() + "</p>";
+
+  html += "<p><strong>Mode</strong>: " + String(gMode) + "</p>";
+  html += "<p><strong>LED_BRIGHTNESS</strong>: " + String(LED_BRIGHTNESS) + "</p>";
+  html += "<p><strong>HTTP_PORT</strong>: " + String(HTTP_PORT) + "</p>";
+  
+  html += "<p><strong>Timezone</strong>: " + String(timeZone) + "</p>";
+  html += "<p><strong>UTC Offset</strong>: " + String(utcOffsetInSeconds) + "</p>";
+  html += "<p><strong>NTP Server</strong>: " + String(NTP_SERVER) + "</p>";
+  html += "<p><strong>Current Epoch Time</strong>: " + String(timeClient.getEpochTime()) + "</p>";
+  
+  // digital clock display of the time
+  html += "<p><strong>TimeLib</strong>: ";
+  html += (String)year();
+  html += "/";
+  html += (String)month();
+  html += "/";
+  html += (String)day();
+  html += " ";
+  html += (String)hour();
+  html += ":";
+  html += (String)minute();
+  html += ":";
+  html += (String)second();
+  html += "</p>";
+
+  html += "<h2>Database: </h2><p>";
+
+  for (int dayOffset = 0; dayOffset < DAYS_IN_YEAR; dayOffset++)
+  {
+    uint8_t value = DatabaseGetOffsetRaw(dayOffset);
+
+    if (value > 0)
+    {
+      // Base on the day of the year, print the month and day
+      uint8_t month = 1;
+      uint16_t dayOfTheYear = dayOffset;
+      while (dayOfTheYear > monthDays(month, year()))
+      {
+        dayOfTheYear -= monthDays(month, year());
+        month++;
+      }
+      uint8_t day = dayOfTheYear;
+
+      html += (String)(dayOffset);
+      html += " [";
+      html += (String)(month);
+      html += "/";
+      html += (String)(day);
+      html += "] = ";
+      html += (String)(value);
+      html += "[";
+      for (int bitOffset = 0; bitOffset < 7; bitOffset++)
+      {
+        if (value & (1 << bitOffset))
+        {
+          html += "1";
+        }
+        else
+        {
+          html += "0";
+        }
+        html += ",";
+      }
+      html += "],  <br />";
+    }
+  }
+  html += "</p>";
+
+  html += "</body></html>";
+
+  request->send_P(200, "text/html", html.c_str());
+}
 
 void setupServer()
 {
-  webServer.on("/", HTTP_GET, [](AsyncWebServerRequest *request)
-               {
-      request->send_P(200, "text/html", "index page. Version 0.1.2 (2022-Dec-27)  <a href='/update'>update</a>");
-      Serial.println("Client Connected"); });
+  webServer.on("/", HTTP_GET, httpIndex);
 }
 
 void setup()
@@ -81,10 +162,17 @@ void setup()
   // Print a message to the serial port
   Serial.println("EveryDayCalendar v0.1.1 (2022-Dec-27)");
 
-  // your other setup stuff...
-  String captivePortalSSID = (String) "EveryDayCalendar captivePortal " + WiFi.macAddress();
-  WiFi.mode(WIFI_STA);
-  WiFi.softAP(captivePortalSSID.c_str());
+  // WifiManager
+  ESPConnect.autoConnect("EveryDayCalendar");
+  if (ESPConnect.begin(&webServer))
+  {
+    Serial.println("Connected to WiFi");
+    Serial.println("IPAddress: " + WiFi.localIP().toString());
+  }
+  else
+  {
+    Serial.println("Failed to connect to WiFi");
+  }
 
   // Start the DNS server
   dnsServer.start(53, "*", WiFi.softAPIP());
@@ -94,90 +182,73 @@ void setup()
   setupServer();
   webServer.begin();
 
-  /*/
+  Serial.println("\nConnected to the WiFi network");
+  Serial.print("Network information for ");
+  Serial.println(WIFI_SSID);
 
-    WiFi.mode(WIFI_STA); // Optional
-    WiFi.begin(WIFI_SSID, WIFI_PASSWORD);
-    Serial.println("\nConnecting");
+  Serial.println("BSSID : " + WiFi.BSSIDstr());
+  Serial.print("MAC Address : ");
+  Serial.println(WiFi.macAddress());
+  Serial.print("Gateway IP : ");
+  Serial.println(WiFi.gatewayIP());
+  Serial.print("Subnet Mask : ");
+  Serial.println(WiFi.subnetMask());
+  Serial.println((String) "RSSI : " + WiFi.RSSI() + " dB");
+  Serial.print("ESP32 IP : ");
+  Serial.println(WiFi.localIP());
 
-    while (WiFi.status() != WL_CONNECTED)
-    {
-      Serial.print(".");
-      loadingAnimation();
-      delay(100);
-    }
+  // Time server
+  Serial.print("Connecting to time server NTP: ");
+  Serial.println(NTP_SERVER);
+  timeClient.begin();
+  getNtpTime(); // Get the current time from the NTP server
 
-    Serial.println("\nConnected to the WiFi network");
-    Serial.print("Network information for ");
-    Serial.println(WIFI_SSID);
+  // Set the time to the current time from the NTP server
+  setSyncProvider(getNtpTime);
+  setSyncInterval(3600);
 
-    Serial.println("BSSID : " + WiFi.BSSIDstr());
-    Serial.print("MAC Address : ");
-    Serial.println(WiFi.macAddress());
-    Serial.print("Gateway IP : ");
-    Serial.println(WiFi.gatewayIP());
-    Serial.print("Subnet Mask : ");
-    Serial.println(WiFi.subnetMask());
-    Serial.println((String) "RSSI : " + WiFi.RSSI() + " dB");
-    Serial.print("ESP32 IP : ");
-    Serial.println(WiFi.localIP());
+  // Print the time status
+  getCurrentTime();
 
-    // Time server
-    Serial.print("Connecting to time server NTP: ");
-    Serial.println(NTP_SERVER);
-    timeClient.begin();
-    getNtpTime(); // Get the current time from the NTP server
+  // Set the status led to an output
+  pinMode(PIN_LED_STATUS, OUTPUT);
 
-    // Set the time to the current time from the NTP server
-    setSyncProvider(getNtpTime);
-    setSyncInterval(3600);
+  // Set all the buttons to inputs
+  pinMode(PIN_WEEK1, INPUT_PULLUP);
+  pinMode(PIN_WEEK2, INPUT_PULLUP);
+  pinMode(PIN_WEEK3, INPUT_PULLUP);
+  pinMode(PIN_WEEK4, INPUT_PULLUP);
+  pinMode(PIN_WEEK5, INPUT_PULLUP);
+  pinMode(PIN_WEEK6, INPUT_PULLUP);
+  pinMode(PIN_DAY1, INPUT_PULLUP);
+  pinMode(PIN_DAY2, INPUT_PULLUP);
+  pinMode(PIN_DAY3, INPUT_PULLUP);
+  pinMode(PIN_DAY4, INPUT_PULLUP);
+  pinMode(PIN_DAY5, INPUT_PULLUP);
+  pinMode(PIN_DAY6, INPUT_PULLUP);
+  pinMode(PIN_DAY7, INPUT_PULLUP);
+  pinMode(PIN_WIN1, INPUT_PULLUP);
+  pinMode(PIN_WIN2, INPUT_PULLUP);
+  pinMode(PIN_MODE, INPUT_PULLUP);
 
-    // Print the time status
-    getCurrentTime();
+  // If Serial is active you can't use these pins
+  // pinMode(PIN_PREV, INPUT_PULLUP);
+  // pinMode(PIN_NEXT, INPUT_PULLUP);
 
-    // Set the status led to an output
-    pinMode(PIN_LED_STATUS, OUTPUT);
+  // set master brightness control
+  FastLED.setBrightness(LED_BRIGHTNESS);
 
-    // Set all the buttons to inputs
-    pinMode(PIN_WEEK1, INPUT_PULLUP);
-    pinMode(PIN_WEEK2, INPUT_PULLUP);
-    pinMode(PIN_WEEK3, INPUT_PULLUP);
-    pinMode(PIN_WEEK4, INPUT_PULLUP);
-    pinMode(PIN_WEEK5, INPUT_PULLUP);
-    pinMode(PIN_WEEK6, INPUT_PULLUP);
-    pinMode(PIN_DAY1, INPUT_PULLUP);
-    pinMode(PIN_DAY2, INPUT_PULLUP);
-    pinMode(PIN_DAY3, INPUT_PULLUP);
-    pinMode(PIN_DAY4, INPUT_PULLUP);
-    pinMode(PIN_DAY5, INPUT_PULLUP);
-    pinMode(PIN_DAY6, INPUT_PULLUP);
-    pinMode(PIN_DAY7, INPUT_PULLUP);
-    pinMode(PIN_WIN1, INPUT_PULLUP);
-    pinMode(PIN_WIN2, INPUT_PULLUP);
-    pinMode(PIN_MODE, INPUT_PULLUP);
+  // Loading is done. Reset the LEDs to black
+  FastLED.showColor(CRGB::Black);
 
-    // If Serial is active you can't use these pins
-    // pinMode(PIN_PREV, INPUT_PULLUP);
-    // pinMode(PIN_NEXT, INPUT_PULLUP);
-
-    // set master brightness control
-    FastLED.setBrightness(LED_BRIGHTNESS);
-
-    // Loading is done. Reset the LEDs to black
-    FastLED.showColor(CRGB::Black);
-
-    // Loads the database
-    loadsDatabase();
-    printDatabase(year()); // Debug
-    */
+  // Loads the database
+  loadsDatabase();
+  printDatabase(year()); // Debug
 }
 
 // the loop function runs over and over again forever
 void loop()
 {
-  // dnsServer.processNextRequest();
-  return;
-
   // do some periodic updates
   EVERY_N_SECONDS(1)
   {

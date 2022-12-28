@@ -186,10 +186,21 @@ void DatabaseSet(uint8_t year, uint8_t month, uint8_t day, uint8_t offset, bool 
   Serial.println(database[dayOfTheYear]);
 }
 
-bool DatabaseGet(uint8_t year, uint8_t month, uint8_t day, uint8_t offset)
+uint8_t DatabaseGetOffsetRaw(uint16_t dayOffset) {
+  if( dayOffset > DAYS_IN_YEAR ) {
+    return 0;
+  }
+  return database[dayOffset];
+}
+
+uint8_t DatabaseGetRaw(uint8_t year, uint8_t month, uint8_t day)
 {
   uint dayOfTheYear = GetDayOfTheYear(year, month, day);
-  return bitRead(database[dayOfTheYear], offset);
+  return database[dayOfTheYear];
+}
+bool DatabaseGet(uint8_t year, uint8_t month, uint8_t day, uint8_t offset)
+{
+  return bitRead(DatabaseGetRaw(year, month, day), offset);
 }
 
 // ====================

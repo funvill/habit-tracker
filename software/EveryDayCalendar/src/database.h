@@ -10,4 +10,6 @@ void resetDatabase();
 void printDatabase(uint16_t year);
 uint GetDayOfTheYear(uint8_t year, uint8_t month, uint8_t day);
 bool DatabaseGet(uint8_t year, uint8_t month, uint8_t day, uint8_t offset);
+uint8_t DatabaseGetOffsetRaw(uint16_t dayOffset);
+uint8_t DatabaseGetRaw(uint8_t year, uint8_t month, uint8_t day);
 void DatabaseSet(uint8_t year, uint8_t month, uint8_t day, uint8_t offset, bool success);
