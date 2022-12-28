@@ -7,6 +7,11 @@
 #include <WiFiUdp.h>
 #include "EEPROM.h"
 
+#include "globals.h"
+#include "database.h"
+
+static uint8_t gMode;
+
 const int timeZone = -8; // Pacific Standard Time (USA)
 const long utcOffsetInSeconds = 8 * 60 * 60;
 const char *NTP_SERVER = "pool.ntp.org";
@@ -21,225 +26,21 @@ void flipTheStatusLED();
 void checkInputs();
 void getCurrentTime();
 time_t getNtpTime();
-int monthDays(uint8_t month, uint8_t year);
-void displayLEDsForMonth();
 
+// Modes
+void modeCalendar();
+
+// Helpers
 void loadingAnimation();
 void showWinningAnimation();
 
-// Pins
-// ESP32 Pin out
-// https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-reference/peripherals/gpio.html
-const int PIN_WEEK1 = 4;   // IO-4  or pin 26
-const int PIN_WEEK2 = 16;  // IO-16 or pin 27
-const int PIN_WEEK3 = 17;  // IO-17 or pin 28
-const int PIN_WEEK4 = 5;   // IO-5  or pin 29
-const int PIN_WEEK5 = 19;  // IO-19 or pin 31
-const int PIN_WEEK6 = 18;  // IO-18 or pin 30
-const int PIN_DAY1 = 23;   // IO-23 or pin 37
-const int PIN_DAY2 = 22;   // IO-22 or pin 36
-const int PIN_DAY3 = 21;   // IO-21 or pin 33
-const int PIN_DAY4 = 15;   // IO-15 or pin 23
-const int PIN_DAY5 = 12;   // IO-12 or pin 14
-const int PIN_DAY6 = 14;   // IO-14 or pin 13
-const int PIN_DAY7 = 27;   // IO-27 or pin 12, GPIO27, ADC2_CH7, TOUCH7, RTC_GPIO17, EMAC_RX_DV
-const int PIN_WIN1 = 26;   // IO-26 or pin 11
-const int PIN_WIN2 = 33;   // IO-33 or pin  9
-const int PIN_MODE = 32;   // IO-32 or pin  8
-const int PIN_NEXT = 34;   // IO-34 or pin  6, Shares pins with U0RXD (serial). If serial is active you can't use thse pins
-const int PIN_PREV = 35;   // IO-35 or pin  7, Shares pins with U0TXD (serial)
-const int PIN_ONEWIRE = 2; // IO-0 or pin 24
-
-const int PIN_LED_CALENDAR = 25; // IO-25 or pin 10
-const int PIN_LED_STATUS = 13;   // IO-13 or pin 16
-
 // NeoPixel
-const uint8_t PIXELS_COUNT = 42; // 7x6
 CRGB leds[PIXELS_COUNT];
-
-const uint8_t LED_BRIGHTNESS = 64; // 0 DARK - 255 BRIGHT
-const ulong FRAMES_PER_SECOND = 120;
-
-static uint8_t gHue = 0;
-
-// https://github.com/FastLED/FastLED/wiki/Pixel-reference
-
-const CHSV COLOR_SUCCESS = CHSV(96, 255, 128); // Green
-const CHSV COLOR_FAIL = CHSV(0, 255, 128);     // RED
-const CHSV COLOR_FUTURE = CHSV(128, 255, 128); // Aqua
-const CHSV COLOR_NOT_IN_MONTH = CHSV(0, 0, 0); // Black
-
-// Helpful for debugging when identifiying
-// The actual LED on the matrix that is being addressed
-const uint8_t DAY1 = 0;
-const uint8_t DAY2 = 1;
-const uint8_t DAY3 = 2;
-const uint8_t DAY4 = 3;
-const uint8_t DAY5 = 4;
-const uint8_t DAY6 = 5;
-const uint8_t DAY7 = 6;
-const uint8_t DAY8 = 7;
-const uint8_t DAY9 = 8;
-const uint8_t DAY10 = 9;
-const uint8_t DAY11 = 10;
-const uint8_t DAY12 = 11;
-const uint8_t DAY13 = 12;
-const uint8_t DAY14 = 13;
-const uint8_t DAY15 = 14;
-const uint8_t DAY16 = 15;
-const uint8_t DAY17 = 16;
-const uint8_t DAY18 = 17;
-const uint8_t DAY19 = 18;
-const uint8_t DAY20 = 19;
-const uint8_t DAY21 = 20;
-const uint8_t DAY22 = 21;
-const uint8_t DAY23 = 22;
-const uint8_t DAY24 = 23;
-const uint8_t DAY25 = 24;
-const uint8_t DAY26 = 25;
-const uint8_t DAY27 = 26;
-const uint8_t DAY28 = 27;
-const uint8_t DAY29 = 28;
-const uint8_t DAY30 = 29;
-const uint8_t DAY31 = 30;
-const uint8_t DAY32 = 31;
-const uint8_t DAY33 = 32;
-const uint8_t DAY34 = 33;
-const uint8_t DAY35 = 34;
-const uint8_t DAY36 = 35;
-const uint8_t DAY37 = 36;
-const uint8_t DAY38 = 37;
-const uint8_t DAY39 = 38;
-const uint8_t DAY40 = 39;
-const uint8_t DAY41 = 40;
-const uint8_t DAY42 = 41;
-
-// Database
-// ====================
-#define DAYS_IN_YEAR 365
-uint8_t database[DAYS_IN_YEAR];
-
-// loads the database from the EEPROM into memory
-void loadsDatabase()
-{
-  // Sets the current database to empty (0xFF)
-  for (int i = 0; i < DAYS_IN_YEAR; i++)
-  {
-    database[i] = 0; // OFF
-  }
-
-  Serial.println("Loading database from EEPROM");
-  // Load the database from EEPROM
-  if( ! EEPROM.begin(DAYS_IN_YEAR) ) {
-    Serial.println("Failed to initialise EEPROM");
-    Serial.println("Restarting...");
-    delay(1000);
-    ESP.restart();
-  }
-  EEPROM.get(0, database);
-  EEPROM.end();  
-}
-
-void resetDatabase() {
-  Serial.println("Reseting the database, and saving it to EEPROM");
-  for (int i = 0; i < DAYS_IN_YEAR; i++) {
-    database[i] = 0; // OFF
-  }
-  saveDatabase();
-}
-
-
-bool saveDatabase() {
-
-  Serial.println("Saving database to EEPROM");
-
-
-  // Save the database to EEPROM
-  EEPROM.begin(DAYS_IN_YEAR);
-  EEPROM.put(0, database);
-  EEPROM.commit();
-  EEPROM.end();
-  return true;
-}
-
-void printDatabase()
-{
-  Serial.println("Print Database: ");
-  for (int offset = 0; offset < DAYS_IN_YEAR; offset++)
-  {
-    if (database[offset] > 0)
-    {
-      // Base on the day of the year, print the month and day
-      uint8_t month = 1;
-      uint16_t dayOfTheYear = offset;
-      while (dayOfTheYear > monthDays(month, year()))
-      {
-        dayOfTheYear -= monthDays(month, year());
-        month++;
-      }
-      uint8_t day = dayOfTheYear;
-
-      Serial.print(offset);
-      Serial.print(" [");
-      Serial.print(month);
-      Serial.print("/");
-      Serial.print(day);
-      Serial.print("] = ");
-      Serial.print(database[offset]);
-      Serial.print(",  ");
-    }
-  }
-  Serial.println();
-}
-
-// Return the day of the year for the given year, month and day
-uint GetDayOfTheYear(uint8_t year, uint8_t month, uint8_t day)
-{
-  if (month > 12 || day > 31)
-  {
-    return 0;
-  }
-
-  uint dayOfTheYear = 0;
-  for (int i = 0; i < month; i++)
-  {
-    dayOfTheYear += monthDays(i, year);
-  }
-  dayOfTheYear += day;
-  return dayOfTheYear;
-}
-
-void DatabaseSet(uint8_t year, uint8_t month, uint8_t day, uint8_t offset, bool success)
-{
-  uint dayOfTheYear = GetDayOfTheYear(year, month, day);
-  database[dayOfTheYear] = bitWrite(database[dayOfTheYear], offset, success);
-  saveDatabase();
-
-  Serial.print("DatabaseSet year: ");
-  Serial.print(year);
-  Serial.print(", month: ");
-  Serial.print(month);
-
-  Serial.print(", dayOfTheYear: ");
-  Serial.print(dayOfTheYear);
-  Serial.print(", offset: ");
-  Serial.print(offset);
-  Serial.print(", success: ");
-  Serial.print(success);
-  Serial.print(", value: ");
-  Serial.println(database[dayOfTheYear]);
-}
-
-bool DatabaseGet(uint8_t year, uint8_t month, uint8_t day, uint8_t offset)
-{
-  uint dayOfTheYear = GetDayOfTheYear(year, month, day);
-  return bitRead(database[dayOfTheYear], offset);
-}
-
-// ====================
 
 void setup()
 {
+  gMode = MODE_CALENDAR;
+
   // Add the LEDS first as we use them for status and loading animations
   FastLED.addLeds<NEOPIXEL, PIN_LED_CALENDAR>(leds, PIXELS_COUNT);
 
@@ -273,6 +74,8 @@ void setup()
   Serial.println(WIFI_SSID);
 
   Serial.println("BSSID : " + WiFi.BSSIDstr());
+  Serial.print("MAC Address : ");
+  Serial.println(WiFi.macAddress());
   Serial.print("Gateway IP : ");
   Serial.println(WiFi.gatewayIP());
   Serial.print("Subnet Mask : ");
@@ -281,13 +84,11 @@ void setup()
   Serial.print("ESP32 IP : ");
   Serial.println(WiFi.localIP());
 
+  // Time server 
   Serial.print("Connecting to time server NTP: ");
-  Serial.print(NTP_SERVER);
-  // Set up the time client
-  timeClient.begin();
-
-  // Get the current time from the NTP server
-  getNtpTime();
+  Serial.println(NTP_SERVER);
+  timeClient.begin();  
+  getNtpTime(); // Get the current time from the NTP server
 
   // Set the time to the current time from the NTP server
   setSyncProvider(getNtpTime);
@@ -328,26 +129,14 @@ void setup()
   FastLED.showColor(CRGB::Black);
 
   // Loads the database
-  loadsDatabase();
-
-  // ToDo: Detect that this is the first load of the database from the EEPOM and set it to all 0's
-  // resetDatabase();
-
-  // Debug. Set some success over the last month.
-  // DatabaseSet(year(), month(), 3, 0, true);
-  // DatabaseSet(year(), month(), 6, 0, true);
-  // DatabaseSet(year(), month(), 9, 0, true);
-  DatabaseSet(year(), month(), 12, 0, true);
-  DatabaseSet(year(), month(), 15, 0, true);
-
-  printDatabase(); // Debug
+  loadsDatabase();  
+  printDatabase(year()); // Debug
 }
 
 // the loop function runs over and over again forever
 void loop()
 {
   // do some periodic updates
-  EVERY_N_MILLISECONDS(50) { gHue += 1; } // slowly cycle the "base color" through the rainbow
   EVERY_N_SECONDS(1)
   {
     flipTheStatusLED();
@@ -361,8 +150,16 @@ void loop()
   // Set all pixels to black
   FastLED.showColor(CRGB::Black);
 
-  // Update only the months pixels
-  displayLEDsForMonth();
+  switch (gMode)
+  {
+  case MODE_CALENDAR:
+    modeCalendar();
+    break;
+  default:
+    Serial.print("Unknown mode. gMode: ");
+    Serial.println(gMode);
+    break;
+  }
 
   // Check for user input to see if we need to change modes
   checkInputs();
@@ -383,6 +180,36 @@ void checkInputs()
 {
   const uint8_t BUTTON_DOWN_STATE = LOW;
   const CRGB BUTTON_DOWN_COLOR = CRGB::Gold;
+
+  // Mode selectors
+  if (digitalRead(PIN_MODE) == BUTTON_DOWN_STATE)
+  {
+    // Change the mode 
+    gMode++;
+    if(gMode > MODE_MAX)
+    {
+      gMode = MODE_MIN;
+    }    
+    leds[21 - 1] = BUTTON_DOWN_COLOR;
+  }
+  
+  // Win 1
+  if (digitalRead(PIN_WIN1) == BUTTON_DOWN_STATE)
+  {
+    showWinningAnimation();
+    DatabaseSet(year(), month(), day(), 0, true);
+  }
+  // Win 2
+  if (digitalRead(PIN_WIN2) == BUTTON_DOWN_STATE)
+  {
+    showWinningAnimation();
+    DatabaseSet(year(), month(), day(), 1, true);
+  }
+
+
+
+
+
 
   // Check to see if the buttons have been pressed.
 
@@ -481,20 +308,7 @@ void checkInputs()
     }
   }
 
-  if (digitalRead(PIN_WIN1) == BUTTON_DOWN_STATE)
-  {
-    showWinningAnimation();
-    DatabaseSet(year(), month(), day(), 0, true);
-  }
-  if (digitalRead(PIN_WIN2) == BUTTON_DOWN_STATE)
-  {
-    showWinningAnimation();
-    DatabaseSet(year(), month(), day(), 1, true);
-  }
-  if (digitalRead(PIN_MODE) == BUTTON_DOWN_STATE)
-  {
-    leds[21 - 1] = BUTTON_DOWN_COLOR;
-  }
+
   // if (digitalRead(PIN_PREV) == BUTTON_DOWN_STATE) { leds[28-1] = BUTTON_DOWN_COLOR; }
   // if (digitalRead(PIN_NEXT) == BUTTON_DOWN_STATE) { leds[35-1] = BUTTON_DOWN_COLOR; }
 }
@@ -543,37 +357,6 @@ void getCurrentTime()
   // 0 = Sunday, 1 = Monday, 2 = Tuesday, 3 = Wednesday, 4 = Thursday, 5 = Friday, 6 = Saturday,
 }
 
-// This function returns the number of days in a given month and year
-// It takes the month and year as parameters
-int monthDays(uint8_t month, uint8_t year)
-{
-  // February
-  if (month == 2)
-  {
-    // Leap year
-    if (year % 4 == 0)
-    {
-      return 29;
-    }
-    // Not a leap year
-    else
-    {
-      return 28;
-    }
-  }
-  if (month == 4 || month == 6 || month == 9 || month == 11)
-  {
-    return 30;
-  }
-
-  if (month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12)
-  {
-    return 31;
-  }
-
-  return 0;
-}
-
 time_t getNtpTime()
 {
   timeClient.update();
@@ -597,7 +380,7 @@ CRGB breathBetweenToColors(CHSV start, CHSV end, float pulseSpeed = 2.0)
   return CHSV(hue, sat, val);
 }
 
-void displayLEDsForMonth()
+void modeCalendar()
 {
 
   // Calulate the Epoch for the start of this month (1st)
@@ -627,10 +410,6 @@ void displayLEDsForMonth()
     }
   }
 
-  // The current day of the month should fade in and out of the cursor color (gold)
-  // and the background color showing what values have been set so far.
-  leds[day() + dayOfWeek - 1] = breathBetweenToColors(COLOR_FAIL, COLOR_SUCCESS, 2.1);
-
   // fill the future days with gray color (no data)
   for (int offset_pixel = dayOfWeek + day(); offset_pixel < dayOfWeek + daysInMonth; offset_pixel++)
   {
@@ -644,6 +423,10 @@ void displayLEDsForMonth()
   {
     leds[offset_pixel] = COLOR_NOT_IN_MONTH;
   }
+
+  // The current day of the month should fade in and out of the cursor color (gold)
+  // and the background color showing what values have been set so far.
+  leds[day() + dayOfWeek - 1] = breathBetweenToColors(COLOR_FAIL, COLOR_SUCCESS, 2.0);
 }
 
 // Starting with the top left, sets leds illumiated in a progress bar.
@@ -670,8 +453,10 @@ void loadingAnimation()
   }
 }
 
-void SetAllLEDs(CHSV color) {
-  for( int i = 0; i < PIXELS_COUNT; i++) {
+void SetAllLEDs(CHSV color)
+{
+  for (int i = 0; i < PIXELS_COUNT; i++)
+  {
     leds[i] = color;
   }
   FastLED.show();
@@ -682,7 +467,7 @@ void showWinningAnimation()
 {
   for (int offset = 0; offset < 2; offset++)
   {
-    SetAllLEDs(COLOR_SUCCESS);    
+    SetAllLEDs(COLOR_SUCCESS);
     delay(200);
     SetAllLEDs(COLOR_NOT_IN_MONTH);
     delay(200);
