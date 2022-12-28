@@ -37,8 +37,31 @@ void showWinningAnimation();
 // NeoPixel
 CRGB leds[PIXELS_COUNT];
 
+#include <WiFi.h>
+#include <AsyncTCP.h>
+#include "ESPAsyncWebServer.h" // Used for displaying webpages
+#include <AsyncElegantOTA.h>   // Used for Update via webpage. https://github.com/ayushsharma82/AsyncElegantOTA
+
+// Set up the web server.
+AsyncWebServer webServer(HTTP_PORT);
+
+// DNS server used for captive portal
+#include <DNSServer.h>
+DNSServer dnsServer;
+
+// ESPAsync_WiFiManager ESPAsync_wifiManager(&webServer, &dnsServer);
+
+void setupServer()
+{
+  webServer.on("/", HTTP_GET, [](AsyncWebServerRequest *request)
+               {
+      request->send_P(200, "text/html", "index page. Version 0.1.2 (2022-Dec-27)  <a href='/update'>update</a>");
+      Serial.println("Client Connected"); });
+}
+
 void setup()
 {
+
   gMode = MODE_CALENDAR;
 
   // Add the LEDS first as we use them for status and loading animations
@@ -58,84 +81,103 @@ void setup()
   // Print a message to the serial port
   Serial.println("EveryDayCalendar v0.1.1 (2022-Dec-27)");
 
-  WiFi.mode(WIFI_STA); // Optional
-  WiFi.begin(WIFI_SSID, WIFI_PASSWORD);
-  Serial.println("\nConnecting");
+  // your other setup stuff...
+  String captivePortalSSID = (String) "EveryDayCalendar captivePortal " + WiFi.macAddress();
+  WiFi.mode(WIFI_STA);
+  WiFi.softAP(captivePortalSSID.c_str());
 
-  while (WiFi.status() != WL_CONNECTED)
-  {
-    Serial.print(".");
-    loadingAnimation();
-    delay(100);
-  }
+  // Start the DNS server
+  dnsServer.start(53, "*", WiFi.softAPIP());
 
-  Serial.println("\nConnected to the WiFi network");
-  Serial.print("Network information for ");
-  Serial.println(WIFI_SSID);
+  // Configure the web server endpoints.
+  AsyncElegantOTA.begin(&webServer); // Start AsyncElegantOTA
+  setupServer();
+  webServer.begin();
 
-  Serial.println("BSSID : " + WiFi.BSSIDstr());
-  Serial.print("MAC Address : ");
-  Serial.println(WiFi.macAddress());
-  Serial.print("Gateway IP : ");
-  Serial.println(WiFi.gatewayIP());
-  Serial.print("Subnet Mask : ");
-  Serial.println(WiFi.subnetMask());
-  Serial.println((String) "RSSI : " + WiFi.RSSI() + " dB");
-  Serial.print("ESP32 IP : ");
-  Serial.println(WiFi.localIP());
+  /*/
 
-  // Time server 
-  Serial.print("Connecting to time server NTP: ");
-  Serial.println(NTP_SERVER);
-  timeClient.begin();  
-  getNtpTime(); // Get the current time from the NTP server
+    WiFi.mode(WIFI_STA); // Optional
+    WiFi.begin(WIFI_SSID, WIFI_PASSWORD);
+    Serial.println("\nConnecting");
 
-  // Set the time to the current time from the NTP server
-  setSyncProvider(getNtpTime);
-  setSyncInterval(3600);
+    while (WiFi.status() != WL_CONNECTED)
+    {
+      Serial.print(".");
+      loadingAnimation();
+      delay(100);
+    }
 
-  // Print the time status
-  getCurrentTime();
+    Serial.println("\nConnected to the WiFi network");
+    Serial.print("Network information for ");
+    Serial.println(WIFI_SSID);
 
-  // Set the status led to an output
-  pinMode(PIN_LED_STATUS, OUTPUT);
+    Serial.println("BSSID : " + WiFi.BSSIDstr());
+    Serial.print("MAC Address : ");
+    Serial.println(WiFi.macAddress());
+    Serial.print("Gateway IP : ");
+    Serial.println(WiFi.gatewayIP());
+    Serial.print("Subnet Mask : ");
+    Serial.println(WiFi.subnetMask());
+    Serial.println((String) "RSSI : " + WiFi.RSSI() + " dB");
+    Serial.print("ESP32 IP : ");
+    Serial.println(WiFi.localIP());
 
-  // Set all the buttons to inputs
-  pinMode(PIN_WEEK1, INPUT_PULLUP);
-  pinMode(PIN_WEEK2, INPUT_PULLUP);
-  pinMode(PIN_WEEK3, INPUT_PULLUP);
-  pinMode(PIN_WEEK4, INPUT_PULLUP);
-  pinMode(PIN_WEEK5, INPUT_PULLUP);
-  pinMode(PIN_WEEK6, INPUT_PULLUP);
-  pinMode(PIN_DAY1, INPUT_PULLUP);
-  pinMode(PIN_DAY2, INPUT_PULLUP);
-  pinMode(PIN_DAY3, INPUT_PULLUP);
-  pinMode(PIN_DAY4, INPUT_PULLUP);
-  pinMode(PIN_DAY5, INPUT_PULLUP);
-  pinMode(PIN_DAY6, INPUT_PULLUP);
-  pinMode(PIN_DAY7, INPUT_PULLUP);
-  pinMode(PIN_WIN1, INPUT_PULLUP);
-  pinMode(PIN_WIN2, INPUT_PULLUP);
-  pinMode(PIN_MODE, INPUT_PULLUP);
+    // Time server
+    Serial.print("Connecting to time server NTP: ");
+    Serial.println(NTP_SERVER);
+    timeClient.begin();
+    getNtpTime(); // Get the current time from the NTP server
 
-  // If Serial is active you can't use these pins
-  // pinMode(PIN_PREV, INPUT_PULLUP);
-  // pinMode(PIN_NEXT, INPUT_PULLUP);
+    // Set the time to the current time from the NTP server
+    setSyncProvider(getNtpTime);
+    setSyncInterval(3600);
 
-  // set master brightness control
-  FastLED.setBrightness(LED_BRIGHTNESS);
+    // Print the time status
+    getCurrentTime();
 
-  // Loading is done. Reset the LEDs to black
-  FastLED.showColor(CRGB::Black);
+    // Set the status led to an output
+    pinMode(PIN_LED_STATUS, OUTPUT);
 
-  // Loads the database
-  loadsDatabase();  
-  printDatabase(year()); // Debug
+    // Set all the buttons to inputs
+    pinMode(PIN_WEEK1, INPUT_PULLUP);
+    pinMode(PIN_WEEK2, INPUT_PULLUP);
+    pinMode(PIN_WEEK3, INPUT_PULLUP);
+    pinMode(PIN_WEEK4, INPUT_PULLUP);
+    pinMode(PIN_WEEK5, INPUT_PULLUP);
+    pinMode(PIN_WEEK6, INPUT_PULLUP);
+    pinMode(PIN_DAY1, INPUT_PULLUP);
+    pinMode(PIN_DAY2, INPUT_PULLUP);
+    pinMode(PIN_DAY3, INPUT_PULLUP);
+    pinMode(PIN_DAY4, INPUT_PULLUP);
+    pinMode(PIN_DAY5, INPUT_PULLUP);
+    pinMode(PIN_DAY6, INPUT_PULLUP);
+    pinMode(PIN_DAY7, INPUT_PULLUP);
+    pinMode(PIN_WIN1, INPUT_PULLUP);
+    pinMode(PIN_WIN2, INPUT_PULLUP);
+    pinMode(PIN_MODE, INPUT_PULLUP);
+
+    // If Serial is active you can't use these pins
+    // pinMode(PIN_PREV, INPUT_PULLUP);
+    // pinMode(PIN_NEXT, INPUT_PULLUP);
+
+    // set master brightness control
+    FastLED.setBrightness(LED_BRIGHTNESS);
+
+    // Loading is done. Reset the LEDs to black
+    FastLED.showColor(CRGB::Black);
+
+    // Loads the database
+    loadsDatabase();
+    printDatabase(year()); // Debug
+    */
 }
 
 // the loop function runs over and over again forever
 void loop()
 {
+  // dnsServer.processNextRequest();
+  return;
+
   // do some periodic updates
   EVERY_N_SECONDS(1)
   {
@@ -184,15 +226,15 @@ void checkInputs()
   // Mode selectors
   if (digitalRead(PIN_MODE) == BUTTON_DOWN_STATE)
   {
-    // Change the mode 
+    // Change the mode
     gMode++;
-    if(gMode > MODE_MAX)
+    if (gMode > MODE_MAX)
     {
       gMode = MODE_MIN;
-    }    
+    }
     leds[21 - 1] = BUTTON_DOWN_COLOR;
   }
-  
+
   // Win 1
   if (digitalRead(PIN_WIN1) == BUTTON_DOWN_STATE)
   {
@@ -205,11 +247,6 @@ void checkInputs()
     showWinningAnimation();
     DatabaseSet(year(), month(), day(), 1, true);
   }
-
-
-
-
-
 
   // Check to see if the buttons have been pressed.
 
@@ -307,7 +344,6 @@ void checkInputs()
       leds[offset] = BUTTON_DOWN_COLOR;
     }
   }
-
 
   // if (digitalRead(PIN_PREV) == BUTTON_DOWN_STATE) { leds[28-1] = BUTTON_DOWN_COLOR; }
   // if (digitalRead(PIN_NEXT) == BUTTON_DOWN_STATE) { leds[35-1] = BUTTON_DOWN_COLOR; }
