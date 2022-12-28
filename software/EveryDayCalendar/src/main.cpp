@@ -19,9 +19,6 @@ const char *NTP_SERVER = "pool.ntp.org";
 WiFiUDP ntpUDP;
 NTPClient timeClient(ntpUDP, NTP_SERVER, utcOffsetInSeconds);
 
-const char *WIFI_SSID = "MagesticCanadianGoose";
-const char *WIFI_PASSWORD = "Good-Gray-Sloth";
-
 void flipTheStatusLED();
 void checkInputs();
 void getCurrentTime();
@@ -66,7 +63,7 @@ void httpIndex(AsyncWebServerRequest *request)
   html += "<p><strong>Mode</strong>: " + String(gMode) + "</p>";
   html += "<p><strong>LED_BRIGHTNESS</strong>: " + String(LED_BRIGHTNESS) + "</p>";
   html += "<p><strong>HTTP_PORT</strong>: " + String(HTTP_PORT) + "</p>";
-  
+
   html += "<p><strong>Timezone</strong>: " + String(timeZone) + "</p>";
   html += "<p><strong>UTC Offset</strong>: " + String(utcOffsetInSeconds) + "</p>";
   html += "<p><strong>NTP Server</strong>: " + String(NTP_SERVER) + "</p>";
@@ -184,7 +181,7 @@ void setup()
 
   Serial.println("\nConnected to the WiFi network");
   Serial.print("Network information for ");
-  Serial.println(WIFI_SSID);
+  Serial.println(WiFi.SSID());
 
   Serial.println("BSSID : " + WiFi.BSSIDstr());
   Serial.print("MAC Address : ");
