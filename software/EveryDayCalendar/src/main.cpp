@@ -8,6 +8,7 @@
 #include "EEPROM.h"
 
 #include "globals.h"
+#include "font.h"
 #include "database.h"
 
 static uint8_t gMode;
@@ -30,6 +31,8 @@ void modeCalendar();
 // Helpers
 void loadingAnimation();
 void showWinningAnimation();
+void ShowGlyph(const uint8_t *glyph, CHSV color);
+void ScrollText(String text, CHSV color, uint16_t delayMs = 100);
 
 // NeoPixel
 CRGB leds[PIXELS_COUNT];
@@ -68,7 +71,7 @@ void httpIndex(AsyncWebServerRequest *request)
   html += "<p><strong>UTC Offset</strong>: " + String(utcOffsetInSeconds) + "</p>";
   html += "<p><strong>NTP Server</strong>: " + String(NTP_SERVER) + "</p>";
   html += "<p><strong>Current Epoch Time</strong>: " + String(timeClient.getEpochTime()) + "</p>";
-  
+
   // digital clock display of the time
   html += "<p><strong>TimeLib</strong>: ";
   html += (String)year();
@@ -256,6 +259,9 @@ void loop()
   {
     getCurrentTime();
   }
+
+  ScrollText("hello world", COLOR_SUCCESS);
+  return;
 
   // Set all pixels to black
   FastLED.showColor(CRGB::Black);
@@ -575,5 +581,77 @@ void showWinningAnimation()
     delay(200);
     SetAllLEDs(COLOR_NOT_IN_MONTH);
     delay(200);
+  }
+}
+
+uint16_t XY(uint8_t x, uint8_t y)
+{
+  if (x >= LED_MATRIX_WIDTH)
+    return -1;
+  if (y >= LED_MATRIX_HEIGHT)
+    return -1;
+
+  return (y * LED_MATRIX_WIDTH) + x;
+}
+
+// xOffset - Where in the frame to start drawing the glyph from the left. 0 = start at the left
+// xGlyphOffset - clips the glyph from the left to right. 0 = no clipping
+void ShowGlyph(const uint8_t *glyph, CHSV color, uint8_t xOffset = 0, uint8_t xGlyphOffset = 0)
+{
+  for (uint8_t y = 0; y < LED_MATRIX_HEIGHT; y++)
+  {
+    for (uint8_t x = xGlyphOffset; x < LED_MATRIX_WIDTH; x++)
+    {
+      uint16_t ledOffset = XY(xOffset + x - xGlyphOffset, y);
+      if (ledOffset == -1)
+        continue; // out of bounds
+
+      if (glyph[y] & (1 << (LED_MATRIX_WIDTH - x)))
+      {
+        leds[ledOffset] = color;
+      }
+      else
+      {
+        leds[ledOffset] = COLOR_OFF;
+      }
+    }
+  }
+  FastLED.show();
+}
+
+void ScrollText(String text, CHSV color, uint16_t delayMs /* = 100 */)
+{
+  // Debug set the default text
+  text = "abcdefghijklmnopqrstuvwxyz";
+  delayMs = 300;
+
+  // Always add a space to the end so that the text scrolls off the end of the display  
+  text += " "; 
+
+  // Scroll thought the text one letter at a time, then scroll the next letter in
+  // and scroll the first letter out. Repeat until the end of the text.
+  for (int offset = 0; offset < text.length() * LED_MATRIX_WIDTH; offset++)
+  {
+    const uint8_t lowerCaseAOffset = 97 +1 ; 
+    // Find the left letter and right letter
+    uint8_t leftOffsetIntoFont = text[(offset / LED_MATRIX_WIDTH)] - lowerCaseAOffset;
+    if (text[(offset / LED_MATRIX_WIDTH)] == ' ')
+    {
+      leftOffsetIntoFont = 0; // 0 = space
+    }
+    uint8_t rightOffsetIntoFont = text[(offset / LED_MATRIX_WIDTH + 1)] - lowerCaseAOffset;
+    if (text[(offset / LED_MATRIX_WIDTH + 1)] == ' ')
+    {
+      rightOffsetIntoFont = 0; // 0 = space
+    }
+
+    const uint8_t *leftLetter = FONT_TWO[leftOffsetIntoFont];
+    const uint8_t *rightLetter = FONT_TWO[rightOffsetIntoFont];
+
+    ShowGlyph(leftLetter, color, 0, offset % LED_MATRIX_WIDTH);
+    ShowGlyph(rightLetter, color, LED_MATRIX_WIDTH - offset % LED_MATRIX_WIDTH, 0);
+
+    delay(delayMs);
+    FastLED.show();
   }
 }
