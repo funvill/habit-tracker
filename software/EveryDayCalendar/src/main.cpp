@@ -12,10 +12,20 @@
 #include "database.h"
 
 static uint8_t gMode;
+// static uint8_t gCurrsor;
+static uint16_t gCurrentYear;
+static uint8_t gCurrentMonth;
+
+const String VERSION = "v 0.1.2";
 
 const int timeZone = -8; // Pacific Standard Time (USA)
 const long utcOffsetInSeconds = 8 * 60 * 60;
 const char *NTP_SERVER = "pool.ntp.org";
+
+static const char *MONTHS_SHORT[] = {"XXX", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"};
+
+// 0 = Sunday, 1 = Monday, 2 = Tuesday, 3 = Wednesday, 4 = Thursday, 5 = Friday, 6 = Saturday,
+static const char *DAY_SHORT[] = {"Sun", "Mon", "Tue", "Wen", "Thu", "Fri", "Sat"};
 
 WiFiUDP ntpUDP;
 NTPClient timeClient(ntpUDP, NTP_SERVER, utcOffsetInSeconds);
@@ -33,6 +43,19 @@ void loadingAnimation();
 void showWinningAnimation();
 void ShowGlyph(const uint8_t *glyph, CHSV color);
 void ScrollText(String text, CHSV color = COLOR_FONT, uint16_t delayMs = 100);
+
+#include <Time.h>
+time_t GetEpochForDate(uint16_t year, uint8_t month, uint8_t day)
+{
+  tmElements_t tmSet;
+  tmSet.Year = year - 1970; // tmElements_t year is offset from 1970
+  tmSet.Month = month;      // Jan = 0
+  tmSet.Day = day;          // 1st = 0
+  tmSet.Hour = 0;
+  tmSet.Minute = 0;
+  tmSet.Second = 1;
+  return makeTime(tmSet);
+}
 
 // NeoPixel
 CRGB leds[PIXELS_COUNT];
@@ -53,8 +76,9 @@ DNSServer dnsServer;
 
 void httpIndex(AsyncWebServerRequest *request)
 {
-  String html = "<!DOCTYPE html><html><head><title>EveryDayCalendar</title></head><body><h1>EveryDayCalendar</h1><p>Version 0.1.2 (2022-Dec-27)</p><p><a href='/update'>Firmware Update</a></p>";
+  String html = "<!DOCTYPE html><html><head><title>EveryDayCalendar</title></head><body><h1>EveryDayCalendar</h1><p>Version " + VERSION + "</p><p><a href='/update'>Firmware Update</a></p>";
 
+  html += "<h2>WIFI</h2>";
   html += "<p><strong>WiFi SSID</strong>: " + WiFi.SSID() + "</p>";
   html += "<p><strong>WiFi RSSI</strong>: " + String(WiFi.RSSI()) + " dB</p>";
   html += "<p><strong>WiFi IP</strong>: " + WiFi.localIP().toString() + "</p>";
@@ -63,7 +87,8 @@ void httpIndex(AsyncWebServerRequest *request)
   html += "<p><strong>WiFi MAC</strong>: " + WiFi.macAddress() + "</p>";
   html += "<p><strong>WiFi BSSID</strong>: " + WiFi.BSSIDstr() + "</p>";
 
-  html += "<p><strong>Mode</strong>: " + String(gMode) + "</p>";
+  html += "<h2>Other</h2>";
+  html += "<p><strong>BAUD_RATE</strong>: " + String(BAUD_RATE) + "</p>";
   html += "<p><strong>LED_BRIGHTNESS</strong>: " + String(LED_BRIGHTNESS) + "</p>";
   html += "<p><strong>HTTP_PORT</strong>: " + String(HTTP_PORT) + "</p>";
 
@@ -71,6 +96,16 @@ void httpIndex(AsyncWebServerRequest *request)
   html += "<p><strong>UTC Offset</strong>: " + String(utcOffsetInSeconds) + "</p>";
   html += "<p><strong>NTP Server</strong>: " + String(NTP_SERVER) + "</p>";
   html += "<p><strong>Current Epoch Time</strong>: " + String(timeClient.getEpochTime()) + "</p>";
+
+  html += "<h2>Display</h2>";
+  html += "<p><strong>Mode</strong>: " + String(gMode) + "</p>";
+  html += "<p><strong>gCurrentYear</strong>: " + String(gCurrentYear) + "</p>";
+  html += "<p><strong>gCurrentMonth</strong>: " + String(gCurrentMonth) + " (" + (String)MONTHS_SHORT[gCurrentMonth] + ")</p>";
+
+  int daysInMonth = monthDays(gCurrentMonth, gCurrentYear);
+  int dayOfWeek = weekday(GetEpochForDate(gCurrentYear, gCurrentMonth, 1)) - 1;
+  html += "<p><strong>daysInMonth</strong>: " + String(daysInMonth) + "</p>";
+  html += "<p><strong>dayOfWeek</strong>: " + String(dayOfWeek) + " (" + DAY_SHORT[dayOfWeek] + ")</p>";
 
   // digital clock display of the time
   html += "<p><strong>TimeLib</strong>: ";
@@ -142,15 +177,15 @@ void setupServer()
 
 void setup()
 {
-
   gMode = MODE_CALENDAR;
+  // gCurrsor = 0; // Start at the top of the calendar
 
   // Add the LEDS first as we use them for status and loading animations
   FastLED.addLeds<NEOPIXEL, PIN_LED_CALENDAR>(leds, PIXELS_COUNT);
 
   // Set up the serial port for debugging
   // this prevents the button_next, and button_prev from working
-  Serial.begin(115200);
+  Serial.begin(BAUD_RATE);
 
   // Wait for the serial port to be ready before continuing
   while (!Serial)
@@ -210,6 +245,11 @@ void setup()
   // Print the time status
   getCurrentTime();
 
+  // Set the current year and month to the current time
+  // The user can change this using the buttons.
+  gCurrentYear = year();
+  gCurrentMonth = month();
+
   // Set the status led to an output
   pinMode(PIN_LED_STATUS, OUTPUT);
 
@@ -246,7 +286,7 @@ void setup()
   printDatabase(year()); // Debug
 
   //
-  ScrollText("V0.1.1");
+  ScrollText(VERSION);
 }
 
 // the loop function runs over and over again forever
@@ -318,20 +358,46 @@ void checkInputs()
       break;
     }
 
+    Serial.println("Mode changed to: " + (String)gMode);
+
     leds[21 - 1] = BUTTON_DOWN_COLOR;
   }
 
-  // Win 1
+  // Previous Month
   if (digitalRead(PIN_WIN1) == BUTTON_DOWN_STATE)
   {
-    DatabaseSet(year(), month(), day(), 0, true);
-    ScrollText("Win 1");
+    if (gCurrentMonth <= 1)
+    {
+      gCurrentMonth = 12;
+      gCurrentYear -= 1;
+
+      ScrollText((String)gCurrentYear, COLOR_FONT, 50);
+    }
+    else
+    {
+      gCurrentMonth -= 1;
+    }
+
+    Serial.println("gCurrentMonth: " + (String)gCurrentMonth + " (" + (String)MONTHS_SHORT[gCurrentMonth] + ") gCurrentYear: " + (String)gCurrentYear);
+    Serial.println("GetEpochForDate: " + (String)GetEpochForDate(gCurrentYear, gCurrentMonth, 1));
+
+    ScrollText((String)MONTHS_SHORT[gCurrentMonth], COLOR_FONT, 50);
   }
-  // Win 2
+  // Next Month
   if (digitalRead(PIN_WIN2) == BUTTON_DOWN_STATE)
   {
-    DatabaseSet(year(), month(), day(), 1, true);
-    ScrollText("Win 2");
+    gCurrentMonth++;
+    if (gCurrentMonth > 12)
+    {
+      gCurrentMonth = 1;
+      gCurrentYear += 1;
+      ScrollText((String)gCurrentYear, COLOR_FONT, 50);
+    }
+
+    Serial.println("gCurrentMonth: " + (String)gCurrentMonth + " (" + (String)MONTHS_SHORT[gCurrentMonth] + ") gCurrentYear: " + (String)gCurrentYear);
+    Serial.println("GetEpochForDate: " + (String)GetEpochForDate(gCurrentYear, gCurrentMonth, 1));
+
+    ScrollText((String)MONTHS_SHORT[gCurrentMonth], COLOR_FONT, 50);
   }
 
   // Check to see if the buttons have been pressed.
@@ -380,55 +446,41 @@ void checkInputs()
     }
   }
 
-  // For days 1-7, set the entire vertical column to the button down color
+  // For days 1-7, use them as win conditions
   if (digitalRead(PIN_DAY1) == BUTTON_DOWN_STATE)
   {
-    for (uint8_t offset = DAY1; offset <= DAY36; offset += 7)
-    {
-      leds[offset] = BUTTON_DOWN_COLOR;
-    }
+    DatabaseSet(year(), month(), day(), 0, true);
+    ScrollText("Win 1", COLOR_FONT, 50);
   }
   if (digitalRead(PIN_DAY2) == BUTTON_DOWN_STATE)
   {
-    for (uint8_t offset = DAY2; offset <= DAY37; offset += 7)
-    {
-      leds[offset] = BUTTON_DOWN_COLOR;
-    }
+    DatabaseSet(year(), month(), day(), 1, true);
+    ScrollText("Win 2", COLOR_FONT, 50);
   }
   if (digitalRead(PIN_DAY3) == BUTTON_DOWN_STATE)
   {
-    for (uint8_t offset = DAY3; offset <= DAY38; offset += 7)
-    {
-      leds[offset] = BUTTON_DOWN_COLOR;
-    }
+    DatabaseSet(year(), month(), day(), 2, true);
+    ScrollText("Win 3", COLOR_FONT, 50);
   }
   if (digitalRead(PIN_DAY4) == BUTTON_DOWN_STATE)
   {
-    for (uint8_t offset = DAY4; offset <= DAY39; offset += 7)
-    {
-      leds[offset] = BUTTON_DOWN_COLOR;
-    }
+    DatabaseSet(year(), month(), day(), 3, true);
+    ScrollText("Win 4", COLOR_FONT, 50);
   }
   if (digitalRead(PIN_DAY5) == BUTTON_DOWN_STATE)
   {
-    for (uint8_t offset = DAY5; offset <= DAY40; offset += 7)
-    {
-      leds[offset] = BUTTON_DOWN_COLOR;
-    }
+    DatabaseSet(year(), month(), day(), 4, true);
+    ScrollText("Win 5", COLOR_FONT, 50);
   }
   if (digitalRead(PIN_DAY6) == BUTTON_DOWN_STATE)
   {
-    for (uint8_t offset = DAY6; offset <= DAY41; offset += 7)
-    {
-      leds[offset] = BUTTON_DOWN_COLOR;
-    }
+    DatabaseSet(year(), month(), day(), 5, true);
+    ScrollText("Win 6", COLOR_FONT, 50);
   }
   if (digitalRead(PIN_DAY7) == BUTTON_DOWN_STATE)
   {
-    for (uint8_t offset = DAY7; offset <= DAY42; offset += 7)
-    {
-      leds[offset] = BUTTON_DOWN_COLOR;
-    }
+    DatabaseSet(year(), month(), day(), 6, true);
+    ScrollText("Win 7", COLOR_FONT, 50);
   }
 
   // if (digitalRead(PIN_PREV) == BUTTON_DOWN_STATE) { leds[28-1] = BUTTON_DOWN_COLOR; }
@@ -504,51 +556,74 @@ CRGB breathBetweenToColors(CHSV start, CHSV end, float pulseSpeed = 2.0)
 
 void modeCalendar()
 {
-
   // Calulate the Epoch for the start of this month (1st)
-  time_t startOfMonth = timeClient.getEpochTime() - (day() * 24 * 60 * 60);
+  time_t startOfMonth = GetEpochForDate(gCurrentYear, gCurrentMonth, 1);
+  // time_t startOfMonth = timeClient.getEpochTime() - (day() * 24 * 60 * 60);
   // Figure out the day of the week for the start of this month
-  int dayOfWeek = weekday(startOfMonth);
+  int dayOfWeek = weekday(startOfMonth) - 1;
   // Figure out how many days are in this month (28, 29, 30, 31)
-  int daysInMonth = monthDays(month(), year());
+  int daysInMonth = monthDays(gCurrentMonth, gCurrentYear);
   // 0 = Sunday, 1 = Monday, 2 = Tuesday, 3 = Wednesday, 4 = Thursday, 5 = Friday, 6 = Saturday,
 
-  // Set any of the LEDS that are before the start of the month to black
-  for (int offset_pixel = 0; offset_pixel < dayOfWeek; offset_pixel++)
+  // Figure out if this month is in the future or not.
+  bool isFuture = false;
+  if (gCurrentYear > year())
+  {
+    isFuture = true;
+  }
+  else if (gCurrentYear == year())
+  {
+    if (gCurrentMonth > month())
+    {
+      isFuture = true;
+    }
+  }
+
+  // Set all the LEDS to black.
+  for (int offset_pixel = 0; offset_pixel < PIXELS_COUNT; offset_pixel++)
   {
     leds[offset_pixel] = COLOR_NOT_IN_MONTH;
   }
 
-  // Fill the past days with the rainbow color
-  for (int offset_pixel = dayOfWeek; offset_pixel < dayOfWeek + day(); offset_pixel++)
+  if (!isFuture)
   {
-    if (DatabaseGet(year(), month(), offset_pixel - dayOfWeek + 1, 0))
+    // Fill in all the days with the data from the database
+    for (int offset_pixel = dayOfWeek; offset_pixel < dayOfWeek + daysInMonth; offset_pixel++)
     {
-      leds[offset_pixel] = COLOR_SUCCESS; // Success
+      if (DatabaseGet(gCurrentYear, gCurrentMonth, offset_pixel - dayOfWeek + 1, 0))
+      {
+        leds[offset_pixel] = COLOR_SUCCESS; // Success
+      }
+      else
+      {
+        leds[offset_pixel] = COLOR_FAIL; // Failure
+      }
     }
-    else
+  }
+
+  // If we are in the current year, and month.. Then show the future dates as COLOR_FUTURE
+  if (gCurrentYear == year() && gCurrentMonth == month())
+  {
+    // fill the future days with gray color (no data)
+    for (int offset_pixel = dayOfWeek + day(); offset_pixel < dayOfWeek + daysInMonth; offset_pixel++)
     {
-      leds[offset_pixel] = COLOR_FAIL; // Failure
+      // divide the whole hue range across the number of pixels
+      // and add the offset to the current pixel
+      leds[offset_pixel] = COLOR_FUTURE;
+    }
+
+    // The current day of the month should fade in and out of the cursor color (gold)
+    // and the background color showing what values have been set so far.
+    leds[day() + dayOfWeek - 1] = breathBetweenToColors(COLOR_FAIL, COLOR_SUCCESS, 2.0);
+  }
+  else if (isFuture)
+  {
+    // If this month is in the future, then show the whole month as COLOR_FUTURE
+    for (int offset_pixel = dayOfWeek; offset_pixel < dayOfWeek + daysInMonth; offset_pixel++)
+    {
+      leds[offset_pixel] = COLOR_FUTURE;
     }
   }
-
-  // fill the future days with gray color (no data)
-  for (int offset_pixel = dayOfWeek + day(); offset_pixel < dayOfWeek + daysInMonth; offset_pixel++)
-  {
-    // divide the whole hue range across the number of pixels
-    // and add the offset to the current pixel
-    leds[offset_pixel] = COLOR_FUTURE;
-  }
-
-  // Set any of the LEDS after the month to black
-  for (int offset_pixel = dayOfWeek + daysInMonth; offset_pixel < PIXELS_COUNT; offset_pixel++)
-  {
-    leds[offset_pixel] = COLOR_NOT_IN_MONTH;
-  }
-
-  // The current day of the month should fade in and out of the cursor color (gold)
-  // and the background color showing what values have been set so far.
-  leds[day() + dayOfWeek - 1] = breathBetweenToColors(COLOR_FAIL, COLOR_SUCCESS, 2.0);
 }
 
 // Starting with the top left, sets leds illumiated in a progress bar.
@@ -559,7 +634,7 @@ void loadingAnimation()
   static uint8_t hue = 0;
 
   // Starting with black. Loads a new LED once every few ms
-  const uint8_t LOADING_ANIMATION_SPEED = 20;
+  const uint8_t LOADING_ANIMATION_SPEED = 10;
 
   if (offset > PIXELS_COUNT)
   {
@@ -626,35 +701,35 @@ const uint8_t *GetGlyph(char c)
 
   uint8_t offset = 0;
 
-  Serial.print('[');
-  Serial.print(c);
-  Serial.print("] =");
+  // Serial.print('[');
+  // Serial.print(c);
+  // Serial.print("] =");
 
   if (c >= 'a' && c <= 'z')
   {
     offset = (int)c - 'a' + 1;
-    Serial.println("letters: " + (String)offset + ", ");
+    // Serial.println("letters: " + (String)offset + ", ");
     return FONT_LETTERS[offset];
   }
   else if (c >= '0' && c <= '9')
   {
-    offset = (int)c - '0' ;
-    Serial.println("numbers: " + (String)offset + ", ");
+    offset = (int)c - '0';
+    // Serial.println("numbers: " + (String)offset + ", ");
     return FONT_NUMBERS[offset];
   }
   else if (c == '.')
   {
-    Serial.println("numbers: 10, ");
+    // Serial.println("numbers: 10, ");
     return FONT_NUMBERS[10];
   }
   else if (c == ' ')
   {
-    Serial.println("letters: 0, ");
+    // Serial.println("letters: 0, ");
     return FONT_LETTERS[0];
   }
   else
   {
-    Serial.println(" unknown using letters: 0, ");
+    // Serial.println(" unknown using letters: 0, ");
     return FONT_LETTERS[0];
   }
 }
@@ -662,15 +737,15 @@ const uint8_t *GetGlyph(char c)
 void ScrollText(String text, CHSV color, uint16_t delayMs /* = 100 */)
 {
   // Always add a space to the end so that the text scrolls off the end of the display
-  text += " ";
+  text = " " + text + " ";
 
   // Turn off all the LEDs first.
   SetAllLEDs(COLOR_OFF);
 
   // Scroll thought the text one letter at a time, then scroll the next letter in
   // and scroll the first letter out. Repeat until the end of the text.
-  // -1 for the carried return. 
-  for (int offset = 0; offset < (text.length()-1) * LED_MATRIX_WIDTH; offset++)
+  // -1 for the carried return.
+  for (int offset = 0; offset < (text.length() - 1) * LED_MATRIX_WIDTH; offset++)
   {
     ShowGlyph(GetGlyph(text[(offset / LED_MATRIX_WIDTH)]), color, 0, offset % LED_MATRIX_WIDTH);
 

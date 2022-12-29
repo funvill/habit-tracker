@@ -8,8 +8,8 @@
 #include <Arduino.h> // Required for ESP32
 #include "FastLED.h" // Required for CHSV
 
- // HTTP
- #define HTTP_PORT 80
+// HTTP
+#define HTTP_PORT 80
 
 // Pins
 // ESP32 Pins
@@ -82,32 +82,29 @@ const uint8_t DAY40 = 39;
 const uint8_t DAY41 = 40;
 const uint8_t DAY42 = 41;
 
-// Modes 
+// Modes
 const uint8_t MODE_CALENDAR = 0;
-const uint8_t MODE_MAX = MODE_CALENDAR; 
-const uint8_t MODE_MIN = MODE_CALENDAR; 
-
-
+const uint8_t MODE_MAX = MODE_CALENDAR;
+const uint8_t MODE_MIN = MODE_CALENDAR;
 
 // LED colors
 // https://github.com/FastLED/FastLED/wiki/Pixel-reference
-const CHSV COLOR_OFF = CHSV(0, 0, 0); // Black
+const CHSV COLOR_OFF = CHSV(0, 0, 0);          // Black
 const CHSV COLOR_SUCCESS = CHSV(96, 255, 200); // Green
 const CHSV COLOR_FAIL = CHSV(0, 255, 128);     // RED
 const CHSV COLOR_FUTURE = CHSV(128, 255, 128); // Aqua
-const CHSV COLOR_NOT_IN_MONTH = COLOR_OFF; // Black
-const CRGB COLOR_CURSOR = CRGB::Gold ; 
-const CHSV COLOR_FONT = COLOR_SUCCESS; 
-
+const CHSV COLOR_NOT_IN_MONTH = COLOR_OFF;     // Black
+const CRGB COLOR_CURSOR = CRGB::Gold;
+const CHSV COLOR_FONT = COLOR_SUCCESS;
 
 const uint8_t LED_MATRIX_WIDTH = 7;
 const uint8_t LED_MATRIX_HEIGHT = 6;
-
 
 #define DAYS_IN_YEAR 365
 
 // Settings
 // ------------------------------------------------------------
-const uint8_t PIXELS_COUNT = LED_MATRIX_WIDTH * LED_MATRIX_HEIGHT;   // 7x6
-const uint8_t LED_BRIGHTNESS = 64; // 0 DARK - 255 BRIGHT
+const uint8_t PIXELS_COUNT = LED_MATRIX_WIDTH * LED_MATRIX_HEIGHT; // 7x6
+const uint8_t LED_BRIGHTNESS = 64;                                 // 0 DARK - 255 BRIGHT
 const ulong FRAMES_PER_SECOND = 120;
+const uint32_t BAUD_RATE = 115200;
