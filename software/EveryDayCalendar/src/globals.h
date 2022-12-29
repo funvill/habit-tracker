@@ -97,6 +97,8 @@ const CHSV COLOR_FAIL = CHSV(0, 255, 128);     // RED
 const CHSV COLOR_FUTURE = CHSV(128, 255, 128); // Aqua
 const CHSV COLOR_NOT_IN_MONTH = COLOR_OFF; // Black
 const CRGB COLOR_CURSOR = CRGB::Gold ; 
+const CHSV COLOR_FONT = COLOR_SUCCESS; 
+
 
 const uint8_t LED_MATRIX_WIDTH = 7;
 const uint8_t LED_MATRIX_HEIGHT = 6;
