@@ -8,6 +8,7 @@
 #include "EEPROM.h"
 
 #include "globals.h"
+#include "font.h"
 #include "database.h"
 
 static uint8_t gMode;
@@ -30,6 +31,8 @@ void modeCalendar();
 // Helpers
 void loadingAnimation();
 void showWinningAnimation();
+void ShowGlyph(const uint8_t *glyph, CHSV color);
+void ScrollText(String text, CHSV color = COLOR_FONT, uint16_t delayMs = 100);
 
 // NeoPixel
 CRGB leds[PIXELS_COUNT];
@@ -68,7 +71,7 @@ void httpIndex(AsyncWebServerRequest *request)
   html += "<p><strong>UTC Offset</strong>: " + String(utcOffsetInSeconds) + "</p>";
   html += "<p><strong>NTP Server</strong>: " + String(NTP_SERVER) + "</p>";
   html += "<p><strong>Current Epoch Time</strong>: " + String(timeClient.getEpochTime()) + "</p>";
-  
+
   // digital clock display of the time
   html += "<p><strong>TimeLib</strong>: ";
   html += (String)year();
@@ -241,6 +244,9 @@ void setup()
   // Loads the database
   loadsDatabase();
   printDatabase(year()); // Debug
+
+  //
+  ScrollText("V0.1.1");
 }
 
 // the loop function runs over and over again forever
@@ -258,7 +264,7 @@ void loop()
   }
 
   // Set all pixels to black
-  FastLED.showColor(CRGB::Black);
+  // FastLED.showColor(CRGB::Black);
 
   switch (gMode)
   {
@@ -300,20 +306,32 @@ void checkInputs()
     {
       gMode = MODE_MIN;
     }
+
+    switch (gMode)
+    {
+    case MODE_CALENDAR:
+      ScrollText("C");
+      break;
+
+    default:
+      ScrollText("unknown");
+      break;
+    }
+
     leds[21 - 1] = BUTTON_DOWN_COLOR;
   }
 
   // Win 1
   if (digitalRead(PIN_WIN1) == BUTTON_DOWN_STATE)
   {
-    showWinningAnimation();
     DatabaseSet(year(), month(), day(), 0, true);
+    ScrollText("Win 1");
   }
   // Win 2
   if (digitalRead(PIN_WIN2) == BUTTON_DOWN_STATE)
   {
-    showWinningAnimation();
     DatabaseSet(year(), month(), day(), 1, true);
+    ScrollText("Win 2");
   }
 
   // Check to see if the buttons have been pressed.
@@ -566,14 +584,103 @@ void SetAllLEDs(CHSV color)
   FastLED.show();
 }
 
-// scroll the words WIN across the display 7x6 pixels
-void showWinningAnimation()
+uint16_t XY(uint8_t x, uint8_t y)
 {
-  for (int offset = 0; offset < 2; offset++)
+  if (x >= LED_MATRIX_WIDTH)
+    return -1;
+  if (y >= LED_MATRIX_HEIGHT)
+    return -1;
+
+  return (y * LED_MATRIX_WIDTH) + x;
+}
+
+// xOffset - Where in the frame to start drawing the glyph from the left. 0 = start at the left
+// xGlyphOffset - clips the glyph from the left to right. 0 = no clipping
+void ShowGlyph(const uint8_t *glyph, CHSV color, uint8_t xOffset = 0, uint8_t xGlyphOffset = 0)
+{
+  for (uint8_t y = 0; y < FONT_HEIGHT; y++)
   {
-    SetAllLEDs(COLOR_SUCCESS);
-    delay(200);
-    SetAllLEDs(COLOR_NOT_IN_MONTH);
-    delay(200);
+    for (uint8_t x = xGlyphOffset; x < FONT_WIDTH; x++)
+    {
+      // Align the glyph to the bottom of the display.
+      uint16_t ledOffset = XY(xOffset + x - xGlyphOffset, (LED_MATRIX_HEIGHT - FONT_HEIGHT) + y);
+      if (ledOffset == -1)
+        continue; // out of bounds
+
+      if (glyph[y] & (1 << (FONT_WIDTH - x)))
+      {
+        leds[ledOffset] = color;
+      }
+      else
+      {
+        leds[ledOffset] = COLOR_OFF;
+      }
+    }
+  }
+  FastLED.show();
+}
+
+const uint8_t *GetGlyph(char c)
+{
+  c = tolower(c);
+
+  uint8_t offset = 0;
+
+  Serial.print('[');
+  Serial.print(c);
+  Serial.print("] =");
+
+  if (c >= 'a' && c <= 'z')
+  {
+    offset = (int)c - 'a' + 1;
+    Serial.println("letters: " + (String)offset + ", ");
+    return FONT_LETTERS[offset];
+  }
+  else if (c >= '0' && c <= '9')
+  {
+    offset = (int)c - '0' ;
+    Serial.println("numbers: " + (String)offset + ", ");
+    return FONT_NUMBERS[offset];
+  }
+  else if (c == '.')
+  {
+    Serial.println("numbers: 10, ");
+    return FONT_NUMBERS[10];
+  }
+  else if (c == ' ')
+  {
+    Serial.println("letters: 0, ");
+    return FONT_LETTERS[0];
+  }
+  else
+  {
+    Serial.println(" unknown using letters: 0, ");
+    return FONT_LETTERS[0];
+  }
+}
+
+void ScrollText(String text, CHSV color, uint16_t delayMs /* = 100 */)
+{
+  // Always add a space to the end so that the text scrolls off the end of the display
+  text += " ";
+
+  // Turn off all the LEDs first.
+  SetAllLEDs(COLOR_OFF);
+
+  // Scroll thought the text one letter at a time, then scroll the next letter in
+  // and scroll the first letter out. Repeat until the end of the text.
+  // -1 for the carried return. 
+  for (int offset = 0; offset < (text.length()-1) * LED_MATRIX_WIDTH; offset++)
+  {
+    ShowGlyph(GetGlyph(text[(offset / LED_MATRIX_WIDTH)]), color, 0, offset % LED_MATRIX_WIDTH);
+
+    // Only show the 2nd letter if there is a 2nd letter to show.
+    if (offset / LED_MATRIX_WIDTH < text.length())
+    {
+      ShowGlyph(GetGlyph(text[(offset / LED_MATRIX_WIDTH + 1)]), color, LED_MATRIX_WIDTH - offset % LED_MATRIX_WIDTH, 0);
+    }
+
+    delay(delayMs);
+    FastLED.show();
   }
 }
