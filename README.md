@@ -11,10 +11,12 @@ Uses a ESP32 to connect to the internet and backup the data from the boards.
 
 Fabricated using JLPCB SMD placement services. Fully automated manufacturing.
 
+![hardware-2022-dec-11.png](hardware-2022-dec-11.png?raw=true)
+
 ![3D](3d.png?raw=true)
 
 ![PCB](pcb.png?raw=true)
 
 ![Schematic](schematic.png?raw=true)
 
-
+See [changelog](changelog.md) for full list of changes
