@@ -84,8 +84,12 @@ const uint8_t DAY42 = 41;
 
 // Modes
 const uint8_t MODE_CALENDAR = 0;
-const uint8_t MODE_MAX = MODE_CALENDAR;
+const uint8_t MODE_CLOCK = 1;
+const uint8_t MODE_PROGRESS = 2;
+const uint8_t MODE_BREATHING = 3;
+const uint8_t MODE_RAINBOW = 4;
 const uint8_t MODE_MIN = MODE_CALENDAR;
+const uint8_t MODE_MAX = MODE_RAINBOW;
 
 // LED colors
 // https://github.com/FastLED/FastLED/wiki/Pixel-reference

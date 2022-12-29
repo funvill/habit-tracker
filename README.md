@@ -17,6 +17,4 @@ Fabricated using JLPCB SMD placement services. Fully automated manufacturing.
 
 ![Schematic](schematic.png?raw=true)
 
-## Change log
 
-- Submitted the PCBs to the fabrication servive (JLPCB) for manufacturing.

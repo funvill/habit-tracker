@@ -17,6 +17,17 @@ const uint8_t FONT_HEIGHT = 5;
 const uint8_t FONT_WIDTH = 7;
 const uint8_t FONT_LETTERS_SIZE = 27; // a-z + space
 
+
+const uint8_t FONT_SYMBOLS[][5] = {
+    {
+        0b11111000, // AP mode symbol
+        0b01110000,
+        0b00100000,
+        0b01110000,
+        0b11111000,
+    }
+};
+
 const uint8_t FONT_NUMBERS[][5] = {
     {
         0b11111000, // 0
