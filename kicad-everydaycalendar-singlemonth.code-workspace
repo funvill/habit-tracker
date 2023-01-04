@@ -1,0 +1,52 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"name": "EveryDayCalendar",
+			"path": "software/EveryDayCalendar"
+		}
+	],
+	"settings": {
+		"files.associations": {
+			"cmath": "cpp",
+			"array": "cpp",
+			"vector": "cpp",
+			"xstring": "cpp",
+			"xutility": "cpp",
+			"string": "cpp",
+			"string_view": "cpp",
+			"chrono": "cpp",
+			"deque": "cpp",
+			"format": "cpp",
+			"forward_list": "cpp",
+			"initializer_list": "cpp",
+			"list": "cpp",
+			"regex": "cpp",
+			"xhash": "cpp",
+			"xtree": "cpp",
+			"unordered_map": "cpp",
+			"unordered_set": "cpp",
+			"bit": "c",
+			"charconv": "c",
+			"condition_variable": "c",
+			"iomanip": "c",
+			"limits": "c",
+			"mutex": "c",
+			"random": "c",
+			"shared_mutex": "c",
+			"xlocale": "c",
+			"xlocinfo": "c",
+			"xloctime": "c",
+			"*.tcc": "c",
+			"ctime": "c",
+			"numeric": "c",
+			"ratio": "c",
+			"streambuf": "c",
+			"tuple": "c",
+			"type_traits": "c",
+			"utility": "c"
+		}
+	}
+}
