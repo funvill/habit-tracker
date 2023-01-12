@@ -42,6 +42,7 @@ CRGB leds[PIXELS_COUNT];
 const char *NTP_SERVER = "pool.ntp.org";
 
 // Automatic updates
+
 #include <esp32FOTA.hpp>
 esp32FOTA esp32FOTA("esp32-habit-tracker", "0.0.1", false, true);
 const char *manifest_url = "https://blog.abluestar.com/habit-tracker/firmware.json";
@@ -227,7 +228,7 @@ void setup()
   bool updatedNeeded = esp32FOTA.execHTTPcheck();
   if (updatedNeeded)
   {
-    Serial.println("Update needed");
+    Serial.println("!!! Update needed !!!! ");
   }
   else
   {
@@ -242,8 +243,8 @@ void loop()
     bool updatedNeeded = esp32FOTA.execHTTPcheck();
     if (updatedNeeded)
     {
-      Serial.println("Update needed");
-      // esp32FOTA.execOTA();
+      Serial.println("!!! Update needed !!! ");
+      esp32FOTA.execOTA();
     }
   }
 
