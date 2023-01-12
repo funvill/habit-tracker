@@ -1,5 +1,11 @@
 # Change log
 
+## 2023-Jan-03 (build 2)
+
+- Added a fades pixel animation
+- Moved modes to their own files
+- Added reset wifi command
+
 ## 2022-Dec-29 (build 1)
 
 - Intial version

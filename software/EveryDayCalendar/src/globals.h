@@ -8,6 +8,15 @@
 #include <Arduino.h> // Required for ESP32
 #include "FastLED.h" // Required for CHSV
 
+
+#ifndef __GLOBAL_H__
+#define __GLOBAL_H__
+
+// The build version is shown on the loading screen.
+// the version is shown in the serial prompt and the web page.
+const String VERSION = "build 2";
+const uint8_t BUILD_NUMBER = 0b00000010;
+
 // HTTP
 #define HTTP_PORT 80
 
@@ -84,12 +93,14 @@ const uint8_t DAY42 = 41;
 
 // Modes
 const uint8_t MODE_CALENDAR = 0;
-const uint8_t MODE_CLOCK = 1;
-const uint8_t MODE_PROGRESS = 2;
+const uint8_t MODE_BINARY_CLOCK = 1;
+const uint8_t MODE_EPOCH_CLOCK = 2;
 const uint8_t MODE_BREATHING = 3;
-const uint8_t MODE_RAINBOW = 4;
+const uint8_t MODE_FADE_POINTS = 4;
+
+const uint8_t MODE_START = MODE_FADE_POINTS;
 const uint8_t MODE_MIN = MODE_CALENDAR;
-const uint8_t MODE_MAX = MODE_RAINBOW;
+const uint8_t MODE_MAX = MODE_FADE_POINTS;
 
 // LED colors
 // https://github.com/FastLED/FastLED/wiki/Pixel-reference
@@ -106,9 +117,29 @@ const uint8_t LED_MATRIX_HEIGHT = 6;
 
 #define DAYS_IN_YEAR 365
 
+const int timeZone = -8; // Pacific Standard Time (USA)
+const long utcOffsetInSeconds = timeZone * 60 * 60;
+
+static const char *MONTHS_SHORT[] = {"XXX", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"};
+
+// 0 = Sunday, 1 = Monday, 2 = Tuesday, 3 = Wednesday, 4 = Thursday, 5 = Friday, 6 = Saturday,
+static const char *DAY_SHORT[] = {"Sun", "Mon", "Tue", "Wen", "Thu", "Fri", "Sat"};
+
 // Settings
 // ------------------------------------------------------------
 const uint8_t PIXELS_COUNT = LED_MATRIX_WIDTH * LED_MATRIX_HEIGHT; // 7x6
 const uint8_t LED_BRIGHTNESS = 64;                                 // 0 DARK - 255 BRIGHT
 const ulong FRAMES_PER_SECOND = 120;
 const uint32_t BAUD_RATE = 115200;
+
+// Globals
+// ------------------------------------------------------------
+// NeoPixel
+extern CRGB leds[PIXELS_COUNT];
+
+
+static uint8_t gMode;
+static uint16_t gCurrentYear;
+static uint8_t gCurrentMonth;
+
+#endif // __GLOBAL_H__
