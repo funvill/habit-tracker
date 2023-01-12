@@ -41,6 +41,12 @@ CRGB leds[PIXELS_COUNT];
 
 const char *NTP_SERVER = "pool.ntp.org";
 
+// Automatic updates
+#include <esp32FOTA.hpp>
+esp32FOTA esp32FOTA("esp32-habit-tracker", "0.0.1", false, true);
+const char *manifest_url = "https://blog.abluestar.com/habit-tracker/firmware.json";
+//
+
 WiFiUDP ntpUDP;
 NTPClient timeClient(ntpUDP, NTP_SERVER, utcOffsetInSeconds);
 
@@ -54,7 +60,6 @@ void modeCalendar();
 void modeClock();
 void modeProgress();
 void modeBreathing();
-
 
 time_t GetEpochForDate(uint16_t year, uint8_t month, uint8_t day)
 {
@@ -185,7 +190,7 @@ void setup()
   Serial.println(WiFi.localIP());
 
   // Print the IP address to the LEDS
-  ScrollText((String) "IP " + WiFi.localIP().toString());
+  // ScrollText((String) "IP " + WiFi.localIP().toString());
 
   // Time server
   Serial.print("Connecting to time server NTP: ");
@@ -207,11 +212,41 @@ void setup()
   gMode = MODE_START;
 
   printDatabase(year()); // Debug
-}
 
+  // Auto update
+  // -----------------------
+
+  esp32FOTA.setManifestURL(manifest_url);
+
+  // usage with lambda function:
+  esp32FOTA.setProgressCb([](size_t progress, size_t size)
+                          {
+      if( progress == size || progress == 0 ) Serial.println();
+      Serial.print("."); });
+
+  bool updatedNeeded = esp32FOTA.execHTTPcheck();
+  if (updatedNeeded)
+  {
+    Serial.println("Update needed");
+  }
+  else
+  {
+    Serial.println("No update needed");
+  }
+}
 // the loop function runs over and over again forever
 void loop()
 {
+  EVERY_N_MINUTES_I(AUTO_UPDATE, 1)
+  {
+    bool updatedNeeded = esp32FOTA.execHTTPcheck();
+    if (updatedNeeded)
+    {
+      Serial.println("Update needed");
+      // esp32FOTA.execOTA();
+    }
+  }
+
   // do some periodic updates
   EVERY_N_SECONDS(1)
   {
@@ -476,7 +511,6 @@ time_t getNtpTime()
   timeClient.update();
   return timeClient.getEpochTime();
 }
-
 
 void modeCalendar()
 {
