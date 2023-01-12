@@ -1,12 +1,5 @@
-[
-  {
-    "type": "esp32-habit-tracker",
-    "version": "0.0.5",
-    "url": "https://blog.abluestar.com/habit-tracker/firmware_0.0.5.bin"
-  },
-  {
-    "type": "esp32-habit-tracker",
-    "version": "0.0.1",
-    "url": "https://blog.abluestar.com/habit-tracker/firmware_0.0.1.bin"
-  }
-]
+{
+  "type": "esp32-habit-tracker",
+  "version": "0.0.5",
+  "url": "https://blog.abluestar.com/habit-tracker/firmware_0.0.5.bin"
+}
