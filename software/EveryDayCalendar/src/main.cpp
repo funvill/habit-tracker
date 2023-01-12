@@ -20,6 +20,7 @@
 #include "FastLED.h"
 #include <WiFi.h>
 
+#include <time.h>
 #include <TimeLib.h>
 #include <NTPClient.h>
 #include <WiFiUdp.h>
@@ -55,7 +56,7 @@ void modeClock();
 void modeProgress();
 void modeBreathing();
 
-#include <Time.h>
+
 time_t GetEpochForDate(uint16_t year, uint8_t month, uint8_t day)
 {
   tmElements_t tmSet;
