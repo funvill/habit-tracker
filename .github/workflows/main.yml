@@ -19,8 +19,8 @@ jobs:
         pip install --upgrade platformio
     - name: Run PlatformIO
       run: |
-      cd software/EveryDayCalendar
-      pio run -e ${{ env.TARGET }}
+        cd software/EveryDayCalendar
+        pio run -e ${{ env.TARGET }}
     - name: Archive Firmware Files
       uses: actions/upload-artifact@v3
       with: 
