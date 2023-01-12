@@ -15,7 +15,6 @@
  *   - Timezone, UTC offset, NTP server, LED brightness, etc.
  *   - Colors
  */
-
 #include <Arduino.h>
 #include "FastLED.h"
 #include <WiFi.h>
