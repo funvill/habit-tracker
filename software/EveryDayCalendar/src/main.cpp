@@ -160,9 +160,9 @@ void setup()
   if (preferences.isKey("mode") == PT_INVALID)
   {
     Serial.println("Using default Mode, Month, and Year");
-    preferences.putChar("mode", MODE_CALENDAR);
-    preferences.putChar("month", 1);
-    preferences.putShort("year", 2023);
+    preferences.putUChar("mode", MODE_CALENDAR);
+    preferences.putUChar("month", 1);
+    preferences.putUShort("year", 2023);
   }
   preferences.end();
 
@@ -234,9 +234,15 @@ void setup()
   // Load settings
   preferences.begin("habit-tracker", true);
   gMode = preferences.getChar("mode", MODE_START);
-  gCurrentMonth = preferences.getChar("month", year());
-  gCurrentYear = preferences.getShort("year", month());
+  gCurrentMonth = preferences.getUChar("month", year());
+  gCurrentYear = preferences.getUShort("year", month());
   preferences.end();
+
+  if( gCurrentYear < 2020 ) {
+    // There was an error somewhere. We need to reset the year to 2023
+    Serial.println("Error: gCurrentYear < 2020. Resetting to 2023");
+    gCurrentYear = 2023; 
+  }
 
   // Auto update
   // -----------------------
@@ -362,7 +368,7 @@ void checkInputs()
     // Save settings
     Preferences preferences;
     preferences.begin("habit-tracker", false);
-    preferences.putChar("mode", gMode);    
+    preferences.putUChar("mode", gMode);    
     preferences.end();
   }
 
@@ -389,8 +395,8 @@ void checkInputs()
     // Save settings
     Preferences preferences;
     preferences.begin("habit-tracker", false);
-    preferences.putChar("month", gCurrentMonth);
-    preferences.putShort("year", gCurrentYear);    
+    preferences.putUChar("month", gCurrentMonth);
+    preferences.putUShort("year", gCurrentYear);    
     preferences.end();
 
   }
@@ -413,8 +419,8 @@ void checkInputs()
     // Save settings
     Preferences preferences;
     preferences.begin("habit-tracker", false);
-    preferences.putChar("month", gCurrentMonth);
-    preferences.putShort("year", gCurrentYear);    
+    preferences.putUChar("month", gCurrentMonth);
+    preferences.putUShort("year", gCurrentYear);    
     preferences.end();
 
   }
