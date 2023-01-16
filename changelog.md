@@ -1,5 +1,14 @@
 # Change log
 
+## 2023-Jan-08 (build 6)
+
+- Save the month, year, and mode to eeprom on change
+- Randomized seed on startup based on wifi noise
+
+## 2023-Jan-08 (build 3-5)
+
+- Added ability to update via Github
+
 ## 2023-Jan-03 (build 2)
 
 - Added a fades pixel animation
