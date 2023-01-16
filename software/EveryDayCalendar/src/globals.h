@@ -14,8 +14,7 @@
 
 // The build version is shown on the loading screen.
 // the version is shown in the serial prompt and the web page.
-const String VERSION = "build 2";
-const uint8_t BUILD_NUMBER = 0b00000010;
+const uint8_t BUILD_NUMBER = 6;
 
 // HTTP
 #define HTTP_PORT 80

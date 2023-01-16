@@ -15,7 +15,6 @@
  *   - Timezone, UTC offset, NTP server, LED brightness, etc.
  *   - Colors
  */
-
 #include <Arduino.h>
 #include "FastLED.h"
 #include <WiFi.h>
@@ -42,6 +41,12 @@ CRGB leds[PIXELS_COUNT];
 
 const char *NTP_SERVER = "pool.ntp.org";
 
+// Automatic updates
+#include <esp32FOTA.hpp>
+esp32FOTA esp32FOTA("esp32-habit-tracker", BUILD_NUMBER, false, true);
+const char *manifest_url = "https://blog.abluestar.com/habit-tracker/firmware.json";
+//
+
 WiFiUDP ntpUDP;
 NTPClient timeClient(ntpUDP, NTP_SERVER, utcOffsetInSeconds);
 
@@ -55,7 +60,6 @@ void modeCalendar();
 void modeClock();
 void modeProgress();
 void modeBreathing();
-
 
 time_t GetEpochForDate(uint16_t year, uint8_t month, uint8_t day)
 {
@@ -137,10 +141,30 @@ void setup()
   Serial.println("\n\n\n");
 
   // Print a message to the serial port
-  Serial.println("EveryDayCalendar v0.1.1 (2022-Dec-27)");
+  Serial.println("EveryDayCalendar v" + String(BUILD_NUMBER));
 
   // Load the settings
   loadsDatabase();
+
+  // Hardcode the SSID and password for intial loading of the firmware.
+  Preferences preferences;
+  // preferences.begin("espconnect", false);
+  // if (preferences.isKey("ssid") == PT_INVALID)
+  // {
+  //   Serial.println("Using default SSID");
+  //   preferences.putString("ssid", "DEFAULT-SSID");
+  //   preferences.putString("password", "DEFAULT-PASSWORD");
+  // }
+  // preferences.end();
+  preferences.begin("habit-tracker", false);
+  if (preferences.isKey("mode") == PT_INVALID)
+  {
+    Serial.println("Using default Mode, Month, and Year");
+    preferences.putChar("mode", MODE_CALENDAR);
+    preferences.putChar("month", 1);
+    preferences.putShort("year", 2023);
+  }
+  preferences.end();
 
   // WifiManager
   ShowGlyphSearchingWiFi();
@@ -186,7 +210,7 @@ void setup()
   Serial.println(WiFi.localIP());
 
   // Print the IP address to the LEDS
-  ScrollText((String) "IP " + WiFi.localIP().toString());
+  // ScrollText((String) "IP " + WiFi.localIP().toString());
 
   // Time server
   Serial.print("Connecting to time server NTP: ");
@@ -200,19 +224,53 @@ void setup()
 
   // Print the time status
   getCurrentTime();
-
-  // Set the current year and month to the current time
-  // The user can change this using the buttons.
-  gCurrentYear = year();
-  gCurrentMonth = month();
-  gMode = MODE_START;
-
   printDatabase(year()); // Debug
-}
 
+  // Generate a random seed
+  // https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-reference/system/random.html
+  randomSeed(esp_random());
+  Serial.println("Random number: " + String(random(1000)));
+
+  // Load settings
+  preferences.begin("habit-tracker", true);
+  gMode = preferences.getChar("mode", MODE_START);
+  gCurrentMonth = preferences.getChar("month", year());
+  gCurrentYear = preferences.getShort("year", month());
+  preferences.end();
+
+  // Auto update
+  // -----------------------
+  esp32FOTA.setManifestURL(manifest_url);
+
+  // usage with lambda function:
+  esp32FOTA.setProgressCb([](size_t progress, size_t size)
+                          {
+      if( progress == size || progress == 0 ) Serial.println();
+      Serial.print("."); });
+
+  bool updatedNeeded = esp32FOTA.execHTTPcheck();
+  if (updatedNeeded)
+  {
+    Serial.println("!!! Update needed !!!! ");
+  }
+  else
+  {
+    Serial.println("No update needed");
+  }
+}
 // the loop function runs over and over again forever
 void loop()
 {
+  EVERY_N_MINUTES_I(AUTO_UPDATE, 5)
+  {
+    bool updatedNeeded = esp32FOTA.execHTTPcheck();
+    if (updatedNeeded)
+    {
+      Serial.println("!!! Update needed !!! ");
+      esp32FOTA.execOTA();
+    }
+  }
+
   // do some periodic updates
   EVERY_N_SECONDS(1)
   {
@@ -301,7 +359,11 @@ void checkInputs()
 
     Serial.println("Mode changed to: " + (String)gMode);
 
-    leds[21 - 1] = BUTTON_DOWN_COLOR;
+    // Save settings
+    Preferences preferences;
+    preferences.begin("habit-tracker", false);
+    preferences.putChar("mode", gMode);    
+    preferences.end();
   }
 
   // Previous Month
@@ -323,6 +385,14 @@ void checkInputs()
     Serial.println("GetEpochForDate: " + (String)GetEpochForDate(gCurrentYear, gCurrentMonth, 1));
 
     ScrollText((String)MONTHS_SHORT[gCurrentMonth], COLOR_FONT, 50);
+
+    // Save settings
+    Preferences preferences;
+    preferences.begin("habit-tracker", false);
+    preferences.putChar("month", gCurrentMonth);
+    preferences.putShort("year", gCurrentYear);    
+    preferences.end();
+
   }
   // Next Month
   if (digitalRead(PIN_WIN2) == BUTTON_DOWN_STATE)
@@ -339,53 +409,60 @@ void checkInputs()
     Serial.println("GetEpochForDate: " + (String)GetEpochForDate(gCurrentYear, gCurrentMonth, 1));
 
     ScrollText((String)MONTHS_SHORT[gCurrentMonth], COLOR_FONT, 50);
+
+    // Save settings
+    Preferences preferences;
+    preferences.begin("habit-tracker", false);
+    preferences.putChar("month", gCurrentMonth);
+    preferences.putShort("year", gCurrentYear);    
+    preferences.end();
+
   }
 
   // Check to see if the buttons have been pressed.
-
   // For weeks 1-6, set the entire horazonal row to the button down color
-  if (digitalRead(PIN_WEEK1) == BUTTON_DOWN_STATE)
-  {
-    for (uint8_t offset = DAY1; offset <= DAY7; offset++)
-    {
-      leds[offset] = BUTTON_DOWN_COLOR;
-    }
-  }
-  if (digitalRead(PIN_WEEK2) == BUTTON_DOWN_STATE)
-  {
-    for (uint8_t offset = DAY8; offset <= DAY14; offset++)
-    {
-      leds[offset] = BUTTON_DOWN_COLOR;
-    }
-  }
-  if (digitalRead(PIN_WEEK3) == BUTTON_DOWN_STATE)
-  {
-    for (uint8_t offset = DAY15; offset <= DAY21; offset++)
-    {
-      leds[offset] = BUTTON_DOWN_COLOR;
-    }
-  }
-  if (digitalRead(PIN_WEEK4) == BUTTON_DOWN_STATE)
-  {
-    for (uint8_t offset = DAY22; offset <= DAY28; offset++)
-    {
-      leds[offset] = BUTTON_DOWN_COLOR;
-    }
-  }
-  if (digitalRead(PIN_WEEK5) == BUTTON_DOWN_STATE)
-  {
-    for (uint8_t offset = DAY29; offset <= DAY35; offset++)
-    {
-      leds[offset] = BUTTON_DOWN_COLOR;
-    }
-  }
-  if (digitalRead(PIN_WEEK6) == BUTTON_DOWN_STATE)
-  {
-    for (uint8_t offset = DAY36; offset <= DAY42; offset++)
-    {
-      leds[offset] = BUTTON_DOWN_COLOR;
-    }
-  }
+  // if (digitalRead(PIN_WEEK1) == BUTTON_DOWN_STATE)
+  // {
+  //   for (uint8_t offset = DAY1; offset <= DAY7; offset++)
+  //   {
+  //     leds[offset] = BUTTON_DOWN_COLOR;
+  //   }
+  // }
+  // if (digitalRead(PIN_WEEK2) == BUTTON_DOWN_STATE)
+  // {
+  //   for (uint8_t offset = DAY8; offset <= DAY14; offset++)
+  //   {
+  //     leds[offset] = BUTTON_DOWN_COLOR;
+  //   }
+  // }
+  // if (digitalRead(PIN_WEEK3) == BUTTON_DOWN_STATE)
+  // {
+  //   for (uint8_t offset = DAY15; offset <= DAY21; offset++)
+  //   {
+  //     leds[offset] = BUTTON_DOWN_COLOR;
+  //   }
+  // }
+  // if (digitalRead(PIN_WEEK4) == BUTTON_DOWN_STATE)
+  // {
+  //   for (uint8_t offset = DAY22; offset <= DAY28; offset++)
+  //   {
+  //     leds[offset] = BUTTON_DOWN_COLOR;
+  //   }
+  // }
+  // if (digitalRead(PIN_WEEK5) == BUTTON_DOWN_STATE)
+  // {
+  //   for (uint8_t offset = DAY29; offset <= DAY35; offset++)
+  //   {
+  //     leds[offset] = BUTTON_DOWN_COLOR;
+  //   }
+  // }
+  // if (digitalRead(PIN_WEEK6) == BUTTON_DOWN_STATE)
+  // {
+  //   for (uint8_t offset = DAY36; offset <= DAY42; offset++)
+  //   {
+  //     leds[offset] = BUTTON_DOWN_COLOR;
+  //   }
+  // }
 
   // For days 1-7, use them as win conditions
   if (digitalRead(PIN_DAY1) == BUTTON_DOWN_STATE)
@@ -432,7 +509,9 @@ void getCurrentTime()
 {
   // Serial.println(timeClient.getFormattedTime());
 
-  Serial.print("Get Current Day: ");
+  // Calulate what was the day of the week at the start of this month (1st)
+  // 0 = Sunday, 1 = Monday, 2 = Tuesday, 3 = Wednesday, 4 = Thursday, 5 = Friday, 6 = Saturday,
+  Serial.print("Get Current Day of week (0=Sun): ");
   Serial.println(timeClient.getDay());
 
   Serial.print("Current Epoch Time: ");
@@ -468,8 +547,7 @@ void getCurrentTime()
   Serial.print("Days in this month: ");
   Serial.println(daysInMonth);
 
-  // Calulate what was the day of the week at the start of this month (1st)
-  // 0 = Sunday, 1 = Monday, 2 = Tuesday, 3 = Wednesday, 4 = Thursday, 5 = Friday, 6 = Saturday,
+
 }
 
 time_t getNtpTime()
@@ -477,7 +555,6 @@ time_t getNtpTime()
   timeClient.update();
   return timeClient.getEpochTime();
 }
-
 
 void modeCalendar()
 {

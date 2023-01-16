@@ -12,7 +12,7 @@
 void httpIndex(AsyncWebServerRequest *request)
 {
   String html = "<!DOCTYPE html><html><head><title>EveryDayCalendar</title></head><body><h1>Every Day Calendar</h1>";
-  html += "<p>Version " + VERSION + "</p>";
+  html += "<p>Version " + String(BUILD_NUMBER) + "</p>";
   html += "<p><a href='/update'>Firmware Update</a> - <a href='/database'>Download Database</a> - <a href='/reset'>clear settings and data</a> - <a href='/resetwifi'>Wifi Reset</a></p>";
 
   html += "<h2>WIFI</h2>";
