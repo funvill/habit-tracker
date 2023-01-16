@@ -234,7 +234,7 @@ void setup()
 
   // Load settings
   preferences.begin("habit-tracker", true);
-  gMode = preferences.getChar("mode", MODE_START);
+  gMode = preferences.getUChar("mode", MODE_START);
   gCurrentMonth = preferences.getUChar("month", year());
   gCurrentYear = preferences.getUShort("year", month());
   preferences.end();
@@ -243,8 +243,19 @@ void setup()
   {
     // There was an error somewhere. We need to reset the year to 2023
     Serial.println("Error: gCurrentYear < 2020 (was: " + String(gCurrentYear) + "). Resetting to 2023");
+    gCurrentMonth = 1;
     gCurrentYear = 2023;
+
+    preferences.begin("habit-tracker", false);
+    preferences.putUShort("month", gCurrentMonth);
+    preferences.putUShort("year", gCurrentYear);
+    preferences.end();
   }
+  Serial.println("gCurrentMonth: " + String(gCurrentMonth));
+  Serial.println("gCurrentYear: " + String(gCurrentYear));
+  Serial.println("gMode: " + String(gMode));
+  
+
 
   // Auto update
   // -----------------------
@@ -348,7 +359,8 @@ void checkInputs()
     switch (gMode)
     {
     case MODE_CALENDAR:
-      ScrollText("D");
+      ScrollText((String)gCurrentYear, COLOR_FONT, 50);
+      ScrollText((String)MONTHS_SHORT[gCurrentMonth], COLOR_FONT, 50);
       break;
     case MODE_BINARY_CLOCK:
       ScrollText("T");
@@ -363,12 +375,12 @@ void checkInputs()
       ScrollText("F");
       break;
     default:
-      ScrollText("XX");
+      // ScrollText("XX");
       gMode = MODE_CALENDAR;
       break;
     }
 
-    Serial.println("Mode changed to: " + (String)gMode);
+    Serial.println("Mode (gMode) changed to: " + (String)gMode);
 
     // Save settings
     Preferences preferences;

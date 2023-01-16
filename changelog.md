@@ -1,5 +1,8 @@
 # Change log
 
+## 2023-Jan-08 (build 8)
+
+- Fixed isssue where mode was not being saved between power cycles
 ## 2023-Jan-08 (build 7)
 
 - Fixed bug where year was read from settings as a signed instead of unsigned short

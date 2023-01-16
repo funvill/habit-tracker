@@ -64,6 +64,13 @@ void ShowGlyphUpdating() {
   leds[DAY36] = CHSV(0, 255, 0); // Green 
   leds[DAY42] = CHSV(0, 255, 0); // Green 
 
+  // Display the version number in binary on the top row
+  for (uint offset = DAY1; offset < DAY7; offset++)
+  {
+    leds[offset] = bitRead(BUILD_NUMBER, offset) ? CRGB::Red : CRGB::Black;
+  }
+
+
   FastLED.show();
 }
 
@@ -94,6 +101,12 @@ void ShowGlyphSearchingWiFi()
   leds[DAY25] = CHSV(120, 255, 128);
   leds[DAY32] = CHSV(120, 255, 128);
   leds[DAY39] = CHSV(120, 255, 128);
+
+  // Display the version number in binary on the top row
+  for (uint offset = DAY1; offset < DAY7; offset++)
+  {
+    leds[offset] = bitRead(BUILD_NUMBER, offset) ? CRGB::Red : CRGB::Black;
+  }
 
   FastLED.show();
 }
