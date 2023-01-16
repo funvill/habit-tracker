@@ -54,6 +54,7 @@ void flipTheStatusLED();
 void checkInputs();
 void getCurrentTime();
 time_t getNtpTime();
+void CheckForUpdates();
 
 // Modes
 void modeCalendar();
@@ -238,10 +239,11 @@ void setup()
   gCurrentYear = preferences.getUShort("year", month());
   preferences.end();
 
-  if( gCurrentYear < 2020 ) {
+  if (gCurrentYear < 2020)
+  {
     // There was an error somewhere. We need to reset the year to 2023
-    Serial.println("Error: gCurrentYear < 2020. Resetting to 2023");
-    gCurrentYear = 2023; 
+    Serial.println("Error: gCurrentYear < 2020 (was: " + String(gCurrentYear) + "). Resetting to 2023");
+    gCurrentYear = 2023;
   }
 
   // Auto update
@@ -254,27 +256,30 @@ void setup()
       if( progress == size || progress == 0 ) Serial.println();
       Serial.print("."); });
 
+  CheckForUpdates();
+}
+
+void CheckForUpdates()
+{
   bool updatedNeeded = esp32FOTA.execHTTPcheck();
   if (updatedNeeded)
   {
     Serial.println("!!! Update needed !!!! ");
+    ShowGlyphUpdating();
+    esp32FOTA.execOTA();
   }
   else
   {
     Serial.println("No update needed");
   }
 }
+
 // the loop function runs over and over again forever
 void loop()
 {
   EVERY_N_MINUTES_I(AUTO_UPDATE, 5)
   {
-    bool updatedNeeded = esp32FOTA.execHTTPcheck();
-    if (updatedNeeded)
-    {
-      Serial.println("!!! Update needed !!! ");
-      esp32FOTA.execOTA();
-    }
+    CheckForUpdates();
   }
 
   // do some periodic updates
@@ -368,7 +373,7 @@ void checkInputs()
     // Save settings
     Preferences preferences;
     preferences.begin("habit-tracker", false);
-    preferences.putUChar("mode", gMode);    
+    preferences.putUChar("mode", gMode);
     preferences.end();
   }
 
@@ -396,9 +401,8 @@ void checkInputs()
     Preferences preferences;
     preferences.begin("habit-tracker", false);
     preferences.putUChar("month", gCurrentMonth);
-    preferences.putUShort("year", gCurrentYear);    
+    preferences.putUShort("year", gCurrentYear);
     preferences.end();
-
   }
   // Next Month
   if (digitalRead(PIN_WIN2) == BUTTON_DOWN_STATE)
@@ -420,9 +424,8 @@ void checkInputs()
     Preferences preferences;
     preferences.begin("habit-tracker", false);
     preferences.putUChar("month", gCurrentMonth);
-    preferences.putUShort("year", gCurrentYear);    
+    preferences.putUShort("year", gCurrentYear);
     preferences.end();
-
   }
 
   // Check to see if the buttons have been pressed.
@@ -552,8 +555,6 @@ void getCurrentTime()
   int daysInMonth = monthDays(month(), year());
   Serial.print("Days in this month: ");
   Serial.println(daysInMonth);
-
-
 }
 
 time_t getNtpTime()

@@ -53,6 +53,20 @@ void animationNoWifi()
   FastLED.show();
 }
 
+void ShowGlyphUpdating() {
+  for (uint offset = DAY1; offset < PIXELS_COUNT; offset++)
+  {
+    leds[offset] = CHSV(0, 255, 128); // red 
+  }
+
+  leds[DAY1] = CHSV(0, 255, 0); // Green 
+  leds[DAY7] = CHSV(0, 255, 0); // Green 
+  leds[DAY36] = CHSV(0, 255, 0); // Green 
+  leds[DAY42] = CHSV(0, 255, 0); // Green 
+
+  FastLED.show();
+}
+
 void ShowGlyphSearchingWiFi()
 {
   for (uint offset = DAY1; offset < PIXELS_COUNT; offset++)
