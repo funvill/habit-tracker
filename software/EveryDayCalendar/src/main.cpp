@@ -277,7 +277,7 @@ void loop()
     flipTheStatusLED();
   }
 
-  EVERY_N_MINUTES(1)
+  EVERY_N_MINUTES(10)
   {
     getCurrentTime();
   }
