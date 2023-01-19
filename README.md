@@ -11,6 +11,8 @@ Uses a ESP32 to connect to the internet and backup the data from the boards.
 
 Fabricated using JLPCB SMD placement services. Fully automated manufacturing.
 
+More information about this project can be found on my blog [project page](https://blog.abluestar.com/projects/2022-monthly-habit-tracker/)
+
 ![hardware-2022-dec-11.png](hardware-2022-dec-11.png?raw=true)
 
 ![3D](3d.png?raw=true)
